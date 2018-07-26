@@ -1,8 +1,13 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* ---- reset ---- */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-a {
-  color: #00B7FF;
+body {
+  margin: 0;
+  padding: 0;
 }

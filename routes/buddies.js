@@ -20,7 +20,8 @@ router.get('/:id', (req, res, next) => {
   const { id } = req.params;
   User.find(id)
     .then((user) => {
-      console.log('show buddy profile');
+      console.log('show buddy profile')
+      res.render('/')
     })
     .catch((error) => {
       next(error);

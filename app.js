@@ -5,17 +5,17 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('hbs');
 
-const session = require("express-session");
-const MongoStore = require("connect-mongo")(session);
+// const session = require("express-session");
+// const MongoStore = require("connect-mongo")(session);
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/books');
+require('./dbmongo');
+// const mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost/books');
 
 
 const indexRouter = require('./routes/index');
 const buddiesRouter = require('./routes/buddies');
 // var authRouter = require('./routes/auth');
-
 
 const app = express();
 
@@ -26,18 +26,18 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 
 
-app.use(session({
-  store: new MongoStore({
-    mongooseConnection: mongoose.connection,
-    ttl: 24 * 60 * 60 // 1 day
-  }),
-  secret: 'some-string',
-  resave: true,
-  saveUninitialized: true,
-  cookie: {
-    maxAge: 24 * 60 * 60 * 1000}
-  })
-)
+// app.use(session({
+//   store: new MongoStore({
+//     mongooseConnection: mongoose.connection,
+//     ttl: 24 * 60 * 60 // 1 day
+//   }),
+//   secret: 'some-string',
+//   resave: true,
+//   saveUninitialized: true,
+//   cookie: {
+//     maxAge: 24 * 60 * 60 * 1000}
+//   })
+// );
 
 app.use(logger('dev'));
 app.use(express.json());

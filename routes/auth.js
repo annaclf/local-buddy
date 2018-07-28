@@ -6,8 +6,6 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 
-
-
 //SIGN UP: --------------------------------------------------------------
 
 router.get('/signup', (req, res, next) => {
@@ -27,6 +25,7 @@ router.post('/signup', (req, res, next) => {
       const salt = bcrypt.genSaltSync(saltRounds);
       const hashedPassword = bcrypt.hashSync(password, salt);
       const newUser = new User({ username, hashedPassword, email, city, age, highlights, biography });
+      req.session.currentUser = newUser;
       return newUser.save();
     }
   })
@@ -39,7 +38,6 @@ router.post('/signup', (req, res, next) => {
 });
 
 
-
 //LOGIN: --------------------------------------------------------------
 
 router.get('/login', (req, res, next) => {
@@ -49,18 +47,22 @@ router.get('/login', (req, res, next) => {
 
 router.post('/login', (req, res, next) => {
   const { username, password } = req.body;
-  
+  if( !username || !password ) return res.render('auth/login', { message: 'Rellena todos los campos' });
+
   User.findOne({ username })
   .then(user => {
     if(!user){
-      return res.render('auth/login', {message: 'Error, please try again!'})
+      return res.render('auth/login', {message: 'User or password incorrect'})
     }
-
     if (bcrypt.compareSync(password, user.password)) {
+      // Save the login in the session!
       req.session.currentUser = user;
+
+      console.log(`logged in as ${user.username}`);
+
       return res.redirect('/');
     } else {
-      return res.render('login', {message: 'Incorrect password, please try again!'})
+      return res.render('/auth/login', {message: 'Incorrect password, please try again!'})
     }
   })
   .catch(error => {
@@ -68,6 +70,10 @@ router.post('/login', (req, res, next) => {
   })
 })
 
-
+/**Log out */
+router.post('/logout', (req, res, next) => {
+  delete req.session.currentUser;
+  res.redirect('/');
+})
 
 module.exports = router;

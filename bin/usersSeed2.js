@@ -1,4 +1,5 @@
 require('../dbmongo');
+const mongoose = require('mongoose');
 const User = require('../models/user');
 
 const bcrypt = require('bcrypt');
@@ -23,9 +24,6 @@ const users = [
   }
 ]
 
-
-
-
 users.forEach((user) => {
   const password = user.password;
   const salt = bcrypt.genSaltSync(saltRounds);
@@ -37,10 +35,9 @@ console.log(users);
 
 User.create(users)
   .then((data) => {
-    console.log('ok')
-    mongoose.connection.close()
+    console.log('ok');
   })
+  .then( data => mongoose.connection.close())
   .catch(error =>{
     console.log(error)
-    mongoose.connection.close()
   })

@@ -7,7 +7,14 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="/login">Log in</a>
+             {{#if currentUser }}
+               <span>Logged in as {{currentUser.username}} </span>
+              <form action="/logout" method="post">
+                <button type="submit">Log out</button>
+              </form>
+            {{else}}
+              <a class="nav-item nav-link" href="/login">Log in</a>
+            {{/if}}
             <a class="nav-item nav-link" href="/signup">Sign up</a>
             <a class="nav-item nav-link" href="#">x</a>
             <a class="nav-item nav-link" href="#">x</a>

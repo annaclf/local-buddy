@@ -6,15 +6,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  User.find()
-  .then(() => {
-    res.render('index')
-
-      console.log('show home screen');
-    })
-    .catch((error) => {
-      next(error);
-    })
+  res.render('index');
 });
 
 

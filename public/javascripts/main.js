@@ -9,15 +9,15 @@ const swiper = new Swiper('.swiper-container', {
   breakpoints: {
     1024: {
       slidesPerView: 4,
-      spaceBetween: 40,
+      spaceBetween: 10,
     },
     768: {
       slidesPerView: 3,
-      spaceBetween: 30,
+      spaceBetween: 10,
     },
     640: {
       slidesPerView: 2,
-      spaceBetween: 20,
+      spaceBetween: 10,
     },
     320: {
       slidesPerView: 1,

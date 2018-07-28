@@ -8,7 +8,7 @@ const swiper = new Swiper('.swiper-container', {
   },
   breakpoints: {
     1024: {
-      slidesPerView: 4,
+      slidesPerView: 3,
       spaceBetween: 10,
     },
     768: {

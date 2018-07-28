@@ -39,7 +39,6 @@ app.use(session({
 
 app.use(function (req, res, next) {
   app.locals.currentUser = req.session.currentUser;
-  console.log(app.locals.currentUser);
   next();
 });
 

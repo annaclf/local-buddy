@@ -1,8 +1,14 @@
 
-<section class="swiper-container">
-  <div class="swiper-wrapper">
-    {{> profileSCard }}
+<section class="top-section mt-5">
+  <div class="container">
+    <section class="swiper-container">
+      <div class="swiper-wrapper">
+        {{#each user}}
+          {{> profileSCard }}
+        {{/each}}
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </section>
   </div>
-  <!-- Add Pagination -->
-  <div class="swiper-pagination"></div>
 </section>

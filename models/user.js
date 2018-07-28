@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 const userSchema = new Schema({
-  fullname: { type: String, required: true },
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   email: { type: String, required: true , unique: true },
   
+  fullname: { type: String, required: true },
   city: { type: String, required: true },
   age: { type: Number, required: true, min: 18 },
   category: { type: String, enum:['Music', 'Sports', 'Party', 'Food', 'Culture', 'Leisure', 'Games', 'Other'], required: true },
@@ -18,7 +18,7 @@ const userSchema = new Schema({
   typeBeds: { type: String, enum: ['Single Bed', 'Double Bed', 'Couch'], required: true },
   transport: { type: String, default: 'None' },
   
-  avatarUrl: { type: String, default: '../public/images/default-avatar.jpg' },
+  avatarUrl: { type: String, default: './public/images/default-avatar.jpg' },
 
   reservations: [{type: ObjectId, ref: 'Reservation'}]
 });

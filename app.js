@@ -9,8 +9,6 @@ const hbs = require('hbs');
 // const MongoStore = require("connect-mongo")(session);
 
 require('./dbmongo');
-// const mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/books');
 
 
 const indexRouter = require('./routes/index');
@@ -32,7 +30,7 @@ hbs.registerPartials(__dirname + '/views/partials');
 //     mongooseConnection: mongoose.connection,
 //     ttl: 24 * 60 * 60 // 1 day
 //   }),
-//   secret: 'some-string',
+//   secret: 'Ironhack',
 //   resave: true,
 //   saveUninitialized: true,
 //   cookie: {

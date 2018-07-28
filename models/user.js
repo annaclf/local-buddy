@@ -1,5 +1,6 @@
 const mongoose = require('../dbmongo');
 const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
 
 const userSchema = new Schema({
   fullname: { type: String, required: true },
@@ -17,7 +18,9 @@ const userSchema = new Schema({
   typeBeds: { type: String, enum: ['Single Bed', 'Double Bed', 'Couch'], required: true },
   transport: { type: String, default: 'None' },
   
-  avatarUrl: { type: String, default: '../public/images/default-avatar.jpg' }
+  avatarUrl: { type: String, default: '../public/images/default-avatar.jpg' },
+
+  reservations: [{type: ObjectId, ref: 'Reservation'}]
 });
 
 const User = mongoose.model('User', userSchema);

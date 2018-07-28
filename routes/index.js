@@ -5,9 +5,11 @@ const Reservation = require('../models/reservation');
 const router = express.Router();
 
 /* GET home page. */
-router.post('/', (req, res, next) => {
-  res.render('index')
-    .then(() => {
+router.get('/', (req, res, next) => {
+  User.find()
+  .then(() => {
+    res.render('index')
+
       console.log('show home screen');
     })
     .catch((error) => {

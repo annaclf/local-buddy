@@ -46,5 +46,9 @@ h2 {
   .user-form h2 {
     margin-top: 30px; }
 
+/*Errormessage*/
+.errormessage {
+  height: 30px; }
+
 .swiper-slide .card-title {
   font-size: 1rem; }

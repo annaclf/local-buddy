@@ -25,9 +25,8 @@ router.post('/signup', (req, res, next) => {
       const salt = bcrypt.genSaltSync(saltRounds);
       const hashedPassword = bcrypt.hashSync(password, salt);
 
-      !avatarUrl ? avatarUrl = '/images/default-avatar.jpg' : avatarUrl = avatarUrl;
-      !transport ? transport = 'none' : transport = transport;
-
+      if(!avatarUrl) avatarUrl = '/images/default-avatar.jpg';
+      if(!transport) transport = 'none';
 
       const newUser = new User({ username, password, email, fullname, city, age, category, highlights, biography, bedsNumber, typeBeds, transport, avatarUrl });
       req.session.currentUser = newUser;
@@ -52,12 +51,12 @@ router.get('/login', (req, res, next) => {
 
 router.post('/login', (req, res, next) => {
   const { username, password } = req.body;
-  if( !username || !password ) return res.render('auth/login', { message: 'Rellena todos los campos' });
+  if( !username || !password ) return res.render('auth/login', { message: 'You have to fill all the fields' });
 
   User.findOne({ username })
   .then(user => {
     if(!user){
-      return res.render('auth/login', {message: 'User or password incorrect'})
+      return res.render('auth/login', {message: 'User or password are incorrect'})
     }
     if (bcrypt.compareSync(password, user.password)) {
       // Save the login in the session!
@@ -67,7 +66,7 @@ router.post('/login', (req, res, next) => {
 
       return res.redirect('/');
     } else {
-      return res.render('/auth/login', {message: 'Incorrect password, please try again!'})
+      return res.render('auth/login', {message: 'Incorrect password, please try again!'})
     }
   })
   .catch(error => {

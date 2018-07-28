@@ -74,7 +74,8 @@ router.post('/login', (req, res, next) => {
   })
 })
 
-/**Log out */
+//LOG OUT: --------------------------------------------------------------
+
 router.post('/logout', (req, res, next) => {
   delete req.session.currentUser;
   res.redirect('/');

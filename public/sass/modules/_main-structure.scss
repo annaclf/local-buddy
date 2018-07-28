@@ -11,5 +11,11 @@ body {
   margin: 0;
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background:red;
+}
+
+.vh-100{
+  min-height: 100vh;
+}
+h2{
+  font-size: $h2-text-size;
 }

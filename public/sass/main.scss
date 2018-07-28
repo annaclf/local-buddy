@@ -1,10 +1,10 @@
 // Base
 @import 'base/variables';
 @import 'base/mixins';
-  
+
+// Modules
+@import 'modules/main-structure';
+
 // Components
 @import 'components/buttons';
 @import 'components/forms';
-  
-// Modules
-@import 'modules/main-structure';

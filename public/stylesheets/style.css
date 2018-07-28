@@ -1,9 +1,3 @@
-/* SE PUEDE BORRAR - PRUEBA HUGO */
-input {
-  border: 1px solid black;
-  background-color: blanchedalmond; }
-
-/* SE PUEDE BORRAR - PRUEBA HUGO */
 /* ---- reset ---- */
 html {
   box-sizing: border-box; }
@@ -14,6 +8,32 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: red; 
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+.vh-100 {
+  min-height: 100vh; }
+
+h2 {
+  font-size: 1.2rem; }
+
+.btn {
+  border-radius: 0; }
+
+.user-form {
+  background: #fff;
+  padding: 32px; }
+  .user-form .form-control + .form-control {
+    margin: .5rem 0; }
+  .user-form .btn {
+    margin: 1rem 0; }
+  .user-form .form-control {
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    font-size: 0.8rem;
+    padding-left: 0; }
+    .user-form .form-control:focus {
+      box-shadow: none;
+      border-bottom: 1px solid orange; }
+  .user-form h2 {
+    margin-top: 30px; }

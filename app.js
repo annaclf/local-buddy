@@ -15,7 +15,8 @@ require('./dbmongo');
 
 const indexRouter = require('./routes/index');
 const buddiesRouter = require('./routes/buddies');
-// var authRouter = require('./routes/auth');
+const authRouter = require('./routes/auth');
+const logoutRouter = require('./routes/logout');
 
 const app = express();
 
@@ -47,7 +48,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
-// app.use('/auth', authRouter);
+app.use('/', authRouter);
+app.use('/logout', logoutRouter);
 app.use('/buddies', buddiesRouter);
 
 

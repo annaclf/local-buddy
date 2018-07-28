@@ -13,8 +13,8 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', (req, res, next) => {
-  const { username, password, email, fullname, city, age, category, highlights, biography, bedsNumber, typeBeds, transport, avatarUrl } = req.body;
-
+  const { username, password, email, fullname, city, age, category, highlights, biography, bedsNumber, typeBeds } = req.body;
+  let { avatarUrl, transport } = req.body;
   if(!username || !password) {return res.render('auth/signup', {message: 'Incorrect! Please, try again'})}
 
   User.findOne({ username })
@@ -24,6 +24,11 @@ router.post('/signup', (req, res, next) => {
     } else {
       const salt = bcrypt.genSaltSync(saltRounds);
       const hashedPassword = bcrypt.hashSync(password, salt);
+
+      !avatarUrl ? avatarUrl = '/images/default-avatar.jpg' : avatarUrl = avatarUrl;
+      !transport ? transport = 'none' : transport = transport;
+
+
       const newUser = new User({ username, password, email, fullname, city, age, category, highlights, biography, bedsNumber, typeBeds, transport, avatarUrl });
       req.session.currentUser = newUser;
       return newUser.save();

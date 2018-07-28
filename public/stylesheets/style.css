@@ -45,3 +45,6 @@ h2 {
       border-bottom: 1px solid orange; }
   .user-form h2 {
     margin-top: 30px; }
+
+.swiper-slide .card-title {
+  font-size: 1rem; }

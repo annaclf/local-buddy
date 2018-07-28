@@ -1,6 +1,11 @@
-.user-form{
-  background: #fff;
+.form-top{
+  background: #ced4da;
   padding: 32px;
+  color: #fff;
+}
+.user-form{
+  padding: 32px;
+  border: 1px solid #ced4da;
   .form-control+.form-control {
     margin: .5rem 0;
   }
@@ -9,7 +14,7 @@
   }
   .form-control{
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #ced4da;
     border-radius: 0;
     font-size: $form-text-size;
     padding-left:0;

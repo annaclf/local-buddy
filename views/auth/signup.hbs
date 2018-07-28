@@ -1,12 +1,17 @@
-<div class="container">
+<div class="container mb-5 mt-5">
   
   <div class="row vh-100 align-items-center">
     
-    <div class="col-md-5 mx-auto">
+    <div class="col-md-7 col-lg-5 mx-auto">
+      <div class="form-top">
+        <div class="d-flex flex-column">
+          <img src="http://via.placeholder.com/75x45" class="img-fluid align-self-end" alt="Logo" />
+          <h1>Sign up</h1>
+        </div>
+      </div>
+
       <section class="user-form">
         <form method="post" action="/auth/signup" role="register">
-          
-          <img src="http://via.placeholder.com/150x90" class="img-fluid mb-5" alt="Logo" />
           <div class="form-group">
             <h2>Basic information</h2>
             <input type="text" name="username" placeholder="Username" required class="form-control input-lg">
@@ -38,10 +43,10 @@
             <input type="text" name="transport"  placeholder="Type if you have a car or other transport" required class="form-control input-lg">          
           </div>
           <div class="form-group">
-            <h2>Everything ready?</h2>
+            <h2 class="text-center">Everything ready?</h2>
             <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign up</button>
-            <div>
-              <span>Already have an account? </span><a href="/login">Log in</a>
+            <div class="text-center">
+              <p>Already have an account? <a href="/login">Log in</a></p>
             </div>
           </div>
         </form>

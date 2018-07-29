@@ -56,6 +56,8 @@ h2 {
 
 .swiper-container {
   padding-bottom: 50px; }
+  .swiper-container .swiper-pagination {
+    display: none !important; }
 
 .swiper-slide .card-img-top {
   height: 60px; }
@@ -79,7 +81,9 @@ h2 {
 
 @media (min-width: 768px) {
   .swiper-slide .card-img-top {
-    height: 100px; } }
+    height: 100px; }
+  .swiper-container .swiper-pagination {
+    display: block !important; } }
 
 .avatar {
   position: absolute;
@@ -96,3 +100,32 @@ h2 {
     right: 15px;
     width: 70px;
     height: 70px; } }
+
+.buddie-profile .top-banner {
+  color: #fff;
+  background: orange; }
+  .buddie-profile .top-banner .container {
+    position: relative; }
+  .buddie-profile .top-banner .buddie-info {
+    height: 150px; }
+    .buddie-profile .top-banner .buddie-info h2 {
+      font-size: 2rem;
+      margin-bottom: 0; }
+    .buddie-profile .top-banner .buddie-info .city {
+      font-weight: 100;
+      font-size: 1.3rem;
+      margin-bottom: 0; }
+  .buddie-profile .top-banner .rate {
+    font-size: 1.3rem; }
+  .buddie-profile .top-banner .avatar {
+    bottom: -30px;
+    height: 140px;
+    width: 140px;
+    top: auto; }
+
+@media (min-width: 556px) {
+  .mt-3 {
+    margin-top: 3rem !important; }
+  .buddie-profile .top-banner .avatar {
+    height: 170px;
+    width: 170px; } }

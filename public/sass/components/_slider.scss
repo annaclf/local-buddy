@@ -1,5 +1,8 @@
 .swiper-container{
   padding-bottom: 50px;
+  .swiper-pagination{
+    display: none!important;
+  }
 }
 .swiper-slide{
   .card-img-top{
@@ -22,12 +25,18 @@
     margin-bottom: 0;
     min-height: 32px;
   }
+  
 }
 
 @media (min-width: 768px) {
   .swiper-slide{
     .card-img-top{
       height: 100px;
+    }
+  }
+  .swiper-container{
+    .swiper-pagination{
+      display: block!important;
     }
   }
 }

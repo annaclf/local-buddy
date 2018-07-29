@@ -5,8 +5,18 @@
   }
 }
 .swiper-slide{
+  a{
+    color: inherit;
+  }
+  .card{
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+    border: 1px solid rgba(0,0,0,.1);
+  }
+  .card-top{
+    position: relative;
+  }
   .card-img-top{
-    height: 60px;
+    height: 70px;
   }
   .card-title{
     font-size: 1rem;

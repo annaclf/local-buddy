@@ -1,9 +1,9 @@
 require('../dbmongo');
+const mongoose = require('mongoose');
 const User = require('../models/user');
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-
 
 const users = [
   {
@@ -201,23 +201,20 @@ const users = [
     transport: 'Seat Ibiza',
     avatarUrl: '../public/images/default-avatar.jpg'
   }
-]
-
+];
 
 users.forEach((user) => {
   const password = user.password;
   const salt = bcrypt.genSaltSync(saltRounds);
   const hashedPassword = bcrypt.hashSync(password, salt);
   user.password = hashedPassword;
-})
-
+});
 
 User.create(users)
   .then((data) => {
-    console.log('ok')
-    mongoose.connection.close()
+    console.log('ok');
   })
-  .catch(error =>{
-    console.log(error)
-    mongoose.connection.close()
-  })
+  .then(data => mongoose.connection.close())
+  .catch(error => {
+    console.log(error);
+  });

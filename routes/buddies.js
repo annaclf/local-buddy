@@ -30,10 +30,10 @@ POST /buddies/me/reservations/:id/response
 
 router.get('/:id', (req, res, next) => {
   const { id } = req.params;
-  User.find(id)
+  User.findById(id)
     .then((user) => {
-      console.log('show buddy profile')
-      res.render('/buddies/profile', user)
+      console.log(user);
+      res.render('buddies/profile', user)
     })
     .catch((error) => {
       next(error);
@@ -54,7 +54,7 @@ router.get('/:id/reserve', (req, res, next) => {
   const { id } = req.params;
   User.find(id)
   .then(reservation => {
-    res.render('/buddies/form-reservation')
+    res.render('buddies/form-reservation')
     console.log('show form reservation')
 
   })

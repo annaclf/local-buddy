@@ -1,16 +1,21 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container">
-      <div class="brand mr-auto"><a class="navbar-brand" href="#">LocalBuddy</a></div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="brand mr-auto"><a class="navbar-brand navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup"><strong>LB</strong></a></div>
+        {{!-- <button class="" type="button"  aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> --}}
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">x</a>
-            <a class="nav-item nav-link" href="#">x</a>
-            <a class="nav-item nav-link" href="#">x</a>
-            <a class="nav-item nav-link" href="#">x</a>
+            <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+              {{#if currentUser }}
+                <span>Logged in as {{currentUser.username}} </span>
+                <form action="/logout" method="post">
+                  <button type="submit">Log out</button>
+                </form>
+              {{else}}
+                <a class="nav-item nav-link" href="/login">Log in</a>
+                <a class="nav-item nav-link" href="/signup">Sign up</a>
+              {{/if}}
           </div>
         </div>
       </div>

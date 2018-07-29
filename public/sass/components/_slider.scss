@@ -1,0 +1,57 @@
+.swiper-container{
+  padding-bottom: 50px;
+  .swiper-pagination{
+    display: none!important;
+  }
+}
+.swiper-slide{
+  a{
+    color: inherit;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .card{
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+    border: 1px solid rgba(0,0,0,.1);
+  }
+  .card-top{
+    position: relative;
+    background: $primary_color;
+  }
+  .card-img-top{
+    height: 70px;
+    visibility: hidden;
+  }
+  .card-title{
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .card-body{
+    padding: 1rem;
+  }
+  .city{
+    font-size: .8rem;
+    margin-bottom: 0;
+  }
+  .highlights{
+    margin-top: 5px;
+    font-size: 0.7rem;
+    margin-bottom: 0;
+    min-height: 32px;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .swiper-slide{
+    .card-img-top{
+      height: 100px;
+    }
+  }
+  .swiper-container{
+    .swiper-pagination{
+      display: block!important;
+    }
+  }
+}

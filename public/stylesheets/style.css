@@ -1,26 +1,144 @@
 /* ---- reset ---- */
-
 html {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
+
 *, *:before, *:after {
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 body {
   margin: 0;
   padding: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font-size: 14px;
+  font-family: "Lato", sans-serif; }
 
+.vh-100 {
+  min-height: 100vh; }
+  .vh-100.top-section {
+    margin-top: -56px; }
 
+h2 {
+  font-size: 2rem;
+  font-weight: 700; }
 
+h2 {
+  font-size: 1.2rem; }
 
+.btn {
+  border-radius: 0; }
 
+.form-top {
+  background: #ced4da;
+  padding: 1rem;
+  color: #fff; }
 
-/* SE PUEDE BORRAR - PRUEBA HUGO */
-input {
-  border: 1px solid black;
-  background-color: blanchedalmond;
-}
-/* SE PUEDE BORRAR - PRUEBA HUGO */
+.user-form {
+  padding: 1rem;
+  border: 1px solid #ced4da; }
+  .user-form .form-control + .form-control {
+    margin: .5rem 0; }
+  .user-form .btn {
+    margin: 1rem 0; }
+  .user-form .form-control {
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    font-size: 0.8rem;
+    padding-left: 0; }
+    .user-form .form-control:focus {
+      box-shadow: none;
+      border-bottom: 1px solid orange; }
+  .user-form h2 {
+    margin-top: 30px; }
+
+/*Errormessage*/
+.errormessage {
+  height: 30px; }
+
+.swiper-container {
+  padding-bottom: 50px; }
+  .swiper-container .swiper-pagination {
+    display: none !important; }
+
+.swiper-slide a {
+  color: inherit; }
+  .swiper-slide a:hover {
+    text-decoration: none; }
+
+.swiper-slide .card {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+
+.swiper-slide .card-top {
+  position: relative;
+  background: orange; }
+
+.swiper-slide .card-img-top {
+  height: 70px;
+  visibility: hidden; }
+
+.swiper-slide .card-title {
+  font-size: 1rem;
+  margin-bottom: 0; }
+
+.swiper-slide .card-body {
+  padding: 1rem; }
+
+.swiper-slide .city {
+  font-size: .8rem;
+  margin-bottom: 0; }
+
+.swiper-slide .highlights {
+  margin-top: 5px;
+  font-size: 0.7rem;
+  margin-bottom: 0;
+  min-height: 32px; }
+
+@media (min-width: 768px) {
+  .swiper-slide .card-img-top {
+    height: 100px; }
+  .swiper-container .swiper-pagination {
+    display: block !important; } }
+
+.avatar {
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden; }
+
+@media (min-width: 556px) {
+  .avatar {
+    right: 15px;
+    width: 70px;
+    height: 70px; } }
+
+.buddie-profile .top-banner {
+  color: #fff;
+  background: orange; }
+  .buddie-profile .top-banner .container {
+    position: relative; }
+  .buddie-profile .top-banner .buddie-info {
+    height: 150px; }
+    .buddie-profile .top-banner .buddie-info h2 {
+      font-size: 2rem;
+      margin-bottom: 0; }
+    .buddie-profile .top-banner .buddie-info .city {
+      font-weight: 200;
+      font-size: 1.3rem;
+      margin-bottom: 0; }
+  .buddie-profile .top-banner .rate {
+    font-size: 1.3rem; }
+  .buddie-profile .top-banner .avatar {
+    bottom: -30px;
+    height: 140px;
+    width: 140px;
+    top: auto; }
+
+@media (min-width: 556px) {
+  .mt-3 {
+    margin-top: 3rem !important; }
+  .buddie-profile .top-banner .avatar {
+    height: 170px;
+    width: 170px; } }

@@ -1,0 +1,35 @@
+.form-top{
+  background: #ced4da;
+  padding: $form-padding;
+  color: #fff;
+}
+.user-form{
+  padding: $form-padding;
+  border: 1px solid #ced4da;
+  .form-control+.form-control {
+    margin: .5rem 0;
+  }
+  .btn{
+    margin: 1rem 0;
+  }
+  .form-control{
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    font-size: $form-text-size;
+    padding-left:0;
+    &:focus{
+      box-shadow: none;
+      border-bottom: 1px solid $primary_color; 
+    }
+  }
+  h2{
+    margin-top: 30px;
+  }
+}
+
+/*Errormessage*/
+
+.errormessage{
+  height: 30px;
+}

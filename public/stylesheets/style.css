@@ -61,16 +61,20 @@ h2 {
 
 .swiper-slide a {
   color: inherit; }
+  .swiper-slide a:hover {
+    text-decoration: none; }
 
 .swiper-slide .card {
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
   border: 1px solid rgba(0, 0, 0, 0.1); }
 
 .swiper-slide .card-top {
-  position: relative; }
+  position: relative;
+  background: orange; }
 
 .swiper-slide .card-img-top {
-  height: 70px; }
+  height: 70px;
+  visibility: hidden; }
 
 .swiper-slide .card-title {
   font-size: 1rem;

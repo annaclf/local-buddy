@@ -28,7 +28,7 @@ POST /buddies/me/reservations/:id/response
  
 
 
-router.get('/:id', (req, res, next) => {
+router.get('/buddie/:id', (req, res, next) => {
   const { id } = req.params;
   User.find(id)
     .then((user) => {

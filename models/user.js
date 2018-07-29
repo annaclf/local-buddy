@@ -1,4 +1,6 @@
 const mongoose = require('../dbmongo');
+var validate = require('mongoose-validator');
+
 const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 

@@ -24,8 +24,14 @@
             <h2>About me</h2>
             <input type="text" name="fullname" placeholder="Full name" required class="form-control input-lg">
             <input type="text" name="city" placeholder="City" required class="form-control input-lg">
-            <input type="text" name="age"  placeholder="Age" required class="form-control input-lg">          
-            <select class="form-control mr-sm-2" id="categories" name="category">
+            {{!-- <input type="text" name="age"  placeholder="Age" required class="form-control input-lg">           --}}
+            <select class="form-control" name='age' required>
+               <option selected>Age</option>
+              {{#each numbers}}
+                <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+            <select class="form-control" id="categories" name="category" required>
               <option selected>Interests</option>
               <option value="Music">Music</option>
               <option value="Sports">Sports</option>

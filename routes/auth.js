@@ -9,7 +9,12 @@ const saltRounds = 10;
 //SIGN UP: --------------------------------------------------------------
 
 router.get('/signup', (req, res, next) => {
-  res.render('auth/signup')
+  let numbers = [];
+  for(let i = 18; i < 100; i++){
+    numbers.push(i);
+  }
+
+  res.render('auth/signup', {numbers})
 });
 
 router.post('/signup', (req, res, next) => {

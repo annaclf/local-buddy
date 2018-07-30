@@ -9,6 +9,7 @@ router.get('/', privateRoute.requireUser, (req, res, next) => {
   const {_id} = req.session.currentUser;
   User.findById( _id )
     .then(user => {
+      console.log(user)
       res.render('profile/me', user);
     })
     .catch(error => {
@@ -16,11 +17,20 @@ router.get('/', privateRoute.requireUser, (req, res, next) => {
     });
 });
 
+
 router.get('/edit', privateRoute.requireUser, (req, res, next) => {
-  res.render('profile/edit');
+  const {_id} = req.session.currentUser;
+  User.findById(_id)
+    .then(user => {
+      console.log(user)
+      res.render('profile/edit', user);
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
-router.post('/edit', privateRoute.requireUser, (req, res, next) => {
+router.post('/edit', (req, res, next) => {
   const {
     username,
     password,

@@ -150,3 +150,11 @@ h2 {
 
 .buddies-list .buddie-info {
   height: 200px; }
+
+.jumbotron h1 {
+  font-size: 2rem;
+  padding: 5% 0; }
+
+.jumbotron p {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem; }

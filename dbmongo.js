@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/local-buddy', {
-  reconnectTries: Number.MAX_VALUE
+  reconnectTries: Number.MAX_VALUE,
   // useNewUrlParser: true
 })
   .then(() => {

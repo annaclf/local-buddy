@@ -9,10 +9,6 @@ const saltRounds = 10;
 // SIGN UP: --------------------------------------------------------------
 
 router.get('/signup', (req, res, next) => {
-  let numbers = [];
-  for (let i = 18; i < 100; i++) {
-    numbers.push(i);
-  }
   const data = {
     messages: req.flash('info')
   };
@@ -21,21 +17,25 @@ router.get('/signup', (req, res, next) => {
 
 router.post('/signup', authMiddle.validUserInputSignUp, (req, res, next) => {
   const { username, password, email } = req.body;
-  
+
   User.findOne({ username })
     .then(user => {
       if (user) {
-        res.render('auth/signup', {message: 'Already existing user'});
+        console.log('HELLO', user)
+        req.flash('info', 'Username already exists');
+        res.redirect('/signup');
+        // return res.render('auth/signup', {message: 'Already existing user'});
       } else {
         const salt = bcrypt.genSaltSync(saltRounds);
         const hashedPassword = bcrypt.hashSync(password, salt);
-        const newUser = new User({ username, hashedPassword, email });
-        req.session.currentUser = newUser;
-        return newUser.save();
+        const newUser = new User({ username, password: hashedPassword, email });
+
+        return newUser.save()
+          .then(() => {
+            req.session.currentUser = newUser;
+            res.redirect('/');
+          })
       }
-    })
-    .then(() => {
-      res.redirect('/');
     })
     .catch(error => {
       next(error);
@@ -57,17 +57,17 @@ router.post('/login', authMiddle.validUserInputLogin, (req, res, next) => {
   User.findOne({ username })
     .then(user => {
       if (!user) {
-        return res.render('auth/login', {message: 'Incorrect, please try again!'});
-      }
-      if (bcrypt.compareSync(password, user.password)) {
-      // Save the login in the session!
-        req.session.currentUser = user;
-
-        console.log(`logged in as ${user.username}`);
-
-        return res.redirect('/');
+        req.flash('info', 'no user')
+        return res.redirect('/login');
       } else {
-        return res.render('auth/login', {message: 'Incorrect password, please try again!'});
+        if (bcrypt.compareSync(password, user.password)) {
+        // Save the login in the session!
+          req.session.currentUser = user;
+          return res.redirect('/');
+        } else {
+          req.flash('info', 'password wrong')
+          return res.redirect('/login');
+        }
       }
     })
     .catch(error => {

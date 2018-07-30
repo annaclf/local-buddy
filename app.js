@@ -15,7 +15,7 @@ const indexRouter = require('./routes/index');
 const buddiesRouter = require('./routes/buddies');
 const authRouter = require('./routes/auth');
 const searchRouter = require('./routes/search');
-
+const profileRouter = require('./routes/profile');
 
 const app = express();
 
@@ -50,12 +50,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
 app.use('/', indexRouter);
 app.use('/', authRouter);
 app.use('/buddies', buddiesRouter);
 app.use('/search', searchRouter);
+app.use('/profile', profileRouter);
 
 // error handler
 

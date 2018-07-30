@@ -1,7 +1,6 @@
 module.exports = {
   validUserInputSignUp: (req, res, next) => {
     const { username, password, email } = req.body;
-    console.log(req.body)
     if (!username || !password || !email) {
       req.flash('info', 'Missing info, please try again');
       return res.redirect('/signup');
@@ -10,8 +9,8 @@ module.exports = {
     }
   },
   validUserInputLogin: (req, res, next) => {
-    const { username, password, email } = req.body;
-    if (!username || !password || !email) {
+    const { username, password } = req.body;
+    if (!username || !password) {
       req.flash('info', 'Missing info, please try again');
       return res.redirect('/login');
     } else {

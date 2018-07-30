@@ -142,6 +142,9 @@ h2 {
     width: 70px;
     height: 70px; } }
 
+.city {
+  text-transform: capitalize; }
+
 .buddies-list .profile-card {
   background: #ced4da; }
 

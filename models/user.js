@@ -9,7 +9,7 @@ const userSchema = new Schema({
   password: { type: String },
   email: { type: String, unique: true },
   fullname: { type: String },
-  city: { type: String },
+  city: { type: String, lowercase: true },
   age: { type: Number, min: 18 },
   category: { type: String, enum: ['Music', 'Sports', 'Party', 'Food', 'Culture', 'Leisure', 'Games', 'Other'] },
   highlights: { type: String, minlength: 0, maxlength: 60 },

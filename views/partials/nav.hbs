@@ -1,25 +1,38 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container">
-      <div class="brand mr-auto"><a class="navbar-brand navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup"><strong>LB</strong></a></div>
-        {{!-- <button class="" type="button"  aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button> --}}
-        <form action="/search">
-          <input type="text" name="city">
+      <div class="brand mr-auto"><a class="navbar-brand" href="/"><strong>LB</strong></a></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+        </button>
+        <form class="form-inline" action="/search">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">#</span>
+            </div>
+            <input type="text" class="form-control" placeholder="City" name="city" aria-label="City" aria-describedby="basic-addon1">
+          </div>
         </form>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+            <ul class="navbar-nav ml-auto">
               {{#if currentUser }}
-                <span>Logged in as {{currentUser.username}} </span>
+                <li>
+                  <a class="nav-item nav-link" href="/profile">My profile</a>
+                </li>
+              <li>
                 <form action="/logout" method="post">
                   <button type="submit">Log out</button>
                 </form>
+              </li>
               {{else}}
-                <a class="nav-item nav-link" href="/login">Log in</a>
+              <li>
+                 <a class="nav-item nav-link" href="/login">Log in</a>
+              </li>
+              <li>
                 <a class="nav-item nav-link" href="/signup">Sign up</a>
+              </li>
               {{/if}}
-          </div>
+            </ul>               
         </div>
+        
       </div>
     </nav>

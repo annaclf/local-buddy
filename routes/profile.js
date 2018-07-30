@@ -6,13 +6,8 @@ const privateRoute = require('../middlewares/privateMiddleware');
 const router = express.Router();
 
 router.get('/', privateRoute.requireUser, (req, res, next) => {
-  const data = {
-    messages: req.flash('login')
-  };
-
-  let username = req.session.currentUser.username;
-
-  User.findOne({ 'username': `${username}` })
+  const { currentUser: { usernameLog } } = res.locals;
+  User.findOne({ usernameLog })
     .then(user => {
       res.render('profile/me', user);
     })
@@ -21,16 +16,38 @@ router.get('/', privateRoute.requireUser, (req, res, next) => {
     });
 });
 
-// router.get('/me/reservations', (req, res, next) => {
-//   User.findById(id)
-//     .then(user => {
-//       res.render('buddies/reservation');
-//       console.log('show page to manage reservations');
-//     })
-//     .catch(error => {
-//       next(error);
-//     });
-// });
+router.get('/edit', privateRoute.requireUser, (req, res, next) => {
+  res.render('profile/edit');
+});
+
+router.post('/edit', privateRoute.requireUser, (req, res, next) => {
+  const {
+    username,
+    password,
+    email,
+    fullname,
+    city,
+    age,
+    category,
+    highlights,
+    biography,
+    typeBeds,
+    bedsNumber,
+    transport
+  } = req.body;
+
+  const { currentUser: { usernameLog } } = res.locals;
+
+  User.findOneAndUpdate({ usernameLog }, () => {
+    
+  })
+    .then(user => {
+
+    })
+    .catch(error => {
+      next(error);
+    });
+});
 
 // router.post('/me/reservations/:id/response', (req, res, next) => {
 //   const { status } = req.body;

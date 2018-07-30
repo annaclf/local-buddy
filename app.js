@@ -41,6 +41,9 @@ app.use(flash());
 
 app.use(function (req, res, next) {
   app.locals.currentUser = req.session.currentUser;
+  if (req.session.currentUser) {
+    res.locals.currentUser = req.session.currentUser;
+  }
   next();
 });
 

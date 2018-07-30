@@ -1,9 +1,13 @@
 <section class="buddies-list">
   <div class="container">
     <div class="row">
-      {{#each users}}
-        {{> userListCard}}
-      {{/each}}
+      {{#if users}}
+        {{#each users}}
+          {{> userListCard}}
+        {{/each}}
+      {{else}}
+        <p>No users found</p>
+      {{/if}}
     </div>
   </div>
 </section>

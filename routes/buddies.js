@@ -29,6 +29,7 @@ POST /buddies/me/reservations/:id/response
 
 
 router.get('/:id', (req, res, next) => {
+  
   const { id } = req.params;
   User.findById(id)
     .then((user) => {
@@ -87,25 +88,25 @@ router.get('/me', (req, res, next) => {
 
 router.get('/me/reservations', (req, res, next) => {
   User.findById(id)
-  .then(user => {
-    res.render('buddies/reservation')
-    console.log('show page to manage reservations');
-  })
-  .catch(error => {
-    next(error);
-  })
+    .then(user => {
+      res.render('buddies/reservation')
+      console.log('show page to manage reservations');
+    })
+    .catch(error => {
+      next(error);
+    })
 })
 
 router.post('/me/reservations/:id/response', (req, res, next) => {
   const { status } = req.body;
   const { id } = req.params;
   Reservation.findById(id)
-  .then((data) => {
-    console.log('change reservations status');
-  })
-  .catch(error => {
-    next(error);
-  })
+    .then((data) => {
+      console.log('change reservations status');
+    })
+    .catch(error => {
+      next(error);
+    })
 })
 
 

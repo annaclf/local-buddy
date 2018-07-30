@@ -20,7 +20,7 @@ router.post('/signup', (req, res, next) => {
   const { username, password, email, fullname, city, age, category, highlights, biography, bedsNumber, typeBeds } = req.body;
   let { avatarUrl, transport } = req.body;
   if (!username || !password) { return res.render('auth/signup', {message: 'Incorrect! Please, try again'}); }
-
+  User.sortByPopular()
   User.findOne({ username })
     .then(user => {
       if (user) {
@@ -53,6 +53,7 @@ router.get('/login', (req, res, next) => {
 
 router.post('/login', (req, res, next) => {
   const { username, password } = req.body;
+  
   if (!username || !password) return res.render('auth/login', { message: 'You have to fill all the fields' });
 
   User.findOne({ username })

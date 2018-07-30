@@ -17,7 +17,7 @@ const userSchema = new Schema({
   bedsNumber: { type: Number, default: 1, required: true },
   typeBeds: { type: String, enum: ['Single Bed', 'Double Bed', 'Couch'], required: true },
   transport: { type: String, default: 'none' },
-  avatarUrl: { type: String, default: '../images/default-avatar.jpg' },
+  avatarUrl: { type: String, default: '/images/default-avatar.jpg' },
   reservations: [{type: ObjectId, ref: 'Reservation'}]
 });
 

@@ -5,9 +5,9 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 const userSchema = new Schema({
-  username: { type: String, required: true, unique: true },
+  username: { type: String, unique: true },
   password: { type: String },
-  email: { type: String, required: true, unique: true },
+  email: { type: String, unique: true },
   fullname: { type: String },
   city: { type: String },
   age: { type: Number, min: 18 },

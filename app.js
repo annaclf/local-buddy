@@ -7,6 +7,7 @@ const hbs = require('hbs');
 const mongoose = require('mongoose');
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
+const flash = require('connect-flash');
 
 require('./dbmongo');
 
@@ -24,7 +25,6 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-
 app.use(session({
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
@@ -37,6 +37,7 @@ app.use(session({
     maxAge: 24 * 60 * 60 * 1000
   }
 }));
+app.use(flash());
 
 app.use(function (req, res, next) {
   app.locals.currentUser = req.session.currentUser;
@@ -55,7 +56,6 @@ app.use('/', indexRouter);
 app.use('/', authRouter);
 app.use('/buddies', buddiesRouter);
 app.use('/search', searchRouter);
-
 
 // error handler
 

@@ -1,8 +1,9 @@
 const express = require('express');
-const router = express.Router();
 const User = require('../models/user');
-
+const authMiddle = require('../middlewares/authMiddle');
 const bcrypt = require('bcrypt');
+
+const router = express.Router();
 const saltRounds = 10;
 
 // SIGN UP: --------------------------------------------------------------
@@ -12,15 +13,15 @@ router.get('/signup', (req, res, next) => {
   for (let i = 18; i < 100; i++) {
     numbers.push(i);
   }
-
-  res.render('auth/signup', {numbers});
+  const data = {
+    messages: req.flash('info')
+  };
+  res.render('auth/signup', data);
 });
 
-router.post('/signup', (req, res, next) => {
-  const { username, password, email, fullname, city, age, category, highlights, biography, bedsNumber, typeBeds } = req.body;
-  let { avatarUrl, transport } = req.body;
-  if (!username || !password) { return res.render('auth/signup', {message: 'Incorrect! Please, try again'}); }
-  User.sortByPopular()
+router.post('/signup', authMiddle.validUserInputSignUp, (req, res, next) => {
+  const { username, password, email } = req.body;
+  
   User.findOne({ username })
     .then(user => {
       if (user) {
@@ -28,11 +29,7 @@ router.post('/signup', (req, res, next) => {
       } else {
         const salt = bcrypt.genSaltSync(saltRounds);
         const hashedPassword = bcrypt.hashSync(password, salt);
-
-        if (!avatarUrl) avatarUrl = '/images/default-avatar.jpg';
-        if (!transport) transport = 'none';
-
-        const newUser = new User({ username, password, email, fullname, city, age, category, highlights, biography, bedsNumber, typeBeds, transport, avatarUrl });
+        const newUser = new User({ username, hashedPassword, email });
         req.session.currentUser = newUser;
         return newUser.save();
       }
@@ -48,18 +45,19 @@ router.post('/signup', (req, res, next) => {
 // LOGIN: --------------------------------------------------------------
 
 router.get('/login', (req, res, next) => {
-  res.render('auth/login');
+  const data = {
+    messages: req.flash('info')
+  };
+  res.render('auth/login', data);
 });
 
-router.post('/login', (req, res, next) => {
+router.post('/login', authMiddle.validUserInputLogin, (req, res, next) => {
   const { username, password } = req.body;
-  
-  if (!username || !password) return res.render('auth/login', { message: 'You have to fill all the fields' });
 
   User.findOne({ username })
     .then(user => {
       if (!user) {
-        return res.render('auth/login', {message: 'User or password are incorrect'});
+        return res.render('auth/login', {message: 'Incorrect, please try again!'});
       }
       if (bcrypt.compareSync(password, user.password)) {
       // Save the login in the session!

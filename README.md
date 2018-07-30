@@ -4,11 +4,8 @@
 
 Connect people to live experiences out of your city.
 
- ## User Stories
+ ## Mvp
 
-List of user stories in order of priority/importance.
-
-Example:
  - **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault 
  - **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
  - **homepage** - As a user I want to be able to access the homepage so that I see what the app is about and login and signup
@@ -20,7 +17,6 @@ Example:
  - **buddies list** - As a user I want to see all the buddies  available so that I can choose which ones I want to contact
  - **buddies detail** - As a user I want to see more information regarding one buddy so that I can decide if I want to contact him 
  - **buddy reservation** - As a user I want to be able to reserve a buddy so that I can meet him
- - **buddies favourites** - As a user I want to be able to mark a buddy as favourite so that I can see my favourites buddies 
  - **accept reservation** - As a user I want to be able to confirm a reservation from other user
  - **reject reservation** - As  a user I want to be able to reject a reservation from other user
  - **see reservations** - As a user I want to be able to see all reservations status 
@@ -31,6 +27,8 @@ List of other features outside of the MVPs scope
 
 **User profile:**
 - upload my profile picture
+
+ - **buddies favourites** - As a user I want to be able to mark a buddy as favourite so that I can see my favourites buddies 
 
 **Buddies Location**
 

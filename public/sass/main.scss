@@ -9,5 +9,7 @@
 @import 'components/buttons';
 @import 'components/forms';
 @import 'components/slider';
-@import 'components/user';
-@import 'components/userprofile';
+
+// Views
+@import 'views/user';
+@import 'views/userprofile';

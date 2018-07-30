@@ -29,6 +29,17 @@
   }
 }
 
+.avatar{
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
 @media (min-width: 556px) {
   .mt-3{
     margin-top: 3rem!important;
@@ -40,5 +51,10 @@
         width: 170px;
       }
     }
+  }
+  .avatar{
+    right: 15px;
+    width: 70px;
+    height: 70px;
   }
 }

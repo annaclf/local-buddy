@@ -6,9 +6,8 @@
     "start": "node ./bin/www",
     "seed": "node ./bin/usersSeed2.js",
     "watch:scss": "node-sass ./public/sass/main.scss ./public/stylesheets/style.css -w",
-    "build:scss": "node-sass ./public/sass/main.scss ./public/stylesheets/style.css --output style compressed",
     "watch": "nodemon -e js,json,hbs ./bin/www",
-    "watch:n-sass": "nodemon -e js,json,hbs ./bin/www | npm run watch:scss"
+    "watch-sass": "nodemon -e js,json,hbs ./bin/www | npm run watch:scss"
   },
   "dependencies": {
     "bcrypt": "^3.0.0",

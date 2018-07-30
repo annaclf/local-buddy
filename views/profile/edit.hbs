@@ -9,19 +9,19 @@
           <img src="http://via.placeholder.com/150x90" class="img-fluid mb-5" alt="Logo" />
           <div class="form-group">
             <h2>Basic information</h2>
-            <input type="text" name="username" placeholder="Username"  class="form-control input-lg">
+            <input type="text" name="username" placeholder="Username"  class="form-control input-lg"  value="{{this.username}}">
             <input type="password" class="form-control input-lg" id="password" placeholder="Password" >          
-            <input type="email" name="email" placeholder="Email"  class="form-control input-lg" >
+            <input type="email" name="email" placeholder="Email"  class="form-control input-lg" value="{{this.email}}" >
           </div>
           <div class="form-group">
             <input type="file" name="avatarUrl" class="form-control" placeholder="Upload your profile pic" aria-label="Upload profile pic">
           </div>
           <div class="form-group">
             <h2>About me</h2>
-            <input type="text" name="fullname" placeholder="Full name"  class="form-control input-lg">
-            <input type="text" name="city" placeholder="City" class="form-control input-lg">
-            <input type="text" name="age"  placeholder="Age" class="form-control input-lg">          
-            <select class="form-control mr-sm-2" id="categories" name="category">
+            <input type="text" name="fullname" placeholder="Full name"  class="form-control input-lg"  value="{{this.fullname}}">
+            <input type="text" name="city" placeholder="City" class="form-control input-lg" value="{{this.city}}">
+            <input type="text" name="age"  placeholder="Age" class="form-control input-lg" value="{{this.age}}">          
+            <select class="form-control mr-sm-2" id="categories" name="category"  value="{{this.category}}">
               <option selected>Interests</option>
               <option value="Music">Music</option>
               <option value="Sports">Sports</option>
@@ -32,11 +32,16 @@
               <option value="Games">Games</option>
               <option value="Other">Other</option>
             </select>
-            <input type="text" name="highlights" placeholder="Resume your interests in 60 chars" maxlength="60" class="form-control input-lg">
-            <textarea class="form-control" placeholder="Add a small bio, max 200 chars" name="biography" rows="5"></textarea>
-            <input type="text" name="typeBeds"  placeholder="Nr of beds" class="form-control input-lg">          
-            <input type="number" name="bedsNumber"  placeholder="Nr of beds" class="form-control input-lg">          
-            <input type="text" name="transport"  placeholder="Type if you have a car or other transport" class="form-control input-lg">          
+            <input type="text" name="highlights" placeholder="Resume your interests in 60 chars" maxlength="60" class="form-control input-lg"  value="{{this.highlights}}">
+            <textarea class="form-control" placeholder="Add a small bio, max 200 chars" name="biography" rows="5"  value="{{this.biography}}"></textarea>
+            <select class="form-control mr-sm-2" id="typeBeds" name="typeBeds"  value="{{this.typeBeds}}">
+              <option selected>Select your type of bed</option>
+              <option value="Couch">Couch</option>
+              <option value="Single Bed">Single Bed</option>
+              <option value="Double Bed">Double Bed</option>
+            </select>
+            <input type="number" name="bedsNumber" laceholder="Number of beds" class="form-control input-lg" value="{{this.bedsNumber}}">          
+            <input type="text" name="transport" placeholder="Type if you have a car or other transport" class="form-control input-lg" value="{{this.transport}}">          
           </div>
           <div class="form-group">
             <h2>Everything ready?</h2>

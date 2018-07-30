@@ -6,8 +6,8 @@ const privateRoute = require('../middlewares/privateMiddleware');
 const router = express.Router();
 
 router.get('/', privateRoute.requireUser, (req, res, next) => {
-  const { currentUser: { usernameLog } } = res.locals;
-  User.findOne({ usernameLog })
+  const {_id} = req.session.currentUser;
+  User.findById( _id )
     .then(user => {
       res.render('profile/me', user);
     })
@@ -36,13 +36,25 @@ router.post('/edit', privateRoute.requireUser, (req, res, next) => {
     transport
   } = req.body;
 
-  const { currentUser: { usernameLog } } = res.locals;
-
-  User.findOneAndUpdate({ usernameLog }, () => {
-    
+  const {_id} = req.session.currentUser;
+ 
+  User.findByIdAndUpdate( _id, {
+    username,
+    password,
+    email,
+    fullname,
+    city,
+    age,
+    category,
+    highlights,
+    biography,
+    typeBeds,
+    bedsNumber,
+    transport
   })
     .then(user => {
-
+      // console.log(user)
+      res.redirect('/profile');
     })
     .catch(error => {
       next(error);

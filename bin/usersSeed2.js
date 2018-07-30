@@ -19,7 +19,7 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Single Bed',
     transport: 'Seat Leon s.6',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'Raul Campos Jijon',
@@ -34,7 +34,7 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Double Bed',
     transport: 'Seat Ibiza',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'Marina Martínez Casas',
@@ -49,7 +49,7 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Double Bed',
     transport: 'Seat Ibiza',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'Luis Sánchez Perco',
@@ -64,7 +64,7 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Couch',
     transport: 'Peugeot 307',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'María Sánchez Agudo',
@@ -79,7 +79,7 @@ const users = [
     bedsNuber: 2,
     typeBeds: 'Couch',
     transport: 'Peugeot 206',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'Joan Agudo i Riera',
@@ -94,7 +94,7 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Double bed',
     transport: 'Seat Ibiza',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'Monica Agudo i Riera',
@@ -109,7 +109,7 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Single bed',
     transport: 'Seat Ibiza',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'Nick Washington',
@@ -124,7 +124,7 @@ const users = [
     bedsNuber: 3,
     typeBeds: 'Single bed',
     transport: 'Seat Leon',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'Paul Newman',
@@ -139,7 +139,7 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Single bed',
     transport: 'Renault Laguna',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'Cristina González',
@@ -154,7 +154,7 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Couch',
     transport: 'Renault Laguna',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'Luis López',
@@ -169,7 +169,7 @@ const users = [
     bedsNuber: 2,
     typeBeds: 'Couch',
     transport: 'Renault Laguna',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'Anna Heshington',
@@ -184,7 +184,7 @@ const users = [
     bedsNuber: 2,
     typeBeds: 'Couch',
     transport: 'Renault Almera',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   },
   {
     fullname: 'Anthony Hopkins',
@@ -199,7 +199,7 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Single Bed',
     transport: 'Seat Ibiza',
-    avatarUrl: '../public/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg'
   }
 ];
 

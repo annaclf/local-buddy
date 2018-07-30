@@ -140,3 +140,9 @@ h2 {
     right: 15px;
     width: 70px;
     height: 70px; } }
+
+.buddies-list .profile-card {
+  background: #ced4da; }
+
+.buddies-list .buddie-info {
+  height: 200px; }

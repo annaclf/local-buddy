@@ -13,7 +13,8 @@ require('./dbmongo');
 const indexRouter = require('./routes/index');
 const buddiesRouter = require('./routes/buddies');
 const authRouter = require('./routes/auth');
-// const logoutRouter = require('./routes/logout');
+const searchRouter = require('./routes/search');
+
 
 const app = express();
 
@@ -37,7 +38,6 @@ app.use(session({
   }
 }));
 
-// pasar a un fichero de middleware
 app.use(function (req, res, next) {
   app.locals.currentUser = req.session.currentUser;
   next();
@@ -49,9 +49,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 app.use('/', indexRouter);
 app.use('/', authRouter);
 app.use('/buddies', buddiesRouter);
+app.use('/search', searchRouter);
 
 
 // error handler

@@ -13,7 +13,6 @@ require('./dbmongo');
 const indexRouter = require('./routes/index');
 const buddiesRouter = require('./routes/buddies');
 const authRouter = require('./routes/auth');
-const logoutRouter = require('./routes/logout');
 
 const app = express();
 

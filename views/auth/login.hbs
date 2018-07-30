@@ -21,7 +21,12 @@
           </form>
         </section>  
 
-        <aside class="errormessage text-center mt-4">{{message}}</aside> 
+        <aside class="errormessage text-center mt-4">
+          {{#if messages.length}}
+              {{#each messages}}<p>{{this}}</p>{{/each}}
+          {{/if}}
+
+        </aside> 
 
       </div>
     </div>    

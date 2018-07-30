@@ -13,9 +13,9 @@
         <form method="post" action="/signup" role="register">
           <div class="form-group">
             <h2>Basic information</h2>
-            <input type="text" name="username" placeholder="Username" required class="form-control input-lg">
-            <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password" required>          
-            <input type="email" name="email" placeholder="Email" required class="form-control input-lg" >
+            <input type="text" name="username" placeholder="Username" class="form-control input-lg">
+            <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password" >          
+            <input type="email" name="email" placeholder="Email" class="form-control input-lg" >
           </div>
        
           <div class="form-group">
@@ -26,7 +26,16 @@
             </div>
           </div>
         </form>
-      </section>  
+      </section> 
+
+      
+        <aside class="errormessage text-center mt-4">
+          {{#if messages.length}}
+              {{#each messages}}<p>{{this}}</p>{{/each}}
+          {{/if}}
+
+        </aside>  
+        
     </div>
   </div>    
 </div>

@@ -27,20 +27,20 @@ h2 {
   border-radius: 0; }
 
 .form-top {
-  background: #ced4da;
+  background: #e4e4e4;
   padding: 1rem;
   color: #fff; }
 
 .user-form {
   padding: 1rem;
-  border: 1px solid #ced4da; }
+  border: 1px solid #e4e4e4; }
   .user-form .form-control + .form-control {
     margin: .5rem 0; }
   .user-form .btn {
     margin: 1rem 0; }
   .user-form .form-control {
     border: none;
-    border-bottom: 1px solid #ced4da;
+    border-bottom: 1px solid #e4e4e4;
     border-radius: 0;
     font-size: 0.8rem;
     padding-left: 0; }
@@ -146,7 +146,7 @@ h2 {
   text-transform: capitalize; }
 
 .buddies-list .profile-card {
-  background: #ced4da; }
+  background: #e4e4e4; }
 
 .buddies-list .buddie-info {
   height: 200px; }

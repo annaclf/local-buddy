@@ -36,8 +36,6 @@ router.post('/edit', privateRoute.requireUser, (req, res, next) => {
     transport
   } = req.body;
   
-  const { currentUser: { username } } = res.locals;
-
   const {_id} = req.session.currentUser;
  
   User.findByIdAndUpdate( _id, {
@@ -62,6 +60,8 @@ router.post('/edit', privateRoute.requireUser, (req, res, next) => {
       next(error);
     });
 });
+
+module.exports = router;
 
 // router.post('/me/reservations/:id/response', (req, res, next) => {
 //   const { status } = req.body;

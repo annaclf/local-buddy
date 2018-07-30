@@ -31,16 +31,17 @@ router.post('/:id/favourite', (req, res, next) => {
     });
 });
 
-router.get('/:id/reserve', (req, res, next) => {
-  const { id } = req.params;
-  User.find(id)
-    .then(reservation => {
-      res.render('buddies/form-reservation');
-      console.log('show form reservation');
-    })
-    .catch(error => {
-      next(error);
-    });
+router.get('/:id/book', (req, res, next) => {
+  res.render('buddies/form-reservations');
+  // const { id } = req.params;
+  // User.find(id)
+  //   .then(reservation => {
+  //     res.render('buddies/form-reservation');
+  //     console.log('show form reservation');
+  //   })
+  //   .catch(error => {
+  //     next(error);
+  //   });
 });
 
 router.post('/:id/reserve', (req, res, next) => {

@@ -1,4 +1,9 @@
 .buddie-profile{
+  input{
+    font-size: 12px;
+    padding-right: 0;
+    border-radius: 0;
+  }
   .top-banner{
     color: #fff;
     background: $lightblue;
@@ -39,8 +44,32 @@
   overflow: hidden;
 }
 
+.book-section{
+  border: 1px solid $border-color;
+  padding: 5px;
+}
+
 
 @media (min-width: 556px) {
+  .mt-3{
+    margin-top: 3rem!important;
+  }
+  .buddie-profile{
+    .top-banner{
+      .avatar{
+        height: 170px;
+        width: 170px;
+      }
+    }
+  }
+  .avatar{
+    right: 15px;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (min-width: 768px) {
   .mt-3{
     margin-top: 3rem!important;
   }

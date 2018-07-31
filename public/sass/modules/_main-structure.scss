@@ -12,12 +12,12 @@ body {
   padding: 0;
   font-size: $document-text-size;
   font-family: $primary-text-font;
+  padding-top: $navbar-height;
 }
 
 .vh-100{
   min-height: 100vh;
   &.top-section{
-    margin-top: -$navbar-height;
   }
 }
 h2{

@@ -1,4 +1,4 @@
-<section class="buddie-profile">
+<section class="buddie-profile" id="buddie-profile">
   <div class="top-banner">
     <div class="container pt-4">
       <div class="buddie-info d-flex flex-column justify-content-between">
@@ -17,13 +17,38 @@
   </div>
   <div class="container">
     <div class="row mt-3">
-      <div class="col-md-8">
+      <div class="col-md-7">
         <h2>About me</h2>
         <p class="age">Age: {{this.age}}</p>
         <p>{{this.biography}}</p>
         <p><strong>Highlights:</strong> <i>{{this.highlights}}</i></p>
         <p><strong>In category:</strong> {{this.category}}</p>
         <p><strong>Beds:</strong> {{this.bedsNumber}} {{this.typeBeds}}</p>
+      </div>
+      <div class="col-md-4 ml-auto">
+        <section class="book-section">
+          <h2>Book this buddie</h2>
+          <form action="/buddies/{{this.id}}/book">
+            <div class="form-group row">
+              <div class="col-6">
+                <label for="startDate">From</label>
+                <input class="form-control" type="date" value="" name="startDate" id="startDate" min="2018-01-01" max="2019-12-31">
+              </div>
+              <div class="col-6">
+                <label for="endDate">To</label>
+                <input class="form-control" type="date" value="" name="endDate" id="endDate" min="2018-01-01" max="2019-12-31">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col">
+                <button type="submit" id="book-buddy" class="btn btn-lg btn-primary btn-block">Book</button>
+              </div>
+            </div>
+          </form>
+        </section>
+        {{#if messages.length}}
+              {{#each messages}}<p>{{this}}</p>{{/each}}
+          {{/if}}
       </div>
     </div>
   </div>

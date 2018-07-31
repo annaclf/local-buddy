@@ -45,7 +45,7 @@ router.post('/edit', (req, res, next) => {
     bedsNumber,
     transport
   } = req.body;
-
+  
   const {_id} = req.session.currentUser;
  
   User.findByIdAndUpdate( _id, {
@@ -70,6 +70,8 @@ router.post('/edit', (req, res, next) => {
       next(error);
     });
 });
+
+module.exports = router;
 
 // router.post('/me/reservations/:id/response', (req, res, next) => {
 //   const { status } = req.body;

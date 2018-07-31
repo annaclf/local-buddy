@@ -9,12 +9,11 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  padding-top: 56px; }
 
 .vh-100 {
   min-height: 100vh; }
-  .vh-100.top-section {
-    margin-top: -56px; }
 
 h2 {
   font-size: 2rem;
@@ -27,20 +26,20 @@ h2 {
   border-radius: 0; }
 
 .form-top {
-  background: #ced4da;
+  background: #e4e4e4;
   padding: 1rem;
   color: #fff; }
 
 .user-form {
   padding: 1rem;
-  border: 1px solid #ced4da; }
+  border: 1px solid #e4e4e4; }
   .user-form .form-control + .form-control {
     margin: .5rem 0; }
   .user-form .btn {
     margin: 1rem 0; }
   .user-form .form-control {
     border: none;
-    border-bottom: 1px solid #ced4da;
+    border-bottom: 1px solid #e4e4e4;
     border-radius: 0;
     font-size: 0.8rem;
     padding-left: 0; }
@@ -100,6 +99,77 @@ h2 {
   .swiper-container .swiper-pagination {
     display: block !important; } }
 
+.navbar-toggle-button {
+  position: fixed;
+  top: 20px;
+  right: 15px;
+  height: 27px;
+  width: 55px;
+  cursor: pointer;
+  z-index: 101;
+  transition: opacity .25s ease; }
+
+.navbar-toggle-button span {
+  background: #dfdfdf;
+  border: none;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .35s ease;
+  cursor: pointer; }
+
+.navbar-toggle-button span:nth-of-type(2) {
+  top: 9px; }
+
+.navbar-toggle-button span:nth-of-type(3) {
+  top: 18px; }
+
+.navbar-toggle-button.open span.top {
+  transform: translateY(9px) translateX(0) rotate(45deg); }
+
+.navbar-toggle-button.open span.middle {
+  opacity: 0; }
+
+.navbar-toggle-button.open span.bottom {
+  transform: translateY(-9px) translateX(0) rotate(-45deg); }
+
+.navbar-toggle-button.open span {
+  background: #000; }
+
+.menu-container {
+  position: fixed;
+  background: #eeeeee;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s,visibility .35s,height .35s,width .35s;
+  overflow: hidden;
+  z-index: 100;
+  color: #fff; }
+
+.menu-container.open {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  height: 100%;
+  overflow: auto; }
+
+.menu {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+  list-style: none;
+  padding-left: 0; }
+  .menu a {
+    color: #000; }
+
 .buddie-profile .top-banner {
   color: #fff;
   background: orange; }
@@ -146,7 +216,7 @@ h2 {
   text-transform: capitalize; }
 
 .buddies-list .profile-card {
-  background: #ced4da; }
+  background: #e4e4e4; }
 
 .buddies-list .buddie-info {
   height: 200px; }

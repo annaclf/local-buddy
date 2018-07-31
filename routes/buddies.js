@@ -1,6 +1,7 @@
 const express = require('express');
 const User = require('../models/user');
 const Reservation = require('../models/reservation');
+const authMiddle = require('../middlewares/authMiddle');
 const reservationMiddleware = require('../middlewares/reservationMiddleware');
 
 const router = express.Router();
@@ -32,11 +33,11 @@ router.post('/:id/favourite', (req, res, next) => {
     });
 });
 
-router.get('/:id/book', reservationMiddleware.compareDates, (req, res, next) => { 
+router.get('/:id/book', authMiddle.loggedUser, reservationMiddleware.compareDates, (req, res, next) => { 
   const { id } = req.params;
   const { startDate, endDate } = req.query;
 
-  res.render('buddies/form-reservations', {id,startDate,endDate});
+  res.render('buddies/form-reservations', {id, startDate, endDate});
   // const { id } = req.params;
   // User.find(id)
   //   .then(reservation => {

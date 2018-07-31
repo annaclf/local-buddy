@@ -2,14 +2,15 @@ const express = require('express');
 const User = require('../models/user');
 const Reservation = require('../models/reservation');
 const privateRoute = require('../middlewares/privateMiddleware');
+const authMiddle = require('../middlewares/authMiddle');
 
 const router = express.Router();
 
 router.get('/', privateRoute.requireUser, (req, res, next) => {
   const {_id} = req.session.currentUser;
-  User.findById( _id )
+  User.findById(_id)
     .then(user => {
-      console.log(user)
+      console.log(user);
       res.render('profile/me', user);
     })
     .catch(error => {
@@ -17,12 +18,11 @@ router.get('/', privateRoute.requireUser, (req, res, next) => {
     });
 });
 
-
 router.get('/edit', privateRoute.requireUser, (req, res, next) => {
   const {_id} = req.session.currentUser;
   User.findById(_id)
     .then(user => {
-      console.log(user)
+      console.log(user);
       res.render('profile/edit', user);
     })
     .catch(error => {
@@ -45,10 +45,10 @@ router.post('/edit', (req, res, next) => {
     bedsNumber,
     transport
   } = req.body;
-  
+
   const {_id} = req.session.currentUser;
- 
-  User.findByIdAndUpdate( _id, {
+
+  User.findByIdAndUpdate(_id, {
     username,
     password,
     email,
@@ -71,18 +71,27 @@ router.post('/edit', (req, res, next) => {
     });
 });
 
-module.exports = router;
+router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
+  const idTraveller = req.session.currentUser._id;
+  Reservation.find({ idTraveller: idTraveller })
+    .then(reservations => {
+      res.render('profile/reservations', reservations);
+    })
+    .catch(error => {
+      next(error);
+    });
+});
 
-// router.post('/me/reservations/:id/response', (req, res, next) => {
-//   const { status } = req.body;
-//   const { id } = req.params;
-//   Reservation.findById(id)
-//     .then((data) => {
-//       console.log('change reservations status');
-//     })
-//     .catch(error => {
-//       next(error);
-//     });
-// });
+router.post('/reservations', (req, res, next) => {
+  const {idReservation, response} = req.body;
+
+  Reservation.findOne(idReservation)
+    .then(reservation => {
+      reservation.status = response;
+    })
+    .catch(error => {
+      next(error);
+    });
+});
 
 module.exports = router;

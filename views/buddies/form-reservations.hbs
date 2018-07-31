@@ -9,10 +9,12 @@
       
       <div class="col-md-6 col-lg-5 mx-auto">
         <section class="login-form text-center">
-          <form method="post" action='/{{this.id}}/book' role="login" class="user-form">
+          <form method="post" action='/buddies/{{this.id}}/book' role="login" class="user-form">
             
 
             <input type="text" name="startDate" class="form-control input-lg" value="{{this.startDate}}">
+            <input type="text" name="endDate" class="form-control input-lg" value="{{this.endDate}}">
+            <input type="hidden" name="status" class="form-control input-lg" value="Pending">
             
             <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Book</button>
 

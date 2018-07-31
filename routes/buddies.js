@@ -33,31 +33,45 @@ router.post('/:id/favourite', (req, res, next) => {
     });
 });
 
-router.get('/:id/book', authMiddle.loggedUser, reservationMiddleware.compareDates, (req, res, next) => { 
+router.get('/:id/book', authMiddle.loggedUser, reservationMiddleware.compareDates, (req, res, next) => {
   const { id } = req.params;
   const { startDate, endDate } = req.query;
-
   res.render('buddies/form-reservations', {id, startDate, endDate});
-  // const { id } = req.params;
-  // User.find(id)
-  //   .then(reservation => {
-  //     res.render('buddies/form-reservation');
-  //     console.log('show form reservation');
-  //   })
-  //   .catch(error => {
-  //     next(error);
-  //   });
 });
 
-router.post('/:id/reserve', (req, res, next) => {
-  const { id } = req.params;
-  Reservation.findById(id)
-    .then(reservation => {
-      console.log('confirm buddy reservation');
+router.post('/:id/book', (req, res, next) => {
+  const idBuddy = req.params.id;
+  const idTraveller = req.session.currentUser._id;
+  const { startDate, endDate, status } = req.body;
+  // const status = 'Pending';
+
+  const data = {
+    status,
+    startDate,
+    endDate,
+    idBuddy,
+    idTraveller
+  };
+
+  Reservation.create(data)
+    .then(() => {
+      res.redirect('/');
     })
     .catch(error => {
       next(error);
     });
+
+  // User.findById(_id)
+  //   .then(user => {
+  //     const newReservation = new Reservation({ status, startDate, endDate, idBuddy, user.id });
+  //     return newReservation.save()
+  //       .then(reservation => {
+  //         res.redirect('/');
+  //       });
+  //   })
+  //   .catch(error => {
+  //     next(error);
+  //   });
 });
 
 module.exports = router;

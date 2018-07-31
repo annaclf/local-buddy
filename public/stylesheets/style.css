@@ -9,8 +9,12 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-family: "Maven Pro", sans-serif;
+  font-family: "Roboto", sans-serif;
   padding-top: 56px; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 400 !important; }
 
 .vh-100 {
   min-height: 100vh; }
@@ -24,6 +28,14 @@ h2 {
 
 .btn {
   border-radius: 0; }
+
+.btn-success {
+  background: #006568;
+  border-color: #006568;
+  font-weight: 200; }
+  .btn-success:hover {
+    background: #105657;
+    border-color: #105657; }
 
 .form-top {
   background: #e4e4e4;
@@ -58,10 +70,8 @@ h2 {
 .errormessage {
   height: 30px; }
 
-.swiper-container {
-  padding-bottom: 50px; }
-  .swiper-container .swiper-pagination {
-    display: none !important; }
+.swiper-container .swiper-pagination {
+  display: none !important; }
 
 .swiper-slide a {
   color: inherit; }
@@ -69,16 +79,8 @@ h2 {
     text-decoration: none; }
 
 .swiper-slide .card {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
-  border: 1px solid rgba(0, 0, 0, 0.1); }
-
-.swiper-slide .card-top {
-  position: relative;
-  background: #25797c; }
-
-.swiper-slide .card-img-top {
-  height: 70px;
-  visibility: hidden; }
+  box-shadow: none;
+  border: none; }
 
 .swiper-slide .card-title {
   font-size: 1rem;
@@ -99,8 +101,6 @@ h2 {
   min-height: 50px; }
 
 @media (min-width: 768px) {
-  .swiper-slide .card-img-top {
-    height: 100px; }
   .swiper-container .swiper-pagination {
     display: block !important; } }
 
@@ -231,23 +231,34 @@ p {
 h2 {
   font-size: 1.4rem; }
 
+.faded-text {
+  color: #25797c;
+  font-size: 1rem; }
+
+.meet-our-buddies, .about-us {
+  padding: 30px 0; }
+
 .jumbotron {
+  margin-bottom: 0;
   color: white;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../../images/jumbotron-background.jpg") center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 300px; }
-  .jumbotron .row {
-    padding-top: 50px; }
+  height: 340px;
+  padding: 70px 15px 30px 15px; }
 
 .top-section {
   padding: 40px 0; }
   .top-section h1 {
     font-size: 2rem;
     padding: 5% 0 0 0;
-    font-weight: 400; }
-  .top-section .lead {
-    font-weight: 400; }
+    font-weight: 400;
+    margin-bottom: 0; }
+
+.lead {
+  font-weight: 200;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem; }
 
 #jumbo-mid {
   display: flex;
@@ -262,3 +273,10 @@ h2 {
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("../../images/values2.jpg") center;
   background-repeat: no-repeat;
   background-size: cover; }
+
+@media (min-width: 413px) {
+  .jumbotron {
+    height: 350px;
+    padding: 120px 15px 30px 15px; }
+    .jumbotron p {
+      font-size: 1.4rem; } }

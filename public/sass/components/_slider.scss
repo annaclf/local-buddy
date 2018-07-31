@@ -1,5 +1,4 @@
 .swiper-container{
-  padding-bottom: 50px;
   .swiper-pagination{
     display: none!important;
   }
@@ -12,16 +11,14 @@
     }
   }
   .card{
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
-    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: none;
+    border: none;
   }
   .card-top{
-    position: relative;
-    background: $primary_color;
+    // position: relative;
+    // background:$lightblue;
   }
   .card-img-top{
-    height: 70px;
-    visibility: hidden;
   }
   .card-title{
     font-size: 1rem;
@@ -46,9 +43,7 @@
 
 @media (min-width: 768px) {
   .swiper-slide{
-    .card-img-top{
-      height: 100px;
-    }
+    
   }
   .swiper-container{
     .swiper-pagination{

@@ -6,6 +6,9 @@ function main () {
     slidesPerView: 3,
     spaceBetween: 30,
     mousewheelControl: true,
+    keyboard: {
+      enabled: true
+    },
     pagination: {
       el: '.swiper-pagination',
       draggable: true

@@ -7,10 +7,10 @@ const router = express.Router();
 /* GET home page. */
 
 router.get('/', (req, res, next) => {
-  User.find({},{ fullname:1, city:1, highlights:1 })
+  User.find({},{ fullname: 1, city: 1, highlights: 1 })
     .then(user => {
       console.log(user);
-      res.render("index", { user });
+      res.render('index', { user });
     })
     .catch(error => {
       next(error);

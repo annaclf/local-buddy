@@ -1,3 +1,12 @@
 .btn{
   border-radius:0;
 }
+.btn-success{
+  background:$middleblue;
+  border-color: $middleblue;
+  font-weight: 200;
+  &:hover{
+    background:$darkblue;
+    border-color:$darkblue;
+  }
+}

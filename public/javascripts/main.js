@@ -36,13 +36,17 @@ function main () {
   new WOW().init();
   // const buddieProfile = document.getElementById('buddie-profile');
   const menuTrigger = document.getElementById('menu_trigger');
+  const siteLogo = document.getElementById('site-logo');
   const menuContainer = document.getElementById('menu-container');
 
+  siteLogo.addEventListener('click', () => {
+    menuTrigger.classList.remove('open');
+    menuContainer.classList.remove('open');
+  });
   menuTrigger.addEventListener('click', () => {
     menuTrigger.classList.toggle('open');
     menuContainer.classList.toggle('open');
   });
-  
 }
 
 window.addEventListener('load', main);

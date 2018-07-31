@@ -18,6 +18,8 @@ h1, h2, h3, h4, h5 {
 
 .vh-100 {
   min-height: 100vh; }
+  .vh-100.top-section {
+    margin-top: -56px; }
 
 h2 {
   font-size: 2rem;
@@ -25,6 +27,10 @@ h2 {
 
 h2 {
   font-size: 1.4rem; }
+
+a {
+  color: #006568;
+  text-decoration: none; }
 
 .site-footer {
   background: black;
@@ -37,24 +43,22 @@ h2 {
     overflow: hidden; } }
 
 .btn {
-  border-radius: 0; }
-
-.btn-success {
-  background: #000;
-  border-color: #000;
+  border-radius: 0;
   font-weight: 200;
   transition: all .5s; }
-  .btn-success:hover {
-    background: #105657;
-    border-color: #105657; }
+  .btn.btn-primary, .btn .btn-success {
+    background: #000;
+    border-color: #000; }
+    .btn.btn-primary:hover, .btn .btn-success:hover {
+      background: rgba(0, 0, 0, 0.7);
+      border-color: rgba(0, 0, 0, 0.7); }
 
 .form-control {
   border-radius: 0; }
 
 .form-top {
   background: #e4e4e4;
-  padding: 1rem;
-  color: #fff; }
+  padding: 1rem; }
 
 .user-form {
   padding: 1rem;
@@ -74,6 +78,8 @@ h2 {
       border-bottom: 1px solid #25797c; }
   .user-form h2 {
     margin-top: 30px; }
+  .user-form footer {
+    font-size: 0.8rem; }
 
 .searchform {
   display: block; }

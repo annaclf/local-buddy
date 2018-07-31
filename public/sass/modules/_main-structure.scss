@@ -21,6 +21,7 @@ h1,h2,h3,h4,h5{
 .vh-100{
   min-height: 100vh;
   &.top-section{
+    margin-top: -$navbar-height;
   }
 }
 h2{
@@ -30,7 +31,10 @@ h2{
 h2{
   font-size: $h2-text-size;
 }
-
+a{
+  color: $middleblue;
+  text-decoration: none;
+}
 .site-footer{
   background: black;
   color: #fff;

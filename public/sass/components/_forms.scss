@@ -4,7 +4,6 @@
 .form-top{
   background: $border-color;
   padding: $form-padding;
-  color: #fff;
 }
 .user-form{
   padding: $form-padding;
@@ -28,6 +27,9 @@
   }
   h2{
     margin-top: 30px;
+  }
+  footer{
+    font-size: $h4-text-size;
   }
 }
 

@@ -55,23 +55,11 @@ router.post('/:id/book', (req, res, next) => {
 
   Reservation.create(data)
     .then(() => {
-      res.redirect('/');
+      res.redirect('/profile');
     })
     .catch(error => {
       next(error);
     });
-
-  // User.findById(_id)
-  //   .then(user => {
-  //     const newReservation = new Reservation({ status, startDate, endDate, idBuddy, user.id });
-  //     return newReservation.save()
-  //       .then(reservation => {
-  //         res.redirect('/');
-  //       });
-  //   })
-  //   .catch(error => {
-  //     next(error);
-  //   });
 });
 
 module.exports = router;

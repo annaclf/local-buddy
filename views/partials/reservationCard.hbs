@@ -1,0 +1,9 @@
+      <h1>{{this.idBuddy}}</h1>
+      <p>{{this.status}}</p>
+      <p><i>{{this.startDate}}</i></p>
+
+      <form method="post" action="/reservations">
+          <div class="form-group">
+            <h2>Basic information</h2>
+            <input type="text" name="username" placeholder="Username" class="form-control input-lg" required>
+            <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password" required>   

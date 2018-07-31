@@ -75,7 +75,7 @@ router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
   const idTraveller = req.session.currentUser._id;
   Reservation.find({ idTraveller: idTraveller })
     .then(reservations => {
-      res.render('profile/reservations', reservations);
+      res.render('profile/reservations', {reservations});
     })
     .catch(error => {
       next(error);

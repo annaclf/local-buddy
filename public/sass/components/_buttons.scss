@@ -2,9 +2,10 @@
   border-radius:0;
 }
 .btn-success{
-  background:$middleblue;
-  border-color: $middleblue;
+  background:#000;
+  border-color: #000;
   font-weight: 200;
+  transition: all .5s;
   &:hover{
     background:$darkblue;
     border-color:$darkblue;

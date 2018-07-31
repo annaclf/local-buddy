@@ -26,13 +26,20 @@ h2 {
 h2 {
   font-size: 1.4rem; }
 
+.site-footer {
+  background: black;
+  color: #fff; }
+  .site-footer a {
+    color: #fff; }
+
 .btn {
   border-radius: 0; }
 
 .btn-success {
-  background: #006568;
-  border-color: #006568;
-  font-weight: 200; }
+  background: #000;
+  border-color: #000;
+  font-weight: 200;
+  transition: all .5s; }
   .btn-success:hover {
     background: #105657;
     border-color: #105657; }
@@ -104,6 +111,10 @@ h2 {
   overflow: hidden; }
 
 @media (min-width: 768px) {
+  .swiper-slide .card-body {
+    padding: 1rem 0; }
+  .swiper-slide .card-title {
+    font-size: 1.1rem; }
   .swiper-container .swiper-pagination {
     display: block !important; } }
 
@@ -234,10 +245,6 @@ h2 {
 .buddies-list .buddie-info {
   height: 200px; }
 
-p {
-  font-family: "Maven Pro", sans-serif;
-  font-size: 1.1rem; }
-
 h2 {
   font-size: 1.4rem; }
 
@@ -255,6 +262,7 @@ h2 {
   font-size: 2rem; }
 
 .jumbotron {
+  border-radius: 0;
   margin-bottom: 0;
   color: white;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../../images/jumbotron-background.jpg") center;

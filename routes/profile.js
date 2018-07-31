@@ -83,7 +83,13 @@ router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
 });
 
 router.post('/reservations', (req, res, next) => {
-  const {idReservation, response} = req.body;
+  const status = req.body;
+  console.log(status);
+  if ('accepted' in status) {
+    console.log('accepted');
+  } else {
+    console.log('rejected');
+  }
 
   Reservation.findOne(idReservation)
     .then(reservation => {

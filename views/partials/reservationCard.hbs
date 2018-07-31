@@ -1,9 +1,12 @@
-      <h1>{{this.idBuddy}}</h1>
-      <p>{{this.status}}</p>
-      <p><i>{{this.startDate}}</i></p>
+<h2>Name of the reservation</h2>
+<div>
+<h1>{{this.idBuddy}}</h1>
+<p>{{this.status}}</p>
+<p><i>{{this.startDate}}</i></p>
 
-      <form method="post" action="/reservations">
-          <div class="form-group">
-            <h2>Basic information</h2>
-            <input type="text" name="username" placeholder="Username" class="form-control input-lg" required>
-            <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password" required>   
+</div>
+
+<form method="post" action="/reservations">
+  <input type="submit" name="accepted" value="Accept" class="form-control input-lg">
+  <input type="submit" name="rejected" value="Reject" class="form-control input-lg">   
+</form>

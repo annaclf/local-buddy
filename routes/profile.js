@@ -83,17 +83,11 @@ router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
 });
 
 router.post('/reservations', (req, res, next) => {
-  const status = req.body;
-  console.log(status);
-  if ('accepted' in status) {
-    console.log('accepted');
-  } else {
-    console.log('rejected');
-  }
+  const { status, id } = req.body;
 
-  Reservation.findOne(idReservation)
-    .then(reservation => {
-      reservation.status = response;
+  Reservation.findByIdAndUpdate(id, {status})
+    .then(() => {
+      res.redirect('/profile/reservations');
     })
     .catch(error => {
       next(error);

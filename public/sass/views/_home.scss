@@ -9,36 +9,27 @@ h2{
 
 
 .jumbotron {
-  height: 450px;
   color: white;
-
-  h1{
-    font-size: $h1-text-size;
-    padding: 5% 0;
-    margin: 20% 0 0 0;
-    // text-shadow: 2px 2px 10px #000000;
-
-  }
-  p{
-    font-family: $primary-text-font;
-    font-size: $p-text-size;
-    font-weight: 500;
-  }
-}
-
-.header{
-  h1{
-    font-size: $h1-text-size;
-    padding: 5% 0 0 0;
-  }
-}
-
-
-#jumbo-header{
-  background: linear-gradient(225deg, rgba(0,0,0,0), rgba(0,0,0,0.3)),
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5)),
   url('../../images/jumbotron-background.jpg') center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height:300px;
+  .row{
+    padding-top: 50px;
+  }
+}
+
+.top-section{
+  padding: 40px 0;
+  h1{
+    font-size: $h1-text-size;
+    padding: 5% 0 0 0;
+    font-weight: 400;
+  }
+  .lead{
+    font-weight: 400;
+  }
 }
 
 

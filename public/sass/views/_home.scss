@@ -63,12 +63,13 @@ h2{
   background-size: cover;
 }
 
-@media (min-width: 413px) {
+@media (min-width: 375px) {
   .jumbotron {
     height:350px;
-    padding: 120px 15px 30px 15px;
+    padding: 140px 15px 30px 15px;
     p{
-      font-size: $h2-text-size;
+      font-size: 1.2rem;
+      font-weight: 200;
     }
   }
 }

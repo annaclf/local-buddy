@@ -325,12 +325,13 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover; }
 
-@media (min-width: 413px) {
+@media (min-width: 375px) {
   .jumbotron {
     height: 350px;
-    padding: 120px 15px 30px 15px; }
+    padding: 140px 15px 30px 15px; }
     .jumbotron p {
-      font-size: 1.4rem; } }
+      font-size: 1.2rem;
+      font-weight: 200; } }
 
 @media (min-width: 768px) {
   .jumbotron {

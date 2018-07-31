@@ -1,5 +1,5 @@
 .navbar{
-  background: #fff;
+  background: #000;
   .row{
     width: 100%;
   }
@@ -14,7 +14,7 @@
   cursor: pointer;
   transition: opacity .25s ease;
   span{
-    background: #000;
+    background: #fff;
     border: none;
     height: 2px;
     width: 100%;

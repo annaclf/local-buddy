@@ -48,6 +48,9 @@ h2 {
     background: #105657;
     border-color: #105657; }
 
+.form-control {
+  border-radius: 0; }
+
 .form-top {
   background: #e4e4e4;
   padding: 1rem;
@@ -123,7 +126,7 @@ h2 {
     display: block !important; } }
 
 .navbar {
-  background: #fff; }
+  background: #000; }
   .navbar .row {
     width: 100%; }
 
@@ -137,7 +140,7 @@ h2 {
   cursor: pointer;
   transition: opacity .25s ease; }
   .navbar-toggle-button span {
-    background: #000;
+    background: #fff;
     border: none;
     height: 2px;
     width: 100%;

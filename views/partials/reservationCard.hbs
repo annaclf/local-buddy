@@ -1,12 +1,11 @@
 <h2>Name of the reservation</h2>
 <div>
-<h1>{{this.idBuddy}}</h1>
-<p>{{this.status}}</p>
-<p><i>{{this.startDate}}</i></p>
-
+  <h1>{{this.idBuddy}}</h1>
+  <p>{{this.status}}</p>
+  <p><i>{{this.startDate}}</i></p>
 </div>
 
-<form method="post" action="/reservations">
+<form method="post" action="/profile/reservations">
   <input type="submit" name="accepted" value="Accept" class="form-control input-lg">
   <input type="submit" name="rejected" value="Reject" class="form-control input-lg">   
 </form>

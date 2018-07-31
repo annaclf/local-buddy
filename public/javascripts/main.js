@@ -1,6 +1,10 @@
 'use strict';
 
 function main () {
+  const loader = document.getElementById('load-wrapper');
+  if (loader) {
+    loader.classList.add('loaded');
+  }
   /** Init Swiper */
   const swiper = new Swiper('.swiper-container', {
     slidesPerView: 3,
@@ -28,6 +32,8 @@ function main () {
       }
     }
   });
+  // Init wow
+  new WOW().init();
   // const buddieProfile = document.getElementById('buddie-profile');
   const menuTrigger = document.getElementById('menu_trigger');
   const menuContainer = document.getElementById('menu-container');

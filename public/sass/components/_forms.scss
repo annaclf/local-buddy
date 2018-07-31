@@ -30,6 +30,12 @@
   }
   footer{
     font-size: $h4-text-size;
+    a{
+      &:hover{
+        text-decoration: none;
+        color: $darkblue;
+      }
+    }
   }
 }
 

@@ -1,11 +1,51 @@
 .city{
   text-transform: capitalize;
 }
-.buddies-list{
-  .profile-card{
-    background: $border-color;
+.buddie-card{
+  color: #000;
+  transition: all 1s ease;
+  display: inline-block;
+  padding: 15px 0;
+  // border-bottom: 1px solid $border-color;
+  h3,.rate{
+    margin-top: 15px;
   }
-  .buddie-info{
-    height: 200px;
+  a{
+    color: #000;
+    &:hover{
+      text-decoration: none;
+      background: lightblue;
+    }
   }
+  .highlights{
+    color: #000;
+    margin-bottom: 0;
+  }
+  .rate{
+    font-size: $h2-text-size;
+    font-family: $heading-font;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .buddie-card{
+    // &:nth-of-type(2n){
+    //   border-left: 1px solid $border-color;
+    // }
+    figure img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+    }
+    figure:hover img {
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+    }
+  }
+  .highlights{
+    color: #000;
+  }
+  
 }

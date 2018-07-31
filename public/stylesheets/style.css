@@ -33,8 +33,16 @@ a {
   text-decoration: none; }
 
 .site-footer {
-  background: black;
-  color: #fff; }
+  padding: 30px 0;
+  background: black; }
+  .site-footer ul {
+    list-style: none;
+    padding-left: 0; }
+    .site-footer ul li {
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 100;
+      margin-bottom: 4px; }
   .site-footer a {
     color: #fff; }
 
@@ -46,10 +54,10 @@ a {
   border-radius: 0;
   font-weight: 200;
   transition: all .5s; }
-  .btn.btn-primary, .btn .btn-success {
+  .btn.btn-primary {
     background: #000;
     border-color: #000; }
-    .btn.btn-primary:hover, .btn .btn-success:hover {
+    .btn.btn-primary:hover {
       background: rgba(0, 0, 0, 0.7);
       border-color: rgba(0, 0, 0, 0.7); }
 
@@ -84,7 +92,9 @@ a {
 .searchform {
   display: block; }
   .searchform input {
-    width: 100%; }
+    width: 100%;
+    font-size: .8rem;
+    font-weight: 200; }
 
 /*Errormessage*/
 .errormessage {
@@ -166,7 +176,7 @@ a {
   .navbar-toggle-button.open span.bottom {
     transform: translateY(-6px) translateX(0) rotate(-45deg); }
   .navbar-toggle-button.open span {
-    background: #000; }
+    background: #fff; }
 
 .menu-container {
   position: fixed;

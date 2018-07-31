@@ -16,5 +16,13 @@ module.exports = {
     } else {
       next();
     }
+  },
+  loggedUser: (req, res, next) => {
+    if (req.session.currentUser) {
+      next();
+    } else {
+      req.flash('info', 'Please, log in to book a buddy');
+      return res.redirect('/login');
+    }
   }
 };

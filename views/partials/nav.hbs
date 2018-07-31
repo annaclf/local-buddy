@@ -1,41 +1,48 @@
 <nav class="navbar fixed-top">
-  <div class="container">
-    <div class="row">
-      <div class="brand col-3 col-sm-3">
-        <a class="navbar-brand" href="/"><strong>LB</strong></a>
-      </div>
-      <div class="col col-7 col-sm-8">
-        <form class="searchform" action="/search">
-          <input type="text" class="form-control" placeholder="City" name="city" aria-label="City">
-        </form>
-      </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="brand col-3 col-sm-3">
+      <a class="navbar-brand" href="/"><strong>LB</strong></a>
     </div>
-
-    <div class="menu-container" id="menu-container">
-      <ul class="menu">
-        {{#if currentUser }}
-          <li>
-            <a href="/profile">My profile</a>
-          </li>
-          <li>
-            <form action="/logout" method="post">
-              <button type="submit">Log out</button>
-            </form>
-          </li>
-        {{else}}
-          <li>
-            <a href="/login">Log in</a>
-          </li>
-          <li>
-            <a href="/signup">Sign up</a>
-          </li>
-        {{/if}}
-      </ul>               
-    </div>
-    <div class="navbar-toggle-button" id="menu_trigger">
-      <span class="top"></span>
-      <span class="middle"></span>
-      <span class="bottom"></span>
+    <div class="col col-7 col-sm-8">
+      <form class="searchform" action="/search">
+        <input type="text" class="form-control" placeholder="City" name="city" aria-label="City">
+      </form>
     </div>
   </div>
 </nav>
+<div class="menu-container" id="menu-container">
+  <div class="container">
+    <ul class="menu">
+    {{#if currentUser }}
+      <li>
+        <a href="/profile">My profile</a>
+      </li>
+      <li>
+        <a href="/profile/edit">Edit profile</a>
+      </li>
+      <li>
+        <a href="/profile/reservations">My reservations</a>
+      </li>
+      <li>
+        <form action="/logout" method="post">
+          <button type="submit">Log out</button>
+        </form>
+      </li>
+    {{else}}
+      <li>
+        <a href="/login">Log in</a>
+      </li>
+      <li>
+        <a href="/signup">Sign up</a>
+      </li>
+    {{/if}}
+  </ul> 
+  </div>
+</div>
+<div class="navbar-toggle-button" id="menu_trigger">
+  <span class="top"></span>
+  <span class="middle"></span>
+  <span class="bottom"></span>
+</div>
+</div>

@@ -70,8 +70,12 @@ h2 {
 .errormessage {
   height: 30px; }
 
-.swiper-container .swiper-pagination {
-  display: none !important; }
+.swiper-container {
+  padding-bottom: 20px; }
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #000 !important; }
 
 .swiper-slide a {
   color: inherit; }
@@ -83,22 +87,21 @@ h2 {
   border: none; }
 
 .swiper-slide .card-title {
-  font-size: 1rem;
-  margin-bottom: 0;
-  min-height: 40px; }
+  margin-bottom: 0; }
 
 .swiper-slide .card-body {
   padding: 1rem; }
 
 .swiper-slide .city {
-  font-size: .8rem;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  margin-top: 5px; }
 
 .swiper-slide .highlights {
-  margin-top: 5px;
-  font-size: 0.7rem;
-  margin-bottom: 0;
-  min-height: 50px; }
+  margin-top: 5px; }
+
+.swiper-slide .bio {
+  height: 135px;
+  overflow: hidden; }
 
 @media (min-width: 768px) {
   .swiper-container .swiper-pagination {
@@ -110,18 +113,18 @@ h2 {
     width: 100%; }
 
 .navbar-toggle-button {
+  z-index: 9999;
   position: fixed;
   top: 20px;
   right: 15px;
-  height: 27px;
-  width: 40px;
+  height: 20px;
+  width: 30px;
   cursor: pointer;
-  z-index: 101;
   transition: opacity .25s ease; }
   .navbar-toggle-button span {
-    background: #dfdfdf;
+    background: #000;
     border: none;
-    height: 4px;
+    height: 2px;
     width: 100%;
     position: absolute;
     top: 0;
@@ -129,24 +132,22 @@ h2 {
     transition: all .35s ease;
     cursor: pointer; }
     .navbar-toggle-button span:nth-of-type(2) {
-      top: 9px; }
-    .navbar-toggle-button span:nth-of-type(2) {
-      top: 9px; }
+      top: 6px; }
     .navbar-toggle-button span:nth-of-type(3) {
-      top: 18px; }
+      top: 12px; }
   .navbar-toggle-button.open span.top {
-    transform: translateY(9px) translateX(0) rotate(45deg); }
+    transform: translateY(6px) translateX(0) rotate(45deg); }
   .navbar-toggle-button.open span.middle {
     opacity: 0; }
   .navbar-toggle-button.open span.bottom {
-    transform: translateY(-9px) translateX(0) rotate(-45deg); }
+    transform: translateY(-6px) translateX(0) rotate(-45deg); }
   .navbar-toggle-button.open span {
     background: #000; }
 
 .menu-container {
   position: fixed;
-  background: #eeeeee;
-  top: 0;
+  background: #fff;
+  top: 56px;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -167,11 +168,20 @@ h2 {
 .menu {
   width: 100%;
   margin-top: 50px;
-  list-style: none; }
+  list-style: none;
+  padding-left: 0; }
   .menu li {
     margin-top: 10px; }
     .menu li a {
-      color: #000; }
+      color: #000;
+      font-size: 0.8rem;
+      font-family: "Maven Pro", sans-serif; }
+  .menu button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-size: 0.8rem;
+    font-family: "Maven Pro", sans-serif; }
 
 .buddie-profile .top-banner {
   color: #fff;
@@ -236,7 +246,13 @@ h2 {
   font-size: 1rem; }
 
 .meet-our-buddies, .about-us {
-  padding: 30px 0; }
+  padding: 50px 0; }
+
+.about-us .icon {
+  font-size: 80px; }
+
+.about-us h2 {
+  font-size: 2rem; }
 
 .jumbotron {
   margin-bottom: 0;
@@ -280,3 +296,8 @@ h2 {
     padding: 120px 15px 30px 15px; }
     .jumbotron p {
       font-size: 1.4rem; } }
+
+@media (min-width: 768px) {
+  .jumbotron {
+    height: 450px;
+    padding: 210px 15px 30px 15px; } }

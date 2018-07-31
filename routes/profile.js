@@ -2,14 +2,16 @@ const express = require('express');
 const User = require('../models/user');
 const Reservation = require('../models/reservation');
 const privateRoute = require('../middlewares/privateMiddleware');
+const authMiddle = require('../middlewares/authMiddle');
+
 
 const router = express.Router();
 
 router.get('/', privateRoute.requireUser, (req, res, next) => {
   const {_id} = req.session.currentUser;
-  User.findById( _id )
+  User.findById(_id)
     .then(user => {
-      console.log(user)
+      console.log(user);
       res.render('profile/me', user);
     })
     .catch(error => {
@@ -17,12 +19,11 @@ router.get('/', privateRoute.requireUser, (req, res, next) => {
     });
 });
 
-
 router.get('/edit', privateRoute.requireUser, (req, res, next) => {
   const {_id} = req.session.currentUser;
   User.findById(_id)
     .then(user => {
-      console.log(user)
+      console.log(user);
       res.render('profile/edit', user);
     })
     .catch(error => {
@@ -45,10 +46,10 @@ router.post('/edit', (req, res, next) => {
     bedsNumber,
     transport
   } = req.body;
-  
+
   const {_id} = req.session.currentUser;
- 
-  User.findByIdAndUpdate( _id, {
+
+  User.findByIdAndUpdate(_id, {
     username,
     password,
     email,
@@ -84,5 +85,13 @@ module.exports = router;
 //       next(error);
 //     });
 // });
+
+
+router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
+  const { id } = req.session.currentUser;
+  
+
+})
+
 
 module.exports = router;

@@ -114,7 +114,7 @@ h2 {
   top: 20px;
   right: 15px;
   height: 27px;
-  width: 55px;
+  width: 40px;
   cursor: pointer;
   z-index: 101;
   transition: opacity .25s ease; }
@@ -232,25 +232,22 @@ h2 {
   font-size: 1.4rem; }
 
 .jumbotron {
-  height: 450px;
-  color: white; }
-  .jumbotron h1 {
-    font-size: 2rem;
-    padding: 5% 0;
-    margin: 20% 0 0 0; }
-  .jumbotron p {
-    font-family: "Maven Pro", sans-serif;
-    font-size: 1.1rem;
-    font-weight: 500; }
-
-.header h1 {
-  font-size: 2rem;
-  padding: 5% 0 0 0; }
-
-#jumbo-header {
-  background: linear-gradient(225deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url("../../images/jumbotron-background.jpg") center;
+  color: white;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../../images/jumbotron-background.jpg") center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  min-height: 300px; }
+  .jumbotron .row {
+    padding-top: 50px; }
+
+.top-section {
+  padding: 40px 0; }
+  .top-section h1 {
+    font-size: 2rem;
+    padding: 5% 0 0 0;
+    font-weight: 400; }
+  .top-section .lead {
+    font-weight: 400; }
 
 #jumbo-mid {
   display: flex;

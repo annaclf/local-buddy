@@ -1,4 +1,34 @@
-<p>{{this.startDate}}</p>
+<p></p>
 <p>{{this.endDate}}</p>
 <p>User: {{this.id}}</p>
 
+<section class="book-section">
+  <div class="container">
+    
+    <div class="row vh-100 align-items-center top-section">
+      
+      <div class="col-md-6 col-lg-5 mx-auto">
+        <section class="login-form text-center">
+          <form method="post" action='/buddies/{{this.id}}/book' role="login" class="user-form">
+            
+
+            <input type="text" name="startDate" class="form-control input-lg" value="{{this.startDate}}">
+            <input type="text" name="endDate" class="form-control input-lg" value="{{this.endDate}}">
+            <input type="hidden" name="status" class="form-control input-lg" value="Pending">
+            
+            <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Book</button>
+
+          </form>
+        </section>  
+
+        <aside class="errormessage text-center mt-4">
+          {{#if messages.length}}
+              {{#each messages}}<p>{{this}}</p>{{/each}}
+          {{/if}}
+
+        </aside> 
+
+      </div>
+    </div>    
+  </div>
+</section>

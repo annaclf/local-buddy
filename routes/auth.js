@@ -23,7 +23,7 @@ router.post('/signup', authMiddle.validUserInputSignUp, (req, res, next) => {
 
   newUser.save(function (err) {
     if (err) {
-      req.flash('error', err.message);
+      req.flash('info', err.message);
       res.redirect('/signup');
     } else {
       req.session.currentUser = newUser;

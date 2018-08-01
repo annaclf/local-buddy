@@ -5,11 +5,4 @@
     <p><i>{{this.startDate}}</i></p>
     <p><i>{{this.endDate}}</i></p>
   </div>
-
-  <form method="post" action="/profile/reservations">
-    <button type="submit" name="status" value="Accepted" class="form-control input-lg">Accept</button>
-    <button type="submit" name="status" value="Rejected" class="form-control input-lg">Reject</button>  
-    <input type="hidden" name="id" value="{{this._id}}">
-  </form>
-
 </div>

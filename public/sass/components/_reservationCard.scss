@@ -1,0 +1,29 @@
+.reservation-card{
+  body{
+    font-display: $text-font;
+  }
+
+  background-color: #f1f1f1;
+
+  img{
+    width: 100px;
+    object-position: center;
+    overflow: hidden;
+
+  }
+
+  .text-book-card{
+    padding: 3% 0 3% 5%;
+  
+    h2{
+      margin: 0;
+      font-size: 18px;
+      font-weight: bolder;
+    }
+    p{
+      margin: 0;
+      font-size: 14px;
+      color: 	#A9A9A9;
+    }
+  }
+}

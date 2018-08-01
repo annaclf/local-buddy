@@ -1,42 +1,41 @@
-<div class="container">
-  <h2>Reservations</h2>
+<div class="container reservations">
+  <h1 class="title-book mt-5">Your bookings</h1>
   
-  <div class="pending">
-    <h3>Pending Reservations</h3>
+  <section class="pending">
+    <h2 class="book-sections-title">Requests to book you</h2>
     {{#unless pending}}
       <p>You have no pending reservations</p>
     {{/unless}}
 
     {{#each pending}}
-      <div>
+      <div class="booking-card">
         {{> reservationCard }}
       </div>
 
       <div>
         <form method="post" action="/profile/reservations">
-          <button type="submit" name="status" value="Accepted" class="form-control input-lg">Accept</button>
-          <button type="submit" name="status" value="Rejected" class="form-control input-lg">Reject</button>  
+          <button type="submit" name="status" value="Accepted" class="form-control btn btn-success">Accept</button>
+          <button type="submit" name="status" value="Rejected" class="form-control btn btn-danger">Reject</button>  
           <input type="hidden" name="id" value="{{this._id}}">
         </form>
       </div>
+    {{/each}}
+  </section>
+
+  <section class="accepted">
+    <h2 class="book-sections-title">Accepted bookings</h2>
+
+    {{#unless accepted}}
+      <p>You have no accepted reservations</p>
+    {{/unless}}
+
+    {{#each accepted}}
+      <div class="booking-card">
+        {{> reservationCard }}
+      </div>
+
 
     {{/each}}
-  </div>
-
-<div class="accepted">
-  <h3>Accepted Reservations</h3>
-
-  {{#unless accepted}}
-    <p>You have no accepted reservations</p>
-  {{/unless}}
-
-  {{#each accepted}}
-    <div>
-      {{> reservationCard }}
-    </div>
-
-
-  {{/each}}
+  </section>
 </div>
-
 

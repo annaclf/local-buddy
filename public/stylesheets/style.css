@@ -312,6 +312,25 @@ a {
   100% {
     transform: translate(19px, 0); } }
 
+.reservation-card {
+  background-color: #f1f1f1; }
+  .reservation-card body {
+    font-display: "Roboto", sans-serif; }
+  .reservation-card img {
+    width: 100px;
+    object-position: center;
+    overflow: hidden; }
+  .reservation-card .text-book-card {
+    padding: 3% 0 3% 5%; }
+    .reservation-card .text-book-card h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bolder; }
+    .reservation-card .text-book-card p {
+      margin: 0;
+      font-size: 14px;
+      color: #A9A9A9; }
+
 .user-pic {
   height: 375px;
   display: flex; }
@@ -474,3 +493,18 @@ h2 {
   .jumbotron {
     height: 450px;
     padding: 210px 15px 30px 15px; } }
+
+.reservations {
+  margin-bottom: 5%; }
+  .reservations h1 {
+    font-size: 2rem; }
+  .reservations section {
+    margin-top: 5%;
+    padding-top: 5%; }
+    .reservations section .book-sections-title {
+      border-bottom: 1px solid #A9A9A9; }
+  .reservations .accepted {
+    margin-top: 10%; }
+
+.booking-card {
+  margin-top: 5%; }

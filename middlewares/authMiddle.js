@@ -11,7 +11,7 @@ module.exports = {
   validUserInputLogin: (req, res, next) => {
     const { username, password } = req.body;
     if (!username || !password) {
-      req.flash('info', 'Missing info, please try again');
+      req.flash('error', 'Missing info, please try again');
       return res.redirect('/login');
     } else {
       next();

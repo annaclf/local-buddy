@@ -105,45 +105,56 @@ a {
   height: 30px; }
 
 .swiper-container {
-  padding-bottom: 20px; }
+  padding-bottom: 0px; }
 
 .swiper-pagination-bullet-active {
   opacity: 1;
   background: #000 !important; }
 
-.swiper-slide a {
-  color: inherit; }
-  .swiper-slide a:hover {
-    text-decoration: none; }
+.avatar-img {
+  color: white;
+  height: 200px;
+  font-size: 0.8rem; }
 
-.swiper-slide .card {
-  box-shadow: none;
-  border: none; }
+.align-end {
+  padding-top: 60%; }
 
-.swiper-slide .card-title {
-  margin-bottom: 0; }
-
-.swiper-slide .card-body {
-  padding: 1rem; }
-
-.swiper-slide .city {
-  margin-bottom: 0;
-  margin-top: 5px; }
-
-.swiper-slide .highlights {
-  margin-top: 5px; }
-
-.swiper-slide .bio {
-  height: 135px;
-  overflow: hidden; }
+.swiper-slide {
+  width: 80%;
+  padding-right: 20px; }
+  .swiper-slide a {
+    color: inherit; }
+    .swiper-slide a:hover {
+      text-decoration: none; }
+  .swiper-slide .card {
+    box-shadow: none;
+    border: none; }
+  .swiper-slide .card-title {
+    margin-bottom: 0; }
+  .swiper-slide .card-body {
+    padding: 5%; }
+  .swiper-slide .city {
+    margin-bottom: 0;
+    margin-top: 5px; }
+  .swiper-slide .bio {
+    height: 140px;
+    overflow: hidden; }
 
 @media (min-width: 768px) {
-  .swiper-slide .card-body {
-    padding: 1rem 0; }
-  .swiper-slide .card-title {
-    font-size: 1.1rem; }
+  .swiper-slide {
+    width: 50%;
+    padding-right: 20px; }
+    .swiper-slide .card-body {
+      padding: 1rem 0; }
+    .swiper-slide .card-title {
+      font-size: 1.1rem; }
   .swiper-container .swiper-pagination {
     display: block !important; } }
+
+@media (min-width: 1024px) {
+  .swiper-slide {
+    width: 30%;
+    padding-right: 20px; } }
 
 .navbar {
   background: #000; }
@@ -288,16 +299,16 @@ a {
   100% {
     transform: translate(19px, 0); } }
 
-.header .user-pic {
+.user-pic {
   height: 375px;
   display: flex; }
 
-.header #username {
+#username {
   text-align: center;
   height: 50px;
   font-size: 1.4rem; }
 
-.header .fullname {
+.fullname {
   font-size: 2rem;
   color: white;
   align-self: flex-end;

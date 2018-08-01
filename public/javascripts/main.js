@@ -19,8 +19,7 @@ function main () {
       draggable: true
     }
   });
-  // Init wow
-  new WOW().init();
+ 
   // const buddieProfile = document.getElementById('buddie-profile');
   const menuTrigger = document.getElementById('menu_trigger');
   const siteLogo = document.getElementById('site-logo');

@@ -10,7 +10,6 @@ router.get('/', privateRoute.requireUser, (req, res, next) => {
   const {_id} = req.session.currentUser;
   User.findById(_id)
     .then(user => {
-      console.log(user);
       res.render('profile/me', user);
     })
     .catch(error => {
@@ -31,6 +30,7 @@ router.get('/edit', privateRoute.requireUser, (req, res, next) => {
 });
 
 router.post('/edit', (req, res, next) => {
+  // @TODO - protect the routes
   const {
     username,
     password,
@@ -82,7 +82,7 @@ router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
     });
 });
 
-router.post('/reservations', (req, res, next) => {
+router.post('/reservations', authMiddle.loggedUser, (req, res, next) => {
   const { status, id } = req.body;
 
   Reservation.findByIdAndUpdate(id, {status})

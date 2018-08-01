@@ -2,14 +2,14 @@
   <div class="container">
    {{#if users}}
     <div class="row">
-      <h2 class="col-12">We have found {{users.length}} buddies in Barclona</h2>
+      <h2 class="col-12">You have {{users.length}} buddies in <span class="city">{{city}}</span></h2>
     </div>
     <div class="row">
         {{#each users}}
-          {{> userListCard}}
+          {{> profileSCard }}
         {{/each}}
       {{else}}
-        <p>No users found</p>
+        <h2 class="pb-5">No buddies found in {{city}}</h2>
       
     </div>
     {{/if}}

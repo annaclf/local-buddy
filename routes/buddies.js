@@ -6,7 +6,6 @@ const reservationMiddleware = require('../middlewares/reservationMiddleware');
 
 const router = express.Router();
 
-/* GET users listing. */
 router.get('/', (req, res, next) => {
   res.redirect('/');
 });
@@ -23,7 +22,7 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
-router.post('/:id/favourite', (req, res, next) => {
+router.post('/:id/favourite', authMiddle.loggedUser, (req, res, next) => {
   User.find()
     .then(() => {
       console.log('add buddy to favourites');
@@ -39,11 +38,10 @@ router.get('/:id/book', authMiddle.loggedUser, reservationMiddleware.compareDate
   res.render('buddies/form-reservations', {id, startDate, endDate});
 });
 
-router.post('/:id/book', (req, res, next) => {
+router.post('/:id/book', authMiddle.loggedUser, (req, res, next) => {
   const idBuddy = req.params.id;
   const idTraveller = req.session.currentUser._id;
   const { startDate, endDate, status } = req.body;
-  // const status = 'Pending';
 
   const data = {
     status,

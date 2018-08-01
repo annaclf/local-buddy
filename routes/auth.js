@@ -67,7 +67,7 @@ router.post('/login', authMiddle.validUserInputLogin, (req, res, next) => {
 
 // LOG OUT: --------------------------------------------------------------
 
-router.post('/logout', (req, res, next) => {
+router.post('/logout', authMiddle.loggedUser, (req, res, next) => {
   delete req.session.currentUser;
   res.redirect('/');
 });

@@ -198,58 +198,34 @@ h2 {
     font-size: 0.8rem;
     font-family: "Maven Pro", sans-serif; }
 
-.buddie-profile input {
-  font-size: 12px;
-  padding-right: 0;
-  border-radius: 0; }
-
-.buddie-profile .top-banner {
-  color: #fff;
-  background: #25797c; }
-  .buddie-profile .top-banner .container {
-    position: relative; }
-  .buddie-profile .top-banner .buddie-info {
-    height: 150px; }
-    .buddie-profile .top-banner .buddie-info h2 {
-      font-size: 2rem;
-      margin-bottom: 0; }
-    .buddie-profile .top-banner .buddie-info .city {
-      font-weight: 200;
-      font-size: 1.3rem;
-      margin-bottom: 0; }
-  .buddie-profile .top-banner .rate {
-    font-size: 1.3rem; }
-  .buddie-profile .top-banner .avatar {
-    bottom: -30px;
-    height: 140px;
-    width: 140px;
-    top: auto; }
-
-.avatar {
+.header .user-pic-container {
+  width: 375px;
+  height: 375px;
   position: absolute;
-  bottom: -10px;
-  right: 10px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden; }
+  top: 56px; }
 
-.book-section {
-  border: 1px solid #e4e4e4;
-  padding: 5px; }
+.header #username {
+  text-align: center;
+  height: 50px; }
+
+.header #user-pic {
+  object-fit: cover;
+  width: 375px;
+  height: 375px;
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+
+.header h2 {
+  position: absolute;
+  top: 360px;
+  font-size: 2rem;
+  color: white; }
+
+.header h3 {
+  font-size: 1.3rem; }
 
 @media (min-width: 556px) {
-  .mt-3 {
-    margin-top: 3rem !important; }
-  .buddie-profile .top-banner .avatar {
-    height: 170px;
-    width: 170px; }
-  .avatar {
-    right: 15px;
-    width: 70px;
-    height: 70px; } }
-
-@media (min-width: 768px) {
   .mt-3 {
     margin-top: 3rem !important; }
   .buddie-profile .top-banner .avatar {

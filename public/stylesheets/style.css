@@ -111,14 +111,28 @@ a {
   .searchform input {
     width: 100%;
     font-size: .8rem;
-    font-weight: 200; }
+    font-weight: 200;
+    position: relative;
+    height: 41px; }
+  .searchform:before {
+    position: absolute;
+    right: 0px;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+    top: 5px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    content: "\f002";
+    font-size: 1.3rem;
+    color: #e4e4e4; }
 
 /*Errormessage*/
 .errormessage {
   height: 30px; }
 
 .swiper-container {
-  padding-bottom: 0px; }
+  padding-bottom: 20px; }
 
 .swiper-pagination-bullet-active {
   opacity: 1;
@@ -133,8 +147,7 @@ a {
   padding-top: 60%; }
 
 .swiper-slide {
-  width: 80%;
-  padding-right: 20px; }
+  width: 80%; }
   .swiper-slide a {
     color: inherit; }
     .swiper-slide a:hover {
@@ -152,6 +165,9 @@ a {
   .swiper-slide .bio {
     height: 140px;
     overflow: hidden; }
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 7px; }
 
 @media (min-width: 768px) {
   .swiper-slide {
@@ -341,7 +357,7 @@ a {
   font-size: 1.4rem; }
 
 .fullname {
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: white;
   align-self: flex-end;
   margin-bottom: 5%; }
@@ -367,6 +383,12 @@ input.date-input {
   height: 40px;
   font-size: .8rem; }
 
+.search-page .top-section {
+  padding: 20px 0; }
+
+.search-page .jumbotron {
+  height: 200px; }
+
 .city {
   text-transform: capitalize; }
 
@@ -389,11 +411,11 @@ input.date-input {
     font-size: 1.4rem;
     font-family: "Maven Pro", sans-serif; }
   .buddie-card .align-end {
-    padding-top: 210px;
+    padding-top: 205px;
     padding-left: 1.25rem;
     padding-right: 1.25rem; }
   .buddie-card .avatar-img {
-    height: 323px; }
+    height: 290px; }
   .buddie-card .fullname {
     margin-bottom: 0;
     font-size: 1.6rem; }
@@ -404,7 +426,8 @@ input.date-input {
   .buddie-card .card-body {
     max-height: 140px;
     padding-bottom: 15px;
-    overflow: hidden; }
+    overflow: hidden;
+    padding: 1rem; }
 
 .search-results {
   position: relative; }
@@ -415,8 +438,14 @@ input.date-input {
     width: 100px; }
 
 @media (min-width: 615px) {
+  .avatar-img {
+    height: 323px; }
   .fullname {
-    font-size: 1.3rem; } }
+    font-size: 1.3rem; }
+  .align-end {
+    padding-top: 230px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; } }
 
 @media (min-width: 768px) {
   .buddie-card figure img {
@@ -426,7 +455,9 @@ input.date-input {
     transition: .3s ease-in-out; }
   .buddie-card figure:hover img {
     -webkit-filter: grayscale(0);
-    filter: grayscale(0); } }
+    filter: grayscale(0); }
+  .align-end {
+    padding-top: 222px; } }
 
 h2 {
   font-size: 1.4rem; }

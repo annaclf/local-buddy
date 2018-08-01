@@ -19,11 +19,26 @@ h1,h2,h3,h4,h5{
   font-family: $heading-font;
   font-weight: 400!important;
 }
+.content-box{
+  border: 1px solid $border-color;
+  padding: 30px;
+}
+.page-other{
+  +footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+}
 .vh-100{
   min-height: 100vh;
   &.top-section{
     margin-top: -$navbar-height;
   }
+}
+.vh-80{
+  min-height: 80vh;
 }
 h2{
   font-size: 2rem;

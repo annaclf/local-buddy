@@ -16,7 +16,10 @@
       <div class="row">
         <div class="jumbo-content col-md-8 col-lg-6">
           <p>LocalBuddy is the new platform where you can connect with thousands of friends to live experiences out of your city.</p>
-            <a class="btn btn-lg btn-primary" href="/signup" role="button">Sign up today</a>
+            {{#if currentUser}}
+            {{else}}
+              <a class="btn btn-lg btn-primary" href="/signup" role="button">Sign up today</a>
+            {{/if}}
         </div>
       </div>
     </div>
@@ -64,8 +67,11 @@
     <div class="container">
       <div class="row">
         <div class="jumbo-content col-md-8 col-lg-6">
-          <p>Are you ready to connect with thousands of friends to live experiences out of your city?</p>
+          {{#if currentUser}}
+          {{else}}
+          <p>Are you ready to connect with thousands of friends to live experiences out of your city?</p>  
             <a class="btn btn-lg btn-primary" href="/signup" role="button">Sign up today</a>
+          {{/if}}        
         </div>
       </div>
     </div>

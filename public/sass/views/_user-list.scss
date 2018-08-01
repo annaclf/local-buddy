@@ -6,28 +6,63 @@
   transition: all 1s ease;
   display: inline-block;
   padding: 15px 0;
+  position: relative;
   // border-bottom: 1px solid $border-color;
-  h3,.rate{
-    margin-top: 15px;
-  }
-  a{
+  &:hover{
+    text-decoration: none;
     color: #000;
-    &:hover{
-      text-decoration: none;
-      background: lightblue;
-    }
   }
   .highlights{
-    color: #000;
     margin-bottom: 0;
+    font-size: .9rem;
+  }
+  .city{
+    margin-bottom: 0;
+    font-size: 1rem;
   }
   .rate{
     font-size: $h2-text-size;
     font-family: $heading-font;
   }
+  .align-end{
+    padding-top:210px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .avatar-img{
+    height: 323px;
+  }
+  .fullname{
+    margin-bottom: 0;
+    font-size: 1.6rem;
+  }
+  .card{
+    border: none;
+  }
+  .card-top{
+    color: #fff;
+  }
+  .card-body{
+    max-height: 140px;
+    padding-bottom: 15px;
+    overflow:hidden;
+  }
   
 }
-
+.search-results{
+  position: relative;
+  .btn{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+  }
+}
+@media (min-width: 615px) {
+  .fullname{
+    font-size: 1.3rem;
+  }
+}
 @media (min-width: 768px) {
   .buddie-card{
     // &:nth-of-type(2n){
@@ -43,9 +78,6 @@
       -webkit-filter: grayscale(0);
       filter: grayscale(0);
     }
-  }
-  .highlights{
-    color: #000;
   }
   
 }

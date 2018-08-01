@@ -126,7 +126,7 @@ a {
 
 .avatar-img {
   color: white;
-  height: 200px;
+  height: 250px;
   font-size: 0.8rem; }
 
 .align-end {
@@ -355,20 +355,49 @@ input.date-input {
   color: #000;
   transition: all 1s ease;
   display: inline-block;
-  padding: 15px 0; }
-  .buddie-card h3, .buddie-card .rate {
-    margin-top: 15px; }
-  .buddie-card a {
+  padding: 15px 0;
+  position: relative; }
+  .buddie-card:hover {
+    text-decoration: none;
     color: #000; }
-    .buddie-card a:hover {
-      text-decoration: none;
-      background: lightblue; }
   .buddie-card .highlights {
-    color: #000;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    font-size: .9rem; }
+  .buddie-card .city {
+    margin-bottom: 0;
+    font-size: 1rem; }
   .buddie-card .rate {
     font-size: 1.4rem;
     font-family: "Maven Pro", sans-serif; }
+  .buddie-card .align-end {
+    padding-top: 210px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; }
+  .buddie-card .avatar-img {
+    height: 323px; }
+  .buddie-card .fullname {
+    margin-bottom: 0;
+    font-size: 1.6rem; }
+  .buddie-card .card {
+    border: none; }
+  .buddie-card .card-top {
+    color: #fff; }
+  .buddie-card .card-body {
+    max-height: 140px;
+    padding-bottom: 15px;
+    overflow: hidden; }
+
+.search-results {
+  position: relative; }
+  .search-results .btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px; }
+
+@media (min-width: 615px) {
+  .fullname {
+    font-size: 1.3rem; } }
 
 @media (min-width: 768px) {
   .buddie-card figure img {
@@ -378,9 +407,7 @@ input.date-input {
     transition: .3s ease-in-out; }
   .buddie-card figure:hover img {
     -webkit-filter: grayscale(0);
-    filter: grayscale(0); }
-  .highlights {
-    color: #000; } }
+    filter: grayscale(0); } }
 
 h2 {
   font-size: 1.4rem; }

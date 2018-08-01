@@ -1,17 +1,28 @@
-<section class="buddies-list pt-5">
+<section class="jumbotron search-results" id="jumbo-bottom">
   <div class="container">
-   {{#if users}}
     <div class="row">
-      <h2 class="col-12">You have {{users.length}} buddies in <span class="city">{{city}}</span></h2>
+      <div class="jumbo-content mx-auto pt-4">
+        {{#if users}}
+          <h2 class="col-12">You have {{users.length}} buddies in <span class="city">{{city}}</span></h2>
+        {{else}}          
+          <h2 class="pb-5 col">No buddies found in <span class="city">{{city}}</span> yet</h2>
+          <a class="btn btn-lg btn-primary" href="/"><i class="fas fa-arrow-left"></i></a>
+        {{/if}}
+      </div>
     </div>
-    <div class="row">
-        {{#each users}}
-          {{> userlistcard }}
-        {{/each}}
-      {{else}}
-        <h2 class="pb-5">No buddies found in {{city}}</h2>
-      
-    </div>
-    {{/if}}
   </div>
 </section>
+{{#if users}}
+  <section class="buddies-list pt-3 pb-4">
+    <div class="container-fluid">
+      <div class="row">
+        {{#each users}}
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          {{> userlistcard }}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+{{/if}}
+  

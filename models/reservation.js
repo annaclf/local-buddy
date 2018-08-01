@@ -8,7 +8,9 @@ const reservationSchema = new Schema({
   startDate: String,
   endDate: String,
   idBuddy: { type: ObjectId, ref: 'User' },
-  idTraveller: { type: ObjectId, ref: 'User' }
+  idTraveller: { type: ObjectId, ref: 'User' },
+  nameBuddy: String,
+  avatarBuddy: String
 });
 
 const Reservation = mongoose.model('Reservation', reservationSchema);

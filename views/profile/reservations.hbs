@@ -1,8 +1,10 @@
 <div class="container">
+  <h2>Reservations</h2>
   
   <div class="pending">
+    <h3>Pending Reservations</h3>
     {{#unless pending}}
-      <h2>You have no pending reservations</h2>
+      <p>You have no pending reservations</p>
     {{/unless}}
 
     {{#each pending}}
@@ -22,8 +24,10 @@
   </div>
 
 <div class="accepted">
+  <h3>Accepted Reservations</h3>
+
   {{#unless accepted}}
-    <h2>You have no accepted reservations</h2>
+    <p>You have no accepted reservations</p>
   {{/unless}}
 
   {{#each accepted}}

@@ -7,7 +7,7 @@ const saltRounds = 10;
 
 const users = [
   {
-    fullname: 'Hugo Lopez Jijon',
+    fullname: 'Rocío Lopez Quesada',
     username: 'Thimandind',
     password: 'Lo3eiChoo',
     email: 'BekmarzaMasaev@armyspy.com',
@@ -19,10 +19,10 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Single Bed',
     transport: 'Seat Leon s.6',
-    avatarUrl: '/images/default-avatar.jpg'
+    avatarUrl: 'https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5b703c6052b95e9f418a9025296bdc0c&auto=format&fit=crop&w=500&q=60'
   },
   {
-    fullname: 'Raul Campos Jijon',
+    fullname: 'Marta Campos Jijon',
     username: 'Rauncam',
     password: 'Lhwh5sfhfsh3',
     email: 'LukasFreud@rhyta.com',
@@ -34,7 +34,7 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Double Bed',
     transport: 'Seat Ibiza',
-    avatarUrl: '/images/default-avatar.jpg'
+    avatarUrl: 'https://images.unsplash.com/photo-1504276048855-f3d60e69632f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=05f84c6cccdbace3c4b7d04fc85df9a6&auto=format&fit=crop&w=500&q=60'
   },
   {
     fullname: 'Marina Martínez Casas',
@@ -49,13 +49,13 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Double Bed',
     transport: 'Seat Ibiza',
-    avatarUrl: '/images/default-avatar.jpg'
+    avatarUrl: 'https://images.unsplash.com/photo-1503104834685-7205e8607eb9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=defcf01cd785ef042aa159c5b1681e14&auto=format&fit=crop&w=500&q=60'
   },
   {
-    fullname: 'Luis Sánchez Perco',
+    fullname: 'Luisa Sánchez Perco',
     username: 'Blity1963',
     password: 'ohch4ohXoo',
-    email: 'Sages19324@jourrapide.com',
+    email: 'Sa323324@jourrapide.com',
     city: 'Madrid',
     age: 31,
     category: 'Culture',
@@ -64,7 +64,7 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Couch',
     transport: 'Peugeot 307',
-    avatarUrl: '/images/default-avatar.jpg'
+    avatarUrl: 'https://images.unsplash.com/photo-1510520434124-5bc7e642b61d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6b256ab85181b440dbd72eb4b1c297c&auto=format&fit=crop&w=500&q=60'
   },
   {
     fullname: 'María Sánchez Agudo',
@@ -79,10 +79,10 @@ const users = [
     bedsNuber: 2,
     typeBeds: 'Couch',
     transport: 'Peugeot 206',
-    avatarUrl: '/images/default-avatar.jpg'
+    avatarUrl: 'https://images.unsplash.com/photo-1513207565459-d7f36bfa1222?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=35fe1b3b9c76a4d39394697202e872e0&auto=format&fit=crop&w=500&q=60'
   },
   {
-    fullname: 'Joan Agudo i Riera',
+    fullname: 'Aitana Agudo i Riera',
     username: 'jagu',
     password: 'law3lk5f',
     email: 'jagu@jagu.com',
@@ -94,11 +94,11 @@ const users = [
     bedsNuber: 1,
     typeBeds: 'Double Bed',
     transport: 'Seat Ibiza',
-    avatarUrl: '/images/default-avatar.jpg'
+    avatarUrl: 'https://images.unsplash.com/photo-1433954558247-ba7696b9af19?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5224f7bddffe1086b76d2e480ab2444&auto=format&fit=crop&w=500&q=60'
   },
   {
     fullname: 'Monica Agudo i Riera',
-    username: 'Mona',
+    username: 'Monasdf',
     password: 'asldf34h65',
     email: 'mona@monica.com',
     city: 'Madrid',

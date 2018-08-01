@@ -317,14 +317,19 @@ a {
   .reservation-card body {
     font-display: "Roboto", sans-serif; }
   .reservation-card img {
-    width: 100px; }
+    width: 100px;
+    object-position: center;
+    overflow: hidden; }
   .reservation-card .text-book-card {
-    padding: 5% 0 5% 5%; }
+    padding: 3% 0 3% 5%; }
     .reservation-card .text-book-card h2 {
       margin: 0;
-      font-size: 1.4rem; }
+      font-size: 18px;
+      font-weight: bolder; }
     .reservation-card .text-book-card p {
-      margin: 0; }
+      margin: 0;
+      font-size: 14px;
+      color: #A9A9A9; }
 
 .user-pic {
   height: 375px;

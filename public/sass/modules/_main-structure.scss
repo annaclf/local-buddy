@@ -21,6 +21,7 @@ h1,h2,h3,h4,h5{
 .vh-100{
   min-height: 100vh;
   &.top-section{
+    margin-top: -$navbar-height;
   }
 }
 h2{
@@ -30,13 +31,26 @@ h2{
 h2{
   font-size: $h2-text-size;
 }
-
+a{
+  color: $middleblue;
+  text-decoration: none;
+}
 .site-footer{
-  background: black;
-  color: #fff;
-  a{
-    color: #fff;
-  }
+  padding: 30px 0;
+  ul{
+    list-style: none;
+    padding-left: 0;
+      li{
+        color: #fff;
+        font-size: .8rem;
+        font-weight: 100;
+        margin-bottom: 4px;
+      }
+    }
+    background: black;
+    a{
+      color: #fff;
+    }
 }
 
 @media (min-width: 768px) {

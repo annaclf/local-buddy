@@ -10,7 +10,8 @@ body {
   padding: 0;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
-  padding-top: 56px; }
+  padding-top: 56px;
+  color: #474747; }
 
 h1, h2, h3, h4, h5 {
   font-family: "Maven Pro", sans-serif;
@@ -287,32 +288,20 @@ a {
   100% {
     transform: translate(19px, 0); } }
 
-.header .user-pic-container {
-  width: 375px;
+.header .user-pic {
   height: 375px;
-  position: absolute;
-  top: 56px; }
+  display: flex; }
 
 .header #username {
   text-align: center;
-  height: 50px; }
+  height: 50px;
+  font-size: 1.4rem; }
 
-.header #user-pic {
-  object-fit: cover;
-  width: 375px;
-  height: 375px;
-  height: 100%;
-  overflow: hidden;
-  position: relative; }
-
-.header h2 {
-  position: absolute;
-  top: 360px;
+.header .fullname {
   font-size: 2rem;
-  color: white; }
-
-.header h3 {
-  font-size: 1.3rem; }
+  color: white;
+  align-self: flex-end;
+  margin-bottom: 5%; }
 
 @media (min-width: 556px) {
   .mt-3 {
@@ -324,6 +313,15 @@ a {
     right: 15px;
     width: 70px;
     height: 70px; } }
+
+.book-section {
+  padding: 5% 5% 0 5%;
+  background-color: #e3e3e3;
+  border: 1px grey solid;
+  margin: 10% 0; }
+
+input {
+  height: 40px; }
 
 .city {
   text-transform: capitalize; }

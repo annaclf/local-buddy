@@ -4,20 +4,13 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-<<<<<<< HEAD
     
-=======
->>>>>>> df9104fddfc010add226dbfa8697ec51cc8ca2ff
     {
       "type": "node",
       "request": "launch",
       "name": "nodemon",
       "runtimeExecutable": "nodemon",
-<<<<<<< HEAD
       "program": "${workspaceFolder}/bin/www`",
-=======
-      "program": "${workspaceFolder}/bin/www",
->>>>>>> df9104fddfc010add226dbfa8697ec51cc8ca2ff
       "restart": true,
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"

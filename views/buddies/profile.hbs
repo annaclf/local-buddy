@@ -1,13 +1,49 @@
 <section class="header">
-  <h3 id="username" class="align-middle pt-3">{{this.username}}</h3>
-  <img id="user-pic" src="{{this.avatarUrl}}" alt="user-pic">
-  <div class="user-pic-container"></div>
-<div class="main-text container">
-  <h2>{{this.fullname}}</h2>
-  <h4>{{this.highlights}}</h4>
-  <h3>{{this.city}}</h3>
-</div>
+  <h3 id="username" class="align-middle pt-3">@{{this.username}}</h3>
+  {{!-- <img id="user-pic" src="https://static.vix.com/es/sites/default/files/styles/large/public/btg/curiosidades.batanga.com/files/111798556.jpg?itok=6PyOiwAG" alt="user-pic"> --}}
+  <div style="background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,1)), url('https://images.unsplash.com/photo-1441123694162-e54a981ceba5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fcdbc9f32f5a6528097514e07d340524&auto=format&fit=crop&w=1534&q=80') no-repeat center; background-size: cover;" class="user-pic container">
+    <h2 class="fullname">{{this.fullname}}</h2>
+  </div>
+
 </section>
+
+<div class="container">
+    <div class="row mt-3">
+      <div class="col-md-7">
+        <p><strong>Highlights:</strong> <i>{{this.highlights}}</i></p>
+        <p class="age">Age: {{this.age}}</p>
+        <h2 class="mt-5">About me</h2>
+        <p>{{this.biography}}</p>
+        <p><strong>In category:</strong> {{this.category}}</p>
+        <p><strong>Beds:</strong> {{this.bedsNumber}} {{this.typeBeds}}</p>
+      </div>
+      <div class="col-md-4 ml-auto">
+        <section class="book-section">
+          <h2>Book this Buddy</h2>
+          <form action="/buddies/{{this.id}}/book">
+            <div class="form-group row">
+              <div class="col-6">
+                <label for="startDate">From</label>
+                <input class="form-control" type="date" value="" name="startDate" id="startDate" min="2018-01-01" max="2019-12-31">
+              </div>
+              <div class="col-6">
+                <label for="endDate">To</label>
+                <input class="form-control" type="date" value="" name="endDate" id="endDate" min="2018-01-01" max="2019-12-31">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col">
+                <button type="submit" id="book-buddy" class="btn btn-lg btn-primary btn-block">Book</button>
+              </div>
+            </div>
+          </form>
+        </section>
+        {{#if messages.length}}
+              {{#each messages}}<p>{{this}}</p>{{/each}}
+          {{/if}}
+      </div>
+    </div>
+  </div>
 
 
 

@@ -1,8 +1,19 @@
-<div>
-  <div>
-    <h2>{{this.idBuddy.avatarUrl}}</h2>
-    <p>Status: {{this.status}}</p>
-    <p>Start Date: <i>{{this.startDate}}</i></p>
-    <p>End Date: <i>{{this.endDate}}</i></p>
+<div class="container reservation-card">
+  <div class="row">
+    <div class="col-4 my-auto">
+      <img src="{{this.idBuddy.avatarUrl}}"  alt="" class="rounded-circle">
+
+    </div>
+    <div class="col-8 my-auto text-book-card">
+      <h2>{{this.idBuddy.fullname}}</h2>
+      <p>City: {{this.idBuddy.city}}</p>
+      <div class="row">
+        <p class="col">Start Date: <br><i>{{this.startDate}}</i></p>
+        <p class="col">End Date: <br><i>{{this.endDate}}</i></p>
+      </div>
+    </div>
+    
   </div>
+
+
 </div>

@@ -11,9 +11,11 @@
 @import 'components/slider';
 @import 'components/navbar';
 @import 'components/loader';
+@import 'components/reservationCard';
 
 // Views
 @import 'views/user';
 @import 'views/userprofile';
 @import 'views/user-list';
 @import 'views/home';
+@import 'views/reservations';

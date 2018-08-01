@@ -1,22 +1,21 @@
-.header{
-  .user-pic{
-    height: 375px;
-    display: flex;
-
-  }
-   #username{
-     text-align: center;
-     height: 50px;
-     font-size: $h2-text-size;
-   }
-
-   .fullname{
-     font-size: $buddie-profile-name-size;
-     color: white;
-     align-self: flex-end;
-     margin-bottom: 5%;
-   }  
+.user-pic{
+  height: 375px;
+  display: flex;
 }
+
+#username{
+  text-align: center;
+  height: 50px;
+  font-size: $h2-text-size;
+}
+
+.fullname{
+  font-size: $buddie-profile-name-size;
+  color: white;
+  align-self: flex-end;
+  margin-bottom: 5%;
+}  
+
 
 @media (min-width: 556px) {
   .mt-3{

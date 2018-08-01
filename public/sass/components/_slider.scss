@@ -1,5 +1,5 @@
 .swiper-container{
-  padding-bottom: 20px;
+  padding-bottom: 0px;
   .swiper-pagination{
   }
 }
@@ -7,7 +7,19 @@
   opacity: 1;
   background: #000!important;
 }
+
+.avatar-img{
+  color: white;
+  height: 200px;
+  font-size: $h4-text-size;
+}
+.align-end{
+  padding-top: 60%;
+  
+}
 .swiper-slide{
+  width: 80%;
+  padding-right: 20px; 
   a{
     color: inherit;
     &:hover{
@@ -28,17 +40,15 @@
     margin-bottom: 0;
   }
   .card-body{
-    padding: 1rem;
+    padding: 5%;
   }
   .city{
     margin-bottom: 0;
     margin-top: 5px;
   }
-  .highlights{
-    margin-top: 5px;
-  }
+ 
   .bio{
-    height: 135px;
+    height: 140px;
     overflow: hidden;
   }
   
@@ -46,6 +56,8 @@
 
 @media (min-width: 768px) {
   .swiper-slide{
+    width: 50%;
+    padding-right: 20px; 
     .card-body{
       padding: 1rem 0;
     }
@@ -57,5 +69,12 @@
     .swiper-pagination{
       display: block!important;
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper-slide{
+    width: 30%;
+    padding-right: 20px; 
   }
 }

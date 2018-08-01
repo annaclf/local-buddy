@@ -7,29 +7,16 @@ function main () {
   }
   /** Init Swiper */
   const swiper = new Swiper('.swiper-container', {
-    slidesPerView: 3,
     spaceBetween: 30,
     mousewheelControl: true,
+    slidesPerView: 'auto',
+
     keyboard: {
       enabled: true
     },
     pagination: {
       el: '.swiper-pagination',
       draggable: true
-    },
-    breakpoints: {
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 10
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 10
-      },
-      420: {
-        slidesPerView: 1,
-        spaceBetween: 10
-      }
     }
   });
   // Init wow

@@ -1,5 +1,5 @@
 const mongoose = require('../dbmongo');
-// var validate = require('mongoose-validator');
+const uniqueValidator = require('mongoose-unique-validator');
 
 const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
@@ -20,6 +20,8 @@ const userSchema = new Schema({
   avatarUrl: { type: String, default: '/images/default-avatar.jpg' },
   reservations: [{type: ObjectId, ref: 'Reservation'}]
 });
+
+userSchema.plugin(uniqueValidator, { message: 'Error, expected {PATH} to be unique.' });
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;

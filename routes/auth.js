@@ -17,29 +17,19 @@ router.get('/signup', (req, res, next) => {
 
 router.post('/signup', authMiddle.validUserInputSignUp, (req, res, next) => {
   const { username, password, email } = req.body;
+  const salt = bcrypt.genSaltSync(saltRounds);
+  const hashedPassword = bcrypt.hashSync(password, salt);
+  const newUser = new User({ username, password: hashedPassword, email });
 
-  User.findOne({ username })
-    .then(user => {
-      if (user) {
-        console.log('HELLO', user)
-        req.flash('info', 'Username already exists');
-        res.redirect('/signup');
-        // return res.render('auth/signup', {message: 'Already existing user'});
-      } else {
-        const salt = bcrypt.genSaltSync(saltRounds);
-        const hashedPassword = bcrypt.hashSync(password, salt);
-        const newUser = new User({ username, password: hashedPassword, email });
-
-        return newUser.save()
-          .then(() => {
-            req.session.currentUser = newUser;
-            res.redirect('/');
-          })
-      }
-    })
-    .catch(error => {
-      next(error);
-    });
+  newUser.save(function (err) {
+    if (err) {
+      req.flash('error', err.message);
+      res.redirect('/signup');
+    } else {
+      req.session.currentUser = newUser;
+      res.redirect('/');
+    }
+  });
 });
 
 // LOGIN: --------------------------------------------------------------
@@ -57,7 +47,7 @@ router.post('/login', authMiddle.validUserInputLogin, (req, res, next) => {
   User.findOne({ username })
     .then(user => {
       if (!user) {
-        req.flash('info', 'no user')
+        req.flash('info', 'no user');
         return res.redirect('/login');
       } else {
         if (bcrypt.compareSync(password, user.password)) {
@@ -65,7 +55,7 @@ router.post('/login', authMiddle.validUserInputLogin, (req, res, next) => {
           req.session.currentUser = user;
           return res.redirect('/');
         } else {
-          req.flash('info', 'password wrong')
+          req.flash('info', 'password wrong');
           return res.redirect('/login');
         }
       }

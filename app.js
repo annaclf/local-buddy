@@ -22,6 +22,11 @@ const app = express();
 // view engine setup
 hbs.registerPartials(path.join(__dirname, '/views/partials'));
 
+hbs.registerHelper('bold', function(options) {
+  
+  return 'hola';
+});
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 

@@ -1,9 +1,42 @@
-  <div>
-    {{!-- {{ reservations }} --}}
-    {{#each reservations}}
+<div class="container">
+  <h2>Reservations</h2>
+  
+  <div class="pending">
+    <h3>Pending Reservations</h3>
+    {{#unless pending}}
+      <p>You have no pending reservations</p>
+    {{/unless}}
+
+    {{#each pending}}
       <div>
         {{> reservationCard }}
       </div>
-    {{/each}}
 
+      <div>
+        <form method="post" action="/profile/reservations">
+          <button type="submit" name="status" value="Accepted" class="form-control input-lg">Accept</button>
+          <button type="submit" name="status" value="Rejected" class="form-control input-lg">Reject</button>  
+          <input type="hidden" name="id" value="{{this._id}}">
+        </form>
+      </div>
+
+    {{/each}}
   </div>
+
+<div class="accepted">
+  <h3>Accepted Reservations</h3>
+
+  {{#unless accepted}}
+    <p>You have no accepted reservations</p>
+  {{/unless}}
+
+  {{#each accepted}}
+    <div>
+      {{> reservationCard }}
+    </div>
+
+
+  {{/each}}
+</div>
+
+

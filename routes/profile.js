@@ -73,9 +73,15 @@ router.post('/edit', (req, res, next) => {
 
 router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
   const idTraveller = req.session.currentUser._id;
-  Reservation.find({ idTraveller: idTraveller })
+  Reservation.find({ idTraveller: idTraveller }).populate('idBuddy')
     .then(reservations => {
-      res.render('profile/reservations', {reservations});
+      const accepted = reservations.filter(reservation => {
+        return reservation.status === 'Accepted';
+      });
+      const pending = reservations.filter(reservation => {
+        return reservation.status === 'Pending';
+      });
+      res.render('profile/reservations', {accepted, pending});
     })
     .catch(error => {
       next(error);
@@ -84,6 +90,8 @@ router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
 
 router.post('/reservations', authMiddle.loggedUser, (req, res, next) => {
   const { status, id } = req.body;
+
+  const test = Reservation.find({status: 'Pending'});
 
   Reservation.findByIdAndUpdate(id, {status})
     .then(() => {

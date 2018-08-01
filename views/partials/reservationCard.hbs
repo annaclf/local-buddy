@@ -1,15 +1,8 @@
-<div class="container">
+<div>
   <div>
-    <h2>{{this.idBuddy}}</h2>
-    <p>{{this.status}}</p>
-    <p><i>{{this.startDate}}</i></p>
-    <p><i>{{this.endDate}}</i></p>
+    <h2>{{this.idBuddy.avatarUrl}}</h2>
+    <p>Status: {{this.status}}</p>
+    <p>Start Date: <i>{{this.startDate}}</i></p>
+    <p>End Date: <i>{{this.endDate}}</i></p>
   </div>
-
-  <form method="post" action="/profile/reservations">
-    <button type="submit" name="status" value="Accepted" class="form-control input-lg">Accept</button>
-    <button type="submit" name="status" value="Rejected" class="form-control input-lg">Reject</button>  
-    <input type="hidden" name="id" value="{{this._id}}">
-  </form>
-
 </div>

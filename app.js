@@ -5,8 +5,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
-const session = require("express-session");
-const MongoStore = require("connect-mongo")(session);
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 
 require('./dbmongo');
@@ -20,7 +20,7 @@ const profileRouter = require('./routes/profile');
 const app = express();
 
 // view engine setup
-hbs.registerPartials(__dirname + '/views/partials');
+hbs.registerPartials(path.join(__dirname, '/views/partials'));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

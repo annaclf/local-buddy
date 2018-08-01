@@ -10,7 +10,6 @@ router.get('/', privateRoute.requireUser, (req, res, next) => {
   const {_id} = req.session.currentUser;
   User.findById(_id)
     .then(user => {
-      console.log(user);
       res.render('profile/me', user);
     })
     .catch(error => {

@@ -19,7 +19,7 @@ function main () {
       draggable: true
     }
   });
- 
+
   // const buddieProfile = document.getElementById('buddie-profile');
   const menuTrigger = document.getElementById('menu_trigger');
   const siteLogo = document.getElementById('site-logo');
@@ -34,6 +34,12 @@ function main () {
     menuContainer.classList.toggle('open');
   });
 }
+
+let dateInputs = document.querySelectorAll('.date-input');
+
+dateInputs.forEach(function (input) {
+  input.value = new Date().toJSON().slice(0, 10);
+});
 
 window.addEventListener('load', main);
 

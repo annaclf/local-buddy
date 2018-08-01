@@ -331,8 +331,9 @@ a {
   border: 1px grey solid;
   margin: 10% 0; }
 
-input {
-  height: 40px; }
+input.date-input {
+  height: 40px;
+  font-size: .8rem; }
 
 .city {
   text-transform: capitalize; }

@@ -34,7 +34,13 @@ router.post('/:id/favourite', authMiddle.loggedUser, (req, res, next) => {
 router.get('/:id/book', authMiddle.loggedUser, reservationMiddleware.compareDates, (req, res, next) => {
   const { id } = req.params;
   const { startDate, endDate } = req.query;
-  res.render('buddies/form-reservations', {id, startDate, endDate});
+  User.findById(id)
+    .then(user => {
+      res.render('buddies/form-reservations', {startDate, endDate, user});
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
 router.post('/:id/book', authMiddle.loggedUser, (req, res, next) => {

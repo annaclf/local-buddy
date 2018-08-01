@@ -75,6 +75,7 @@ router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
   const idTraveller = req.session.currentUser._id;
   Reservation.find({ idTraveller: idTraveller })
     .then(reservations => {
+      // const accepted = reservations.filter(reservation => status === 'Rejected')
       res.render('profile/reservations', {reservations});
     })
     .catch(error => {
@@ -84,6 +85,8 @@ router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
 
 router.post('/reservations', authMiddle.loggedUser, (req, res, next) => {
   const { status, id } = req.body;
+
+  const test = Reservation.find({status: 'Pending'});
 
   Reservation.findByIdAndUpdate(id, {status})
     .then(() => {

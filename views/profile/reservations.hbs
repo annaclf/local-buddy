@@ -1,9 +1,15 @@
-  <div>
-    {{!-- {{ reservations }} --}}
-    {{#each reservations}}
-      <div>
-        {{> reservationCard }}
-      </div>
-    {{/each}}
+  <div class="container">
+    
+    <div class="pending">
+      {{#each reservations}}
+        <div>
+          {{> reservationCard }}
+        </div>
+      {{/each}}
+
+    
+    </div>
 
   </div>
+
+

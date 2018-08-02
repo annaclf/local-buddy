@@ -54,41 +54,46 @@ window.addEventListener('load', main);
 
 /* Esto es para hacer la validación de las fechas del calendario */
 
-// window.onload = () => {
-//   var options = {
-//     enableHighAccuracy: true,
-//     timeout: 10000,
-//     maximumAge: 0
-//   };
+window.onload = () => {
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 10000,
+    maximumAge: 0
+  };
 
-//   let crd;
-//   function success (pos) {
-//     crd = pos.coords;
+  let crd;
+  function success (pos) {
+    crd = pos.coords;
 
-//     console.log('Your current position is:');
-//     console.log('Latitude : ' + crd.latitude);
-//     console.log('Longitude: ' + crd.longitude);
-//     console.log('More or less ' + crd.accuracy + ' meters.');
-//   };
+    console.log('Your current position is:');
+    console.log('Latitude : ' + crd.latitude);
+    console.log('Longitude: ' + crd.longitude);
+    console.log('More or less ' + crd.accuracy + ' meters.');
+  };
 
-//   function error (err) {
-//     console.error('ERROR(' + err.code + '): ' + err.message);
-//   };
+  function error (err) {
+    console.error('ERROR(' + err.code + '): ' + err.message);
+  };
 
-//   navigator.geolocation.getCurrentPosition(success, error, options);
+  navigator.geolocation.getCurrentPosition(success, error, options);
 
-//   function checkCrd (data) {
-//     console.log(data);
-//     if (data) {
-//       document.getElementById('userPosition').value = data.latitude;
-//       document.getElementById('userPosition').value = data.longitude;
+  function checkCrd (data) {
+    console.log('Hugo: ', data);
+    if (data) {
+      console.log('Estoy dentro del IF');
+      const latitude = data.latitude;
+      const longitude = data.longitude;
+      console.log("lat: ", latitude);
+      console.log("long:", longitude);
+      document.getElementById('userPositionLat').value = latitude;
+      document.getElementById('userPositionLon').value = longitude;
 
-//       // document.getElementById('signup-button').disabled = false;
-//       clearInterval(intervalId);
-//     }
-//   };
+      // document.getElementById('signup-button').disabled = false;
+      clearInterval(intervalId);
+    }
+  };
 
-//   let intervalId = setInterval(() => {
-//     checkCrd(crd);
-//   }, 300);
-// };
+  let intervalId = setInterval(() => {
+    checkCrd(crd);
+  }, 300);
+};

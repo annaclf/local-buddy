@@ -19,7 +19,10 @@ const userSchema = new Schema({
   transport: { type: String },
   avatarUrl: { type: String, default: '/images/default-avatar.jpg' },
   reservations: [{type: ObjectId, ref: 'Reservation'}],
-  position: Array
+  location: {
+    type: {type: String},
+    coordinates: [Number]
+  }
 });
 
 userSchema.plugin(uniqueValidator, { message: 'Error, expected {PATH} to be unique.' });

@@ -133,7 +133,7 @@ a {
   height: 30px; }
 
 .swiper-container {
-  padding-bottom: 80px; }
+  padding-bottom: 40px; }
 
 .swiper-pagination-bullet-active {
   opacity: 1;
@@ -424,7 +424,7 @@ input.date-input {
     font-size: 1.4rem;
     font-family: "Maven Pro", sans-serif; }
   .buddie-card .align-end {
-    padding-top: 205px;
+    padding-top: 183px;
     padding-left: 1.25rem;
     padding-right: 1.25rem; }
   .buddie-card .avatar-img {
@@ -451,25 +451,17 @@ input.date-input {
     width: 100px; }
 
 @media (min-width: 615px) {
-  .avatar-img {
+  .buddie-card .avatar-img {
     height: 323px; }
-  .fullname {
+  .buddie-card .fullname {
     font-size: 1.3rem; }
-  .align-end {
+  .buddie-card .align-end {
     padding-top: 230px;
     padding-left: 1.25rem;
     padding-right: 1.25rem; } }
 
 @media (min-width: 768px) {
-  .buddie-card figure img {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out; }
-  .buddie-card figure:hover img {
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0); }
-  .align-end {
+  .buddie-card .align-end {
     padding-top: 222px; } }
 
 h2 {

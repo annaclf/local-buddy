@@ -1,3 +1,69 @@
+<section class="header">
+  <h3 id="username" class="align-middle pt-3">@{{this.username}}</h3>
+  <div style="background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,1)), url('{{this.avatarUrl}}') no-repeat center; background-size: cover;" class="user-pic container">
+    <table style="height: 100%;">
+        <tr>
+          <td class="align-bottom header-name">
+                <h2 class="fullname">{{this.fullname}}</h2>
+                <p>{{this.city}}</p>
+          </td>
+        </tr>
+    </table>
+  </div>
+
+</section>
+
+<section class="container mt-3">
+
+    <div class="row info-icons text-center">
+        {{#unless this.category}}
+          <div class="col">
+            <i class="fas fa-map-marked-alt fa-2x"></i>            
+            <p class="icon-text">{{this.category}}</p>
+          </div>
+        {{/unless}}
+
+
+        {{#unless this.typeBeds}}
+          <div class="col">
+            <i class="fas fa-bed fa-2x"></i>
+            <p class="icon-text">{{this.typeBeds}}</p>
+
+            </div>
+        {{/unless}}
+
+        {{#unless this.transport}}
+        <div class="col">
+          <i class="fas fa-car  fa-2x"></i>
+          <p class="icon-text">{{this.transport}}</p>
+          </div>
+        {{/unless}}
+      </div>
+
+
+    </div>
+    <p><i>{{this.highlights}}</i></p>
+</section>
+
+<div class="container">
+    <div class="row mt-3">
+      <div class="col-md-7">
+        <h2 class="mt-5">About me</h2>
+        <p>{{this.biography}}</p>
+        <p><strong>In category:</strong> {{this.category}}</p>
+        <p><strong>Beds:</strong> {{this.bedsNumber}} {{this.typeBeds}}</p>
+        <a class="btn btn-lg btn-primary" href="profile/edit" role="button">Edit</a>
+      </div>
+
+
+       
+    </div>
+  </div>
+
+
+
+{{!-- 
+
 <section class="buddie-profile">
   <div class="top-banner">
     <div class="container pt-4">
@@ -30,4 +96,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}

@@ -16,28 +16,28 @@
 <section class="container mt-3">
 
     <div class="row info-icons text-center">
-        {{#if this.category}}
+        {{#unless this.category}}
           <div class="col">
             <i class="fas fa-map-marked-alt fa-2x"></i>            
             <p class="icon-text">{{this.category}}</p>
           </div>
-        {{/if}}
+        {{/unless}}
 
 
-        {{#if this.typeBeds}}
+        {{#unless this.typeBeds}}
           <div class="col">
             <i class="fas fa-bed fa-2x"></i>
             <p class="icon-text">{{this.typeBeds}}</p>
 
             </div>
-        {{/if}}
+        {{/unless}}
 
-        {{#if this.transport}}
+        {{#unless this.transport}}
         <div class="col">
           <i class="fas fa-car  fa-2x"></i>
           <p class="icon-text">{{this.transport}}</p>
           </div>
-        {{/if}}
+        {{/unless}}
       </div>
 
 

@@ -22,8 +22,7 @@ const app = express();
 // view engine setup
 hbs.registerPartials(path.join(__dirname, '/views/partials'));
 
-hbs.registerHelper('bold', function(options) {
-  
+hbs.registerHelper('bold', function (options) {
   return 'hola';
 });
 
@@ -46,9 +45,6 @@ app.use(flash());
 
 app.use(function (req, res, next) {
   app.locals.currentUser = req.session.currentUser;
-  if (req.session.currentUser) {
-    res.locals.currentUser = req.session.currentUser;
-  }
   next();
 });
 

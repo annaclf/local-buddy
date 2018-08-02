@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-mongoose.connect('mongodb://localhost/local-buddy', {
+mongoose.connect(process.env.MONGODB_URI, {
   reconnectTries: Number.MAX_VALUE,
   // useNewUrlParser: true
 })

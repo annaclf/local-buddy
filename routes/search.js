@@ -7,9 +7,10 @@ const router = express.Router();
 
 router.get('/', (req, res, next) => {
   const { city } = req.query; 
-  User.find({ city }, { avatarUrl: 1, fullname: 1, city: 1, highlights: 1, biography: 1 })
+  User.find({ city })
     .then(users => {
-      res.render('search/userlist', { users, city });
+      const [user] = users;
+      res.render('search/userlist', { users, city , user});
     })
     .catch(error => {
       next(error);

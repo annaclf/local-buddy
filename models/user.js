@@ -26,6 +26,7 @@ const userSchema = new Schema({
 });
 
 userSchema.plugin(uniqueValidator, { message: 'Error, expected {PATH} to be unique.' });
+userSchema.index({ location: '2dsphere' });
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;

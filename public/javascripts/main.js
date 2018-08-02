@@ -43,57 +43,79 @@ dateInputs.forEach(function (input) {
 
 window.addEventListener('load', main);
 
-// const App = {
-//   clickmenu : () => {
-//     this.menuTrigger.addEventListener('click', () => {
-//       this.menuTrigger.classList.toggle('open');
-//       this.menuContainer.classList.toggle('open');
-//     });
-//   }
+
+// window.onload = () => {
+//   var options = {
+//     enableHighAccuracy: true,
+//     timeout: 10000,
+//     maximumAge: 0
+//   };
+
+//   let crd;
+//   function success (pos) {
+//     crd = pos.coords;
+
+//     console.log('Your current position is:');
+//     console.log('Latitude : ' + crd.latitude);
+//     console.log('Longitude: ' + crd.longitude);
+//     console.log('More or less ' + crd.accuracy + ' meters.');
+//   };
+
+//   function error (err) {
+//     console.error('ERROR(' + err.code + '): ' + err.message);
+//   };
+
+//   navigator.geolocation.getCurrentPosition(success, error, options);
+
+//   function checkCrd (data) {
+//     if (data) {
+//       const latitude = data.latitude;
+//       const longitude = data.longitude;
+
+//       document.getElementById('userPositionLat').value = latitude;
+//       document.getElementById('userPositionLon').value = longitude;
+
+//       // document.getElementById('signup-button').disabled = false;
+//       clearInterval(intervalId);
+//     }
+//   };
+
+//   let intervalId = setInterval(() => {
+//     checkCrd(crd);
+//   }, 300);
 // };
 
-/* Esto es para hacer la validación de las fechas del calendario */
+// MAPBOX-------------------------
 
-window.onload = () => {
-  var options = {
-    enableHighAccuracy: true,
-    timeout: 10000,
-    maximumAge: 0
-  };
+// window.onload = () =>{
+//   mapboxgl.accessToken = 'pk.eyJ1IjoiaGNvcnRhIiwiYSI6ImNqa2N5ZGdsbjBicHUzcG8wNXEycG4xa3EifQ.L806Ib3WtffrlfOnIf-dcA';
+//   let map = new mapboxgl.Map({
+//     container: 'map',
+//     style: 'mapbox://styles/mapbox/streets-v9',
+//     zoom: 14
+//   });
+// }
 
-  let crd;
-  function success (pos) {
-    crd = pos.coords;
 
-    console.log('Your current position is:');
-    console.log('Latitude : ' + crd.latitude);
-    console.log('Longitude: ' + crd.longitude);
-    console.log('More or less ' + crd.accuracy + ' meters.');
-  };
+// let center;
+// if (navigator.geolocation) {
+//   // Get current position
+//   // The permissions dialog will popup
+//   navigator.geolocation.getCurrentPosition(function (position) {
+//     // Create an object to match
+//     // google's Lat-Lng object format
+//     center = [position.coords.longitude, position.coords.latitude];
+//     map.setCenter(center);
 
-  function error (err) {
-    console.error('ERROR(' + err.code + '): ' + err.message);
-  };
+//     console.log('center: ', center);
+//     // User granted permission
+//     // Center the map in the position we got
+//   }, function () {
+//     // If something else goes wrong
+//     console.log('Error in the geolocation service.');
+//   });
+// } else {
+//   // Browser says: Nah! I do not support this.
+//   console.log('Browser does not support geolocation.');
+// }
 
-  navigator.geolocation.getCurrentPosition(success, error, options);
-
-  function checkCrd (data) {
-    console.log('Hugo: ', data);
-    if (data) {
-      console.log('Estoy dentro del IF');
-      const latitude = data.latitude;
-      const longitude = data.longitude;
-      console.log("lat: ", latitude);
-      console.log("long:", longitude);
-      document.getElementById('userPositionLat').value = latitude;
-      document.getElementById('userPositionLon').value = longitude;
-
-      // document.getElementById('signup-button').disabled = false;
-      clearInterval(intervalId);
-    }
-  };
-
-  let intervalId = setInterval(() => {
-    checkCrd(crd);
-  }, 300);
-};

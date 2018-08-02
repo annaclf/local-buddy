@@ -478,7 +478,8 @@ h2 {
   padding: 50px 0 20px; }
 
 .about-us .icon {
-  font-size: 80px; }
+  font-size: 80px;
+  color: #105657; }
 
 .about-us h2 {
   font-size: 2rem; }

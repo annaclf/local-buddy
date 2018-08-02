@@ -10,6 +10,36 @@
           </ul>
         </nav>
       </div>
+       <div class="col-md-6">
+        <nav class="footer-nav">
+          <ul>
+            {{#if currentUser }}
+              <li><h3>My account</h3></li>
+              <li>
+                <a href="/profile">My profile</a>
+              </li>
+              <li>
+                <a href="/profile/edit">Edit profile</a>
+              </li>
+              <li>
+                <a href="/profile/reservations">My reservations</a>
+              </li>
+              <li>
+                <form action="/logout" method="post">
+                  <button type="submit">Log out</button>
+                </form>
+              </li>
+            {{else}}
+              <li>
+                <a href="/login">Log in</a>
+              </li>
+              <li>
+                <a href="/signup">Sign up</a>
+              </li>
+            {{/if}}
+          </ul> 
+        </nav>
+      </div>
     </div>
     <div class="row">
       <div class="col">

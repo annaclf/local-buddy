@@ -5,8 +5,11 @@ h2{
   color: $lightblue;
   font-size: $h3-text-size;
 }
-.meet-our-buddies, .about-us{
+.about-us{
   padding: 50px 0;
+}
+.meet-our-buddies{
+  padding: 50px 0 20px;
 }
 .about-us{
   .icon{

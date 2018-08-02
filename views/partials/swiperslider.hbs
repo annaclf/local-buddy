@@ -1,9 +1,11 @@
 <section class="swiper-container">
   <div class="swiper-wrapper">
     {{#each user}}
+    {{#if this.biography}}
       <div class="swiper-slide">
         {{> profileSCard }}
       </div>
+    {{/if}}
     {{/each}}
   </div>
   <!-- Add Pagination -->

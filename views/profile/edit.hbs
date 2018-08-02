@@ -22,7 +22,7 @@
             <input type="text" name="city" placeholder="City" class="form-control input-lg" value="{{this.city}}">
             <input type="text" name="age"  placeholder="Age" class="form-control input-lg" value="{{this.age}}">          
             <select class="form-control mr-sm-2" id="categories" name="category"  value="{{this.category}}">
-              <option selected>Interests</option>
+              <option selected>Category</option>
               <option value="Music">Music</option>
               <option value="Sports">Sports</option>
               <option value="Party">Party</option>
@@ -33,7 +33,7 @@
               <option value="Other">Other</option>
             </select>
             <input type="text" name="highlights" placeholder="Resume your interests in 60 chars" maxlength="60" class="form-control input-lg"  value="{{this.highlights}}">
-            <textarea class="form-control" placeholder="Add a small bio, max 200 chars" name="biography" rows="5"  value="{{this.biography}}"></textarea>
+            <textarea class="form-control" placeholder="Add a small bio, max 200 chars" name="biography" rows="5"  value="">{{this.biography}}</textarea>
             <select class="form-control mr-sm-2" id="typeBeds" name="typeBeds"  value="{{this.typeBeds}}">
               <option selected>Select your type of bed</option>
               <option value="Couch">Couch</option>

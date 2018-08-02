@@ -3,7 +3,6 @@
   
   <section class="requested">
     <h2 class="book-sections-title">Your requested bookings</h2>
-
     {{#unless pending}}
       <p>You have no requested bookings yet!</p>
     {{/unless}}
@@ -24,7 +23,7 @@
 
     {{#each pending2}}
       <div class="booking-card">
-        {{> reservationCard }}
+        {{> rescardtraveller }}
       </div>
 
       <div>

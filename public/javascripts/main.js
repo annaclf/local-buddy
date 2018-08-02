@@ -53,3 +53,42 @@ window.addEventListener('load', main);
 // };
 
 /* Esto es para hacer la validación de las fechas del calendario */
+
+// window.onload = () => {
+//   var options = {
+//     enableHighAccuracy: true,
+//     timeout: 10000,
+//     maximumAge: 0
+//   };
+
+//   let crd;
+//   function success (pos) {
+//     crd = pos.coords;
+
+//     console.log('Your current position is:');
+//     console.log('Latitude : ' + crd.latitude);
+//     console.log('Longitude: ' + crd.longitude);
+//     console.log('More or less ' + crd.accuracy + ' meters.');
+//   };
+
+//   function error (err) {
+//     console.error('ERROR(' + err.code + '): ' + err.message);
+//   };
+
+//   navigator.geolocation.getCurrentPosition(success, error, options);
+
+//   function checkCrd (data) {
+//     console.log(data);
+//     if (data) {
+//       document.getElementById('userPosition').value = data.latitude;
+//       document.getElementById('userPosition').value = data.longitude;
+
+//       // document.getElementById('signup-button').disabled = false;
+//       clearInterval(intervalId);
+//     }
+//   };
+
+//   let intervalId = setInterval(() => {
+//     checkCrd(crd);
+//   }, 300);
+// };

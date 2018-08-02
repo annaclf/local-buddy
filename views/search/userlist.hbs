@@ -1,45 +1,47 @@
-<header class="top-section">
-  <div class="container">
-    {{#if users}}
-      <h1>You have {{users.length}} buddies in <span class="city">{{city}}</span></h1>
-      <p class="lead">Connect to people</p>
-    {{else}}  
-      <h1>No buddies found in <span class="city">{{city}}</span> yet</h1>
-      <p class="lead">Connect to people</p>
+<div class="search-page">
+  <header class="top-section">
+    <div class="container">
+      {{#if users}}
+        <h1>You have {{users.length}} buddies in <span class="city">{{city}}</span></h1>
+        <p class="lead">Connect to people</p>
+      {{else}}  
+        <h1>No buddies found in <span class="city">{{city}}</span> yet</h1>
+        <p class="lead">Connect to people</p>
 
-    {{/if}}
-  </div>
-</header>                
-          
-<section class="jumbotron search-results" id="jumbo-bottom">
+      {{/if}}
+    </div>
+  </header>                
+            
+  <section class="jumbotron search-results" id="jumbo-bottom">
 
-</section>
-{{#if users}}
-  <section class="buddies-list pt-3 pb-4">
-    <div class="container-fluid">
-      <div class="row">
-        {{#each users}}
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <a href="/buddies/{{this.id}}" class="buddie-card">
-            <div class="card">
-              <div class="card-top">
-                <div class="avatar-img" style="background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,1)), url('{{this.avatarUrl}}') no-repeat center; background-size: cover;">
-                  <div class="align-end">
-                    <h2 class="fullname">{{this.fullname}}</h2>
-                    <p class="city">{{this.city}}</p>
-                    <p class="highlights"><i>{{this.highlights}}</i></p>
+  </section>
+  
+  {{#if users}}
+    <section class="buddies-list pt-3 pb-4">
+      <div class="container-fluid">
+        <div class="row">
+          {{#each users}}
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <a href="/buddies/{{this.id}}" class="buddie-card">
+              <div class="card">
+                <div class="card-top">
+                  <div class="avatar-img" style="background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,1)), url('{{this.avatarUrl}}') no-repeat center; background-size: cover;">
+                    <div class="align-end">
+                      <h2 class="fullname">{{this.fullname}}</h2>
+                      <p class="city">{{this.city}}</p>
+                      <p class="highlights"><i>{{this.highlights}}</i></p>
+                    </div>
                   </div>
                 </div>
+                <div class="card-body">
+                  <p class="bio">{{this.biography}}</p>
+                </div>
               </div>
-              <div class="card-body">
-                <p class="bio">{{this.biography}}</p>
-              </div>
-            </div>
-          </a>
+            </a>
+          </div>
+          {{/each}}
         </div>
-        {{/each}}
       </div>
-    </div>
-  </section>
-{{/if}}
-  
+    </section>
+  {{/if}}
+</div>

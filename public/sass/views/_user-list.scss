@@ -1,3 +1,11 @@
+.search-page{
+  .top-section{
+    padding: 20px 0;
+  }
+  .jumbotron{
+    height: 200px;;
+  }
+}
 .city{
   text-transform: capitalize;
 }
@@ -25,12 +33,12 @@
     font-family: $heading-font;
   }
   .align-end{
-    padding-top:210px;
+    padding-top:205px;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
   .avatar-img{
-    height: 323px;
+    height: 290px;
   }
   .fullname{
     margin-bottom: 0;
@@ -46,6 +54,7 @@
     max-height: 140px;
     padding-bottom: 15px;
     overflow:hidden;
+    padding: 1rem;
   }
   
 }
@@ -59,8 +68,16 @@
   }
 }
 @media (min-width: 615px) {
+  .avatar-img{
+    height: 323px;
+  }
   .fullname{
     font-size: 1.3rem;
+  }
+  .align-end{
+    padding-top:230px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 }
 @media (min-width: 768px) {
@@ -78,6 +95,9 @@
       -webkit-filter: grayscale(0);
       filter: grayscale(0);
     }
+  }
+  .align-end{
+    padding-top:222px;
   }
   
 }

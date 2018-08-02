@@ -41,11 +41,11 @@ h1,h2,h3,h4,h5{
   min-height: 80vh;
 }
 h2{
-  font-size: 2rem;
+  font-size: $h2-text-size;
   font-weight: 700;
 }
-h2{
-  font-size: $h2-text-size;
+h3{
+  font-size: $h3-text-size;
 }
 a{
   color: $middleblue;

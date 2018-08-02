@@ -1,7 +1,6 @@
 .swiper-container{
-  padding-bottom: 0px;
-  .swiper-pagination{
-  }
+  padding-bottom: 20px;
+  
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
@@ -18,7 +17,6 @@
 }
 .swiper-slide{
   width: 80%;
-  padding-right: 20px; 
   a{
     color: inherit;
     &:hover{
@@ -45,6 +43,10 @@
     overflow: hidden;
   }
   
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 7px;
 }
 
 @media (min-width: 768px) {

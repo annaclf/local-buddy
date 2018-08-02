@@ -18,7 +18,8 @@ const userSchema = new Schema({
   typeBeds: { type: String, enum: ['Single Bed', 'Double Bed', 'Couch'] },
   transport: { type: String },
   avatarUrl: { type: String, default: '/images/default-avatar.jpg' },
-  reservations: [{type: ObjectId, ref: 'Reservation'}]
+  reservations: [{type: ObjectId, ref: 'Reservation'}],
+  position: Array
 });
 
 userSchema.plugin(uniqueValidator, { message: 'Error, expected {PATH} to be unique.' });

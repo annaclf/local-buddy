@@ -16,11 +16,11 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', authMiddle.validUserInputSignUp, (req, res, next) => {
-  const { username, password, email } = req.body;
+  const { username, password, email, userPosition } = req.body;
   const salt = bcrypt.genSaltSync(saltRounds);
   const hashedPassword = bcrypt.hashSync(password, salt);
-  const newUser = new User({ username, password: hashedPassword, email });
-
+  const newUser = new User({ username, password: hashedPassword, email, userPosition });
+  
   newUser.save(function (err) {
     if (err) {
       req.flash('info', err.message);

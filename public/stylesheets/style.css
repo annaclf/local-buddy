@@ -392,6 +392,9 @@ input.date-input {
   height: 40px;
   font-size: .8rem; }
 
+.search-page a {
+  display: block; }
+
 .search-page .top-section {
   padding: 20px 0; }
 

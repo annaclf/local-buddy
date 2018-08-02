@@ -1,0 +1,21 @@
+<a href="/buddies/{{this.idTraveller._id}}">
+<div class="container reservation-card">
+  <div class="row">
+    {{!-- <div class="col-4"> --}}
+      {{!-- <img src="{{this.idBuddy.avatarUrl}}"  alt="" class="rounded-circle"> --}}
+      <div style="height: 120px; width:120px; background: url('{{this.idTraveller.avatarUrl}}') no-repeat center; background-size: cover;" class=" col-4 user-pic container"></div>
+    {{!-- </div> --}}
+    <div class="col-8 my-auto text-book-card">
+      <h2>{{this.idTraveller.fullname}}</h2>
+      <p>City: {{this.idTraveller.city}}</p>
+      <div class="row">
+        <p class="col">Start Date: <br><i>{{this.startDate}}</i></p>
+        <p class="col">End Date: <br><i>{{this.endDate}}</i></p>
+      </div>
+    </div>
+    
+  </div>
+
+
+</div>
+</a>

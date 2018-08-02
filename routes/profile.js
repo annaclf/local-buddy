@@ -99,7 +99,7 @@ router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
         return reservation.status === 'Pending';
       });
       const idBuddy = req.session.currentUser._id;
-      Reservation.find({ idBuddy: idBuddy }).populate('idBuddy')
+      Reservation.find({ idBuddy: idBuddy }).populate('idTraveller')
         .then(reservations2 => {
           const pending2 = reservations2.filter(reservation => {
             return reservation.status === 'Pending';

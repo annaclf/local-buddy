@@ -1,7 +1,19 @@
 .user-pic{
   height: 375px;
-  display: flex;
+  color: white;
+
+  .fullname{
+    font-size: 26px;
+    margin: 0%;
+  }  
+  p{
+    margin-bottom: 2%;
+  }
 }
+.icon-text{
+  margin-top: 10%;
+}
+
 
 #username{
   text-align: center;
@@ -9,12 +21,8 @@
   font-size: $h2-text-size;
 }
 
-.fullname{
-  font-size: $buddie-profile-name-size;
-  color: white;
-  align-self: flex-end;
-  margin-bottom: 5%;
-}  
+
+
 
 
 @media (min-width: 556px) {

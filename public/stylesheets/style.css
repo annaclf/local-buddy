@@ -333,18 +333,20 @@ a {
 
 .user-pic {
   height: 375px;
-  display: flex; }
+  color: white; }
+  .user-pic .fullname {
+    font-size: 26px;
+    margin: 0%; }
+  .user-pic p {
+    margin-bottom: 2%; }
+
+.icon-text {
+  margin-top: 10%; }
 
 #username {
   text-align: center;
   height: 50px;
   font-size: 1.4rem; }
-
-.fullname {
-  font-size: 2rem;
-  color: white;
-  align-self: flex-end;
-  margin-bottom: 5%; }
 
 @media (min-width: 556px) {
   .mt-3 {

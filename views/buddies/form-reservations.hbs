@@ -3,17 +3,28 @@
     <div class="row align-items-center">
       
       <div class="col-md-6 col-lg-5 mx-auto">
-        <h2>Your reservation</h2>
-        <div class="book-info">
-          <p>You are about to book {{user.fullname}} from <span class="city">{{user.city}}</span></p>
-          <p>Please check booking dates and confirm:</p>
+        <h2 class="mb-5">Confirm your reservation with:</h2>
+       
+        <div class="container reservation-card">
+          <div class="row">
+            <div style="height: 120px; width:120px; background: url('{{user.avatarUrl}}') no-repeat center; background-size: cover;" class=" col-4 user-pic container"></div>
+              <div class="col-8 my-auto text-book-card">
+                <h2>{{user.fullname}}</h2>
+                <p class="city">City: {{user.city}}</p>
+                <div class="row">
+                  <p class="col">Start Date: <br><i>{{this.startDate}}</i></p>
+                  <p class="col">End Date: <br><i>{{this.endDate}}</i></p>
+                </div>
+              </div>
+          </div>
         </div>
+        
         <section class="login-form text-center">
           <form method="post" action='/buddies/{{user.id}}/book' role="login" class="user-form">
             
 
-            <input type="text" name="startDate" class="form-control input-lg" value="{{this.startDate}}">
-            <input type="text" name="endDate" class="form-control input-lg" value="{{this.endDate}}">
+            <input type="hidden" name="startDate" class="form-control input-lg" value="{{this.startDate}}">
+            <input type="hidden" name="endDate" class="form-control input-lg" value="{{this.endDate}}">
             <input type="hidden" name="status" class="form-control input-lg" value="Pending">
             
             <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Confirm</button>

@@ -71,27 +71,52 @@ router.post('/edit', (req, res, next) => {
     });
 });
 
+// router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
+//   const idTraveller = req.session.currentUser._id;
+//   Reservation.find({ idTraveller: idTraveller }).populate('idBuddy')
+//     .then(reservations => {
+//       const accepted = reservations.filter(reservation => {
+//         return reservation.status === 'Accepted';
+//       });
+//       const pending = reservations.filter(reservation => {
+//         return reservation.status === 'Pending';
+//       });
+//       res.render('profile/reservations', {accepted, pending});
+//     })
+//     .catch(error => {
+//       next(error);
+//     });
+// });
+
 router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
-  const idBuddy = req.session.currentUser._id;
-  Reservation.find({ idBuddy: idBuddy }).populate('idTraveller')
-    .then(reservations => {
-      const accepted = reservations.filter(reservation => {
+  const idTraveller = req.session.currentUser._id;
+  Reservation.find({ idTraveller: idTraveller }).populate('idBuddy')
+    .then(reservations1 => {
+      const accepted = reservations1.filter(reservation => {
         return reservation.status === 'Accepted';
       });
-      const pending = reservations.filter(reservation => {
+      const pending = reservations1.filter(reservation => {
         return reservation.status === 'Pending';
       });
-      res.render('profile/reservations', {accepted, pending});
-    })
-    .catch(error => {
-      next(error);
+      const idBuddy = req.session.currentUser._id;
+      Reservation.find({ idBuddy: idBuddy }).populate('idBuddy')
+        .then(reservations2 => {
+          const pending2 = reservations2.filter(reservation => {
+            return reservation.status === 'Pending';
+          });
+          res.render('profile/reservations', {accepted, pending, pending2});
+        })
+        .catch(error => {
+          next(error);
+        })
+        .catch(error => {
+          next(error);
+        });
     });
 });
 
 router.post('/reservations', authMiddle.loggedUser, (req, res, next) => {
   const { status, id } = req.body;
-
-  const test = Reservation.find({status: 'Pending'});
 
   Reservation.findByIdAndUpdate(id, {status})
     .then(() => {

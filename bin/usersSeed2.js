@@ -8,8 +8,8 @@ const saltRounds = 10;
 const users = [
   {
     fullname: 'Rocío Lopez Quesada',
-    username: 'Thimandind',
-    password: 'Lo3eiChoo',
+    username: 'anna',
+    password: 'anna',
     email: 'BekmarzaMasaev@armyspy.com',
     city: 'Madrid',
     age: 29,
@@ -23,8 +23,8 @@ const users = [
   },
   {
     fullname: 'Marta Campos Jijon',
-    username: 'Rauncam',
-    password: 'Lhwh5sfhfsh3',
+    username: 'hugo',
+    password: 'hugo',
     email: 'LukasFreud@rhyta.com',
     city: 'Madrid',
     age: 21,

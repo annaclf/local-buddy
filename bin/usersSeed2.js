@@ -16,7 +16,7 @@ const users = [
     category: 'Music',
     highlights: 'Food fan. Gamer. Alcoholaholic.',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 1,
+    bedsNumber: 1,
     typeBeds: 'Single Bed',
     transport: 'Seat Leon s.6',
     avatarUrl: 'https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5b703c6052b95e9f418a9025296bdc0c&auto=format&fit=crop&w=500&q=60'
@@ -31,7 +31,7 @@ const users = [
     category: 'Other',
     highlights: 'Devoted twitter nerd. Gamer. Troublemaker. Music fanatic.',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 1,
+    bedsNumber: 1,
     typeBeds: 'Double Bed',
     transport: 'Seat Ibiza',
     avatarUrl: 'https://images.unsplash.com/photo-1504276048855-f3d60e69632f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=05f84c6cccdbace3c4b7d04fc85df9a6&auto=format&fit=crop&w=500&q=60'
@@ -46,7 +46,7 @@ const users = [
     category: 'Sports',
     highlights: 'Future teen idol. Pop culture specialist. Alcohol fanatic.',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 1,
+    bedsNumber: 1,
     typeBeds: 'Double Bed',
     transport: 'Seat Ibiza',
     avatarUrl: 'https://images.unsplash.com/photo-1503104834685-7205e8607eb9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=defcf01cd785ef042aa159c5b1681e14&auto=format&fit=crop&w=500&q=60'
@@ -61,7 +61,7 @@ const users = [
     category: 'Culture',
     highlights: 'Certified alcohol guru. Avid introvert. Pop culture lover.',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 1,
+    bedsNumber: 1,
     typeBeds: 'Couch',
     transport: 'Peugeot 307',
     avatarUrl: 'https://images.unsplash.com/photo-1510520434124-5bc7e642b61d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6b256ab85181b440dbd72eb4b1c297c&auto=format&fit=crop&w=500&q=60'
@@ -76,7 +76,7 @@ const users = [
     category: 'Food',
     highlights: 'Internet lover. Extreme introvert. Wannabe beer geek.',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 2,
+    bedsNumber: 2,
     typeBeds: 'Couch',
     transport: 'Peugeot 206',
     avatarUrl: 'https://images.unsplash.com/photo-1513207565459-d7f36bfa1222?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=35fe1b3b9c76a4d39394697202e872e0&auto=format&fit=crop&w=500&q=60'
@@ -91,7 +91,7 @@ const users = [
     category: 'Food',
     highlights: 'Extrovertido. Fiestero. Serio',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 1,
+    bedsNumber: 1,
     typeBeds: 'Double Bed',
     transport: 'Seat Ibiza',
     avatarUrl: 'https://images.unsplash.com/photo-1433954558247-ba7696b9af19?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5224f7bddffe1086b76d2e480ab2444&auto=format&fit=crop&w=500&q=60'
@@ -106,7 +106,7 @@ const users = [
     category: 'Food',
     highlights: 'Internet lover. Extreme introvert. Wannabe beer geek.',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 1,
+    bedsNumber: 1,
     typeBeds: 'Single Bed',
     transport: 'Seat Ibiza',
     avatarUrl: '/images/default-avatar.jpg'
@@ -121,7 +121,7 @@ const users = [
     category: 'Sports',
     highlights: 'Coffee lover. Bacon enthusiast. Devoted food practitioner.',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 3,
+    bedsNumber: 3,
     typeBeds: 'Single Bed',
     transport: 'Seat Leon',
     avatarUrl: '/images/default-avatar.jpg'
@@ -136,7 +136,7 @@ const users = [
     category: 'Culture',
     highlights: 'Films lover. Extrovert. Love watching films',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 1,
+    bedsNumber: 1,
     typeBeds: 'Single Bed',
     transport: 'Renault Laguna',
     avatarUrl: '/images/default-avatar.jpg'
@@ -151,7 +151,7 @@ const users = [
     category: 'Food',
     highlights: 'Tuna. Bacon. Cheese',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 1,
+    bedsNumber: 1,
     typeBeds: 'Couch',
     transport: 'Renault Laguna',
     avatarUrl: '/images/default-avatar.jpg'
@@ -166,7 +166,7 @@ const users = [
     category: 'Games',
     highlights: 'Age of empires II. Risk. Contact Strike',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 2,
+    bedsNumber: 2,
     typeBeds: 'Couch',
     transport: 'Renault Laguna',
     avatarUrl: '/images/default-avatar.jpg'
@@ -181,7 +181,7 @@ const users = [
     category: 'Culture',
     highlights: 'Architecture lover. Citysightseeing. ',
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 2,
+    bedsNumber: 2,
     typeBeds: 'Couch',
     transport: 'Renault Almera',
     avatarUrl: '/images/default-avatar.jpg'
@@ -196,7 +196,7 @@ const users = [
     category: 'Party',
     highlights: `Let's party dude!!!! `,
     biography: 'Born in 1989 in Bulgaria and later immigrating to Canada, Nina Dobrev is a television and film actress. She got her start in the teen drama Degrassi: The Next Generation and left the show for an even bigger role as Elena Gilbert in the supernatural drama series The Vampire Diaries on The CW. On the big screen, Dobrev has appeared in The Perks of Being a Wallflower (2012), xXx: Return of Xander Cage (2017) and Flatliners (2017), among others. Dobrev famously dated her Vampire Diaries co-star Ian Somerhalder from 2010 to 2013.',
-    bedsNuber: 1,
+    bedsNumber: 1,
     typeBeds: 'Single Bed',
     transport: 'Seat Ibiza',
     avatarUrl: '/images/default-avatar.jpg'

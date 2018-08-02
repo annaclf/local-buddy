@@ -1,6 +1,6 @@
 'use strict';
 
-function main () {
+function main () {   
   const loader = document.getElementById('load-wrapper');
   if (loader) {
     loader.classList.add('loaded');
@@ -53,3 +53,27 @@ window.addEventListener('load', main);
 // };
 
 /* Esto es para hacer la validación de las fechas del calendario */
+
+
+window.onload = () => {
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  };
+  
+  function success(pos) {
+    var crd = pos.coords;
+  
+    console.log('Your current position is:');
+    console.log('Latitude : ' + crd.latitude);
+    console.log('Longitude: ' + crd.longitude);
+    console.log('More or less ' + crd.accuracy + ' meters.');
+  };
+  
+  function error(err) {
+    console.error('ERROR(' + err.code + '): ' + err.message);
+  };
+  
+  navigator.geolocation.getCurrentPosition(success, error, options);
+}

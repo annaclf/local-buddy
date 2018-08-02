@@ -7,13 +7,10 @@ const router = express.Router();
 
 router.get('/', (req, res, next) => {
   const { city } = req.query; 
-  let query = {};
-  if (req.session.currentUser) {
-    query = { city, _id: { $nin: [ req.session.currentUser._id ] } };
-  }
-  User.find(query)
+  User.find({ city })
     .then(users => {
-      res.render('search/userlist', { users, city });
+      const [user] = users;
+      res.render('search/userlist', {users, city, user});
     })
     .catch(error => {
       next(error);

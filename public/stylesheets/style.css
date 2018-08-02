@@ -47,6 +47,7 @@ a {
   text-decoration: none; }
 
 .site-footer {
+  margin-top: 50px;
   padding: 30px 0;
   background: black; }
   .site-footer ul {

@@ -58,7 +58,7 @@ router.post('/:id/book', authMiddle.loggedUser, (req, res, next) => {
 
   Reservation.create(data)
     .then(() => {
-      res.redirect('/profile');
+      res.redirect('/profile/reservations');
     })
     .catch(error => {
       next(error);

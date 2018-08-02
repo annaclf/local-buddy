@@ -5,7 +5,7 @@
         <tr>
           <td class="align-bottom header-name">
             <h2 class="fullname">{{this.fullname}}</h2>
-            <p>{{this.city}}</p>
+            <p class="city">{{this.city}}</p>
             <p><i>{{this.highlights}}</i></p>
           </td>
         </tr>
@@ -17,28 +17,28 @@
 <section class="container mt-3">
 
     <div class="row info-icons text-center">
-        {{#unless this.category}}
+        {{#if this.category}}
           <div class="col">
             <i class="fas fa-map-marked-alt fa-2x"></i>            
             <p class="icon-text">{{this.category}}</p>
           </div>
-        {{/unless}}
+        {{/if}}
 
 
-        {{#unless this.typeBeds}}
+        {{#if this.typeBeds}}
           <div class="col">
             <i class="fas fa-bed fa-2x"></i>
             <p class="icon-text">{{this.typeBeds}}</p>
 
             </div>
-        {{/unless}}
+        {{/if}}
 
-        {{#unless this.transport}}
+        {{#if this.transport}}
         <div class="col">
           <i class="fas fa-car  fa-2x"></i>
           <p class="icon-text">{{this.transport}}</p>
           </div>
-        {{/unless}}
+        {{/if}}
       </div>
 
 
@@ -46,7 +46,7 @@
 </section>
 
 <div class="container">
-    <div class="row mt-3">
+    <div class="row mt-1">
       <div class="col-md-7">
         <h2 class="mt-2">About me</h2>
         <p>{{this.biography}}</p>

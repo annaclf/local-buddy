@@ -149,7 +149,8 @@ a {
 .swiper-slide {
   width: 80%; }
   .swiper-slide a {
-    color: inherit; }
+    color: inherit;
+    display: block; }
     .swiper-slide a:hover {
       text-decoration: none; }
   .swiper-slide .card {

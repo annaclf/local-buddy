@@ -16,28 +16,28 @@
 <section class="container mt-3">
 
     <div class="row info-icons text-center">
-        {{#unless this.category}}
+        {{#if this.category}}
           <div class="col">
             <i class="fas fa-map-marked-alt fa-2x"></i>            
             <p class="icon-text">{{this.category}}</p>
           </div>
-        {{/unless}}
+        {{/if}}
 
 
-        {{#unless this.typeBeds}}
+        {{#if this.typeBeds}}
           <div class="col">
             <i class="fas fa-bed fa-2x"></i>
             <p class="icon-text">{{this.typeBeds}}</p>
 
             </div>
-        {{/unless}}
+        {{/if}}
 
-        {{#unless this.transport}}
+        {{#if this.transport}}
         <div class="col">
           <i class="fas fa-car  fa-2x"></i>
           <p class="icon-text">{{this.transport}}</p>
           </div>
-        {{/unless}}
+        {{/if}}
       </div>
 
 
@@ -51,6 +51,8 @@
         {{#if this.biography}}
         <h2 class="">About me</h2>
         <p>{{this.biography}}</p>
+                 <p><a href="profile/edit">Edit</a></p>
+
         {{else}}
          <p><a href="profile/edit">Please edit your profile to show more info about yourself</a></p>
         {{/if}}

@@ -72,8 +72,8 @@ router.post('/edit', (req, res, next) => {
 });
 
 router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
-  const idTraveller = req.session.currentUser._id;
-  Reservation.find({ idTraveller: idTraveller }).populate('idBuddy')
+  const idBuddy = req.session.currentUser._id;
+  Reservation.find({ idBuddy: idBuddy }).populate('idTraveller')
     .then(reservations => {
       const accepted = reservations.filter(reservation => {
         return reservation.status === 'Accepted';

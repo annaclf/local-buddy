@@ -1,10 +1,21 @@
 <div class="container reservations">
   <h1 class="title-book mt-5">Your bookings</h1>
   
+  <section>
+    <h1>Test</h1>
+        {{#each pending2}}
+      <div class="booking-card">
+        {{> reservationCard }}
+      </div>
+      {{/each}}
+
+      <div>
+  </section>
+
   <section class="pending">
     <h2 class="book-sections-title">Requests to book you</h2>
     {{#unless pending}}
-      <p>You have no pending reservations</p>
+      <p>You have no pending Requests</p>
     {{/unless}}
 
     {{#each pending}}

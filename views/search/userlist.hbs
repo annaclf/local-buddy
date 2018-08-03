@@ -1,4 +1,4 @@
-<div id='map' style='width: auto; height: 300px;'></div>
+<div class="user-list">
 
 
 <div class="search-page">
@@ -14,10 +14,8 @@
       {{/if}}
     </div>
   </header>                
-            
-  <section class="jumbotron search-results" id="jumbo-bottom">
 
-  </section>
+<div id='map' style='width: auto; height: 250px;'></div>
   
   {{#if users}}
     <section class="buddies-list pt-3 pb-4">
@@ -48,6 +46,10 @@
     </section>
   {{/if}}
 </div>
+            
+  <section class="jumbotron search-results" id="jumbo-bottom">
+  </section>
+
 
 <input type="hidden" id='city' value="{{city}}">
 <input type="hidden" id='center' value="{{user.location.coordinates}}">
@@ -91,3 +93,5 @@ let center = document.getElementById('center').value.split(',');
 
 
 </script>
+
+</div>

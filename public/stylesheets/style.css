@@ -451,6 +451,9 @@ input.date-input {
     overflow: hidden;
     padding: 1rem; }
 
+.user-list + .site-footer {
+  margin-top: 0; }
+
 .search-results {
   position: relative; }
   .search-results .btn {

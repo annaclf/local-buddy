@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "seed": "node ./bin/usersSeed2.js",
+    "seed": "node ./bin/userseedDeploy.js",
     "watch:scss": "node-sass ./public/sass/main.scss ./public/stylesheets/style.css -w",
     "watch": "nodemon -e js,json,hbs ./bin/www",
     "watch-sass": "nodemon -e js,json,hbs ./bin/www | npm run watch:scss"

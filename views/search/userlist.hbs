@@ -64,7 +64,7 @@ let center = document.getElementById('center').value.split(',');
   let map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
-    zoom: 10,
+    zoom: 12,
     center: center
   });
 
@@ -79,7 +79,7 @@ let center = document.getElementById('center').value.split(',');
   let domain = document.domain;
   let appUrl;
   if(domain === 'localhost'){
-    appUrl = `${domain}:3000`;
+    appUrl = `http://${domain}:3000`;
   } else {
     appUrl = `https://${domain}`;
   }

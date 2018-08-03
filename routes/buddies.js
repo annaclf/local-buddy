@@ -4,14 +4,13 @@ const Reservation = require('../models/reservation');
 const authMiddle = require('../middlewares/authMiddle');
 const reservationMiddleware = require('../middlewares/reservationMiddleware');
 const privateRoute = require('../middlewares/privateMiddleware');
-
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
   res.redirect('/');
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', privateRoute.validObjectId, (req, res, next) => {
   const { id } = req.params;
   User.findById(id)
     .then((user) => {
@@ -22,7 +21,7 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
-router.post('/:id/favourite', authMiddle.loggedUser, (req, res, next) => {
+router.post('/:id/favourite', privateRoute.validObjectId, authMiddle.loggedUser, (req, res, next) => {
   User.find()
     .then(() => {
       console.log('add buddy to favourites');
@@ -32,8 +31,7 @@ router.post('/:id/favourite', authMiddle.loggedUser, (req, res, next) => {
     });
 });
 
-router.get('/:id/book', privateRoute.requireUser, reservationMiddleware.compareDates, (req, res, next) => {
-  
+router.get('/:id/book', privateRoute.validObjectId, privateRoute.requireUser, reservationMiddleware.compareDates, (req, res, next) => {
   const { id } = req.params;
   const { startDate, endDate } = req.query;
   User.findById(id)
@@ -46,7 +44,7 @@ router.get('/:id/book', privateRoute.requireUser, reservationMiddleware.compareD
     });
 });
 
-router.post('/:id/book', authMiddle.loggedUser, (req, res, next) => {
+router.post('/:id/book', privateRoute.validObjectId, authMiddle.loggedUser, (req, res, next) => {
   const idBuddy = req.params.id;
   const idTraveller = req.session.currentUser._id;
   const { startDate, endDate, status } = req.body;

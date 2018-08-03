@@ -29,7 +29,7 @@ router.get('/edit', privateRoute.requireUser, (req, res, next) => {
     });
 });
 
-router.post('/edit', (req, res, next) => {
+router.post('/edit', privateRoute.requireUser, (req, res, next) => {
   // @TODO - protect the routes
   const {
     username,

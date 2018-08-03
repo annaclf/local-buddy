@@ -16,6 +16,8 @@ const buddiesRouter = require('./routes/buddies');
 const authRouter = require('./routes/auth');
 const searchRouter = require('./routes/search');
 const profileRouter = require('./routes/profile');
+const apiRouter = require('./routes/api');
+
 
 const app = express();
 
@@ -59,7 +61,7 @@ app.use('/', authRouter);
 app.use('/buddies', buddiesRouter);
 app.use('/search', searchRouter);
 app.use('/profile', profileRouter);
-
+app.use('/api', apiRouter);
 // error handler
 
 // catch 404 and forward to error handler

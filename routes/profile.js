@@ -90,7 +90,7 @@ router.post('/edit', privateRoute.requireUser, (req, res, next) => {
 
 router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
   const idTraveller = req.session.currentUser._id;
-  Reservation.find({ idTraveller: idTraveller }).populate('idBuddy')
+  Reservation.find({ idTraveller: idTraveller }).populate('idBuddy').sort({startDate: 1})
     .then(reservations1 => {
       const accepted = reservations1.filter(reservation => {
         return reservation.status === 'Accepted';
@@ -99,7 +99,7 @@ router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
         return reservation.status === 'Pending';
       });
       const idBuddy = req.session.currentUser._id;
-      Reservation.find({ idBuddy: idBuddy }).populate('idTraveller')
+      Reservation.find({ idBuddy: idBuddy }).populate('idTraveller').sort({startDate: 1})
         .then(reservations2 => {
           const pending2 = reservations2.filter(reservation => {
             return reservation.status === 'Pending';

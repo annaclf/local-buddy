@@ -50,6 +50,18 @@ h3{
 a{
   color: $middleblue;
   text-decoration: none;
+  &:hover{
+    text-decoration: none;
+    opacity: .7;
+  }
+  &:focus{
+    text-decoration: none;
+    color: inherit;
+  }
+  &:active{
+    text-decoration: none;
+    color: inherit;
+  }
 }
 .site-footer{
   margin-top: 50px;

@@ -34,7 +34,7 @@ router.post('/signup', authMiddle.validUserInputSignUp, (req, res, next) => {
       res.redirect('/signup');
     } else {
       req.session.currentUser = newUser;
-      res.redirect('/');
+      res.redirect('/profile');
     }
   });
 });
@@ -53,8 +53,9 @@ router.post('/login', authMiddle.validUserInputLogin, (req, res, next) => {
 
   User.findOne({ username })
     .then(user => {
+      console.log(password);
       if (!user) {
-        req.flash('info', 'no user');
+        req.flash('info', 'Username does not exist');
         return res.redirect('/login');
       } else {
         if (bcrypt.compareSync(password, user.password)) {

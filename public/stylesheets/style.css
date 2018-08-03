@@ -45,6 +45,15 @@ h3 {
 a {
   color: #006568;
   text-decoration: none; }
+  a:hover {
+    text-decoration: none;
+    opacity: .7; }
+  a:focus {
+    text-decoration: none;
+    color: inherit; }
+  a:active {
+    text-decoration: none;
+    color: inherit; }
 
 .site-footer {
   margin-top: 50px;

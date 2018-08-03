@@ -53,33 +53,42 @@
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 <script>
 
+  const generateMarker = (data) => {
+    console.log(data.location.coordinates)
+    var marker = new mapboxgl.Marker()
+    .setLngLat(data.location.coordinates)
+    .addTo(map);
+  } 
+
   let city = document.getElementById('city').value;
+  
   axios({
       method: 'get',
       url: `http://localhost:3000/api/search?city=${city}`
     })
     .then(data => {
-      console.log(data);
-        data.data.forEach((location) => {
-        generateMarker(location);
+      console.log(data.data.users);
+        data.data.users.forEach((user) => {
+        generateMarker(user);
       })
-     // data.data.forEach((restaurante) => {
-       // generateMarker(restaurante);
-      //})
     })
     .catch(error => {
       console.error(error);
     })
 
+const coordinatesArray = document.getElementById('center').value.split(',');
+ mapboxgl.accessToken = 'pk.eyJ1IjoiaGNvcnRhIiwiYSI6ImNqa2N5ZGdsbjBicHUzcG8wNXEycG4xa3EifQ.L806Ib3WtffrlfOnIf-dcA';
+  let map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v9',
+    zoom: 12,
+    //center: coordinatesArray
+  });
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiaGNvcnRhIiwiYSI6ImNqa2N5ZGdsbjBicHUzcG8wNXEycG4xa3EifQ.L806Ib3WtffrlfOnIf-dcA';
-let map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/light-v9',
-  zoom: 10,
-  center: coordinatesArray
-});
+  var marker = new mapboxgl.Marker()
+  .setLngLat(coordinatesArray)
+  .addTo(map);
+
 </script>

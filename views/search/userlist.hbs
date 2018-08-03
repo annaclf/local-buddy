@@ -76,13 +76,18 @@ let center = document.getElementById('center').value.split(',');
   } 
 
   let city = document.getElementById('city').value;
-  
+  let domain = document.domain;
+  let appUrl;
+  if(domain === 'localhost'){
+    appUrl = `${domain}:3000`;
+  } else {
+    appUrl = `https://${domain}`;
+  }
   axios({
       method: 'get',
-      url: `http://localhost:3000/api/search?city=${city}`
+      url: `${appUrl}/api/search?city=${city}`
     })
     .then(data => {
-      console.log(data.data.users);
         data.data.users.forEach((user) => {
         generateMarker(user);
       })

@@ -384,10 +384,9 @@ a {
     height: 70px; } }
 
 .book-section {
-  padding: 5% 5% 0 5%;
-  background-color: #e3e3e3;
-  border: 1px grey solid;
-  margin: 10% 0; }
+  padding: 5% 5% 5% 5%;
+  background-color: #f1f1f1;
+  margin: 10% 0 0 0; }
 
 input.date-input {
   height: 40px;

@@ -50,10 +50,21 @@
 </div>
 
 <input type="hidden" id='city' value="{{city}}">
+<input type="hidden" id='center' value="{{user.location.coordinates}}">
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
+
+let center = document.getElementById('center').value.split(',');
+
+ mapboxgl.accessToken = 'pk.eyJ1IjoiaGNvcnRhIiwiYSI6ImNqa2N5ZGdsbjBicHUzcG8wNXEycG4xa3EifQ.L806Ib3WtffrlfOnIf-dcA';
+  let map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v9',
+    zoom: 10,
+    center: center
+  });
 
   const generateMarker = (data) => {
     console.log(data.location.coordinates)
@@ -78,17 +89,5 @@
       console.error(error);
     })
 
-const coordinatesArray = document.getElementById('center').value.split(',');
- mapboxgl.accessToken = 'pk.eyJ1IjoiaGNvcnRhIiwiYSI6ImNqa2N5ZGdsbjBicHUzcG8wNXEycG4xa3EifQ.L806Ib3WtffrlfOnIf-dcA';
-  let map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/light-v9',
-    zoom: 12,
-    //center: coordinatesArray
-  });
-
-  var marker = new mapboxgl.Marker()
-  .setLngLat(coordinatesArray)
-  .addTo(map);
 
 </script>

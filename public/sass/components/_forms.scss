@@ -2,8 +2,10 @@
   border-radius: 0;
 }
 .form-top{
-  background: $border-color;
-  padding: $form-padding;
+  background: #000;
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
 }
 .user-form{
   padding: $form-padding;
@@ -46,11 +48,11 @@
     font-size: .8rem;
     font-weight: 200;
     position: relative;
-    height: 41px;
   }
+  
   &:before{
     position: absolute;
-    right: 0px;
+    right: -5px;
     width: 50px;
     height: 100%;
     z-index: 2;
@@ -58,7 +60,7 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 600;
     content: "\f002";
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: $border-color;
   }
 }

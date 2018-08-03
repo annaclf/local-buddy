@@ -36,7 +36,7 @@
     font-family: $heading-font;
   }
   .align-end{
-    padding-top:205px;
+    padding-top:183px;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
@@ -71,36 +71,26 @@
   }
 }
 @media (min-width: 615px) {
-  .avatar-img{
-    height: 323px;
+  .buddie-card{
+    .avatar-img{
+      height: 323px;
+    }
+    .fullname{
+      font-size: 1.3rem;
+    }
+    .align-end{
+      padding-top:230px;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
   }
-  .fullname{
-    font-size: 1.3rem;
-  }
-  .align-end{
-    padding-top:230px;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
+
 }
 @media (min-width: 768px) {
   .buddie-card{
-    // &:nth-of-type(2n){
-    //   border-left: 1px solid $border-color;
-    // }
-    figure img {
-      -webkit-filter: grayscale(100%);
-      filter: grayscale(100%);
-      -webkit-transition: .3s ease-in-out;
-      transition: .3s ease-in-out;
+    .align-end{
+      padding-top:222px;
     }
-    figure:hover img {
-      -webkit-filter: grayscale(0);
-      filter: grayscale(0);
-    }
-  }
-  .align-end{
-    padding-top:222px;
   }
   
 }

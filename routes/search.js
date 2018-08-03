@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
   User.find({ city })
     .then(users => {
       const [user] = users;
-      res.render('search/userlist', { users, city , user});
+      res.render('search/userlist', {users, city, user});
     })
     .catch(error => {
       next(error);

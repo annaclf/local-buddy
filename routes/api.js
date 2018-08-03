@@ -5,18 +5,17 @@ const router = express.Router();
 
 /* GET home page. */
 
-router.get('/', (req, res, next) => {
-  
+router.get('/search', (req, res, next) => {
   const { city } = req.query;
   User.find({ city })
     .then(users => {
-      const [user] = users;
-      res.render('search/userlist', {users, city, user});
+      res.status(200);
+      res.json({users});
     })
     .catch(error => {
-      next(error);
-    })
+      res.status(500);
+      res.json({ error });
+    });
 });
-
 
 module.exports = router;

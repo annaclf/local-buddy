@@ -50,9 +50,6 @@
 
   <section class="accepted">
     <h2 class="book-sections-title">These buddies are going to visit you!!</h2>
-    {{!-- {{#unless accepted}}
-      <p>You have not any accepted booking yet!</p>
-    {{/unless}} --}}
     {{#each incomingAccepted}}
        <div class="booking-card">
         <a href="/buddies/{{this.idTraveller._id}}">

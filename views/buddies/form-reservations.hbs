@@ -1,10 +1,10 @@
 <section class="reservation-section pt-4">
   <div class="container">
     <div class="row align-items-center">
-      
+
       <div class="col-md-6 col-lg-5 mx-auto">
-        <h2 class="mb-5">Confirm your reservation with:</h2>
-       
+        <h2 class="mb-5">Confirm your stays with:</h2>
+
         <div class="container reservation-card">
           <div class="row">
             <div style="height: 120px; width:120px; background: url('{{user.avatarUrl}}') no-repeat center; background-size: cover;" class=" col-4 user-pic container"></div>
@@ -18,28 +18,28 @@
               </div>
           </div>
         </div>
-        
+
         <section class="login-form text-center">
           <form method="post" action='/buddies/{{user.id}}/book' role="login" class="user-form">
-            
+
 
             <input type="hidden" name="startDate" class="form-control input-lg" value="{{this.startDate}}">
             <input type="hidden" name="endDate" class="form-control input-lg" value="{{this.endDate}}">
             <input type="hidden" name="status" class="form-control input-lg" value="Pending">
-            
+
             <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Confirm</button>
 
           </form>
-        </section>  
+        </section>
 
         <aside class="errormessage text-center mt-4">
           {{#if messages.length}}
               {{#each messages}}<p>{{this}}</p>{{/each}}
           {{/if}}
 
-        </aside> 
+        </aside>
 
       </div>
-    </div>    
+    </div>
   </div>
 </section>

@@ -13,9 +13,7 @@ router.get('/', (req, res, next) => {
     .then(user => {
       res.render('index', { user });
     })
-    .catch(error => {
-      next(error);
-    });
+    .catch(next);
 });
 
 module.exports = router;

@@ -19,6 +19,7 @@ router.post('/signup', authMiddle.validUserInputSignUp, (req, res, next) => {
   const { username, password, email, userPositionLat, userPositionLon } = req.body;
   const salt = bcrypt.genSaltSync(saltRounds);
   const hashedPassword = bcrypt.hashSync(password, salt);
+
   const newUser = new User({
     username,
     password: hashedPassword,
@@ -28,15 +29,16 @@ router.post('/signup', authMiddle.validUserInputSignUp, (req, res, next) => {
       coordinates: [userPositionLon, userPositionLat]
     }
   });
-  newUser.save(function (err) {
-    if (err) {
-      req.flash('info', err.message);
-      res.redirect('/signup');
-    } else {
+
+  newUser.save()
+    .then(newUser => {
       req.session.currentUser = newUser;
       res.redirect('/profile');
-    }
-  });
+    })
+    .catch(err => {
+      req.flash('info', err.message);
+      res.redirect('/signup');
+    });
 });
 
 // LOGIN: --------------------------------------------------------------
@@ -59,8 +61,6 @@ router.post('/login', authMiddle.validUserInputLogin, (req, res, next) => {
         return res.redirect('/login');
       }
       if (bcrypt.compareSync(password, user.password)) {
-        console.log('compared');
-        // Save the login in the session!
         req.session.currentUser = user;
         if (req.session.counter === 1) {
           const previousUrl = req.session.lastUrl;
@@ -71,13 +71,11 @@ router.post('/login', authMiddle.validUserInputLogin, (req, res, next) => {
           return res.redirect('/profile');
         }
       } else {
-        req.flash('info', 'password wrong');
+        req.flash('info', 'Username and password doesnt match');
         return res.redirect('/login');
       }
     })
-    .catch(error => {
-      next(error);
-    });
+    .catch(next);
 });
 
 // LOG OUT: --------------------------------------------------------------

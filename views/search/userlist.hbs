@@ -7,16 +7,16 @@
       {{#if users}}
         <h1>You have {{users.length}} buddies in <span class="city">{{city}}</span></h1>
         <p class="lead">Connect to people</p>
-      {{else}}  
+      {{else}}
         <h1>No buddies found in <span class="city">{{city}}</span> yet</h1>
         <p class="lead">Connect to people</p>
 
       {{/if}}
     </div>
-  </header>                
+  </header>
 
 <div id='map' style='width: auto; height: 250px;'></div>
-  
+
   {{#if users}}
     <section class="buddies-list pt-3 pb-4">
       <div class="container-fluid">
@@ -34,9 +34,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="card-body">
+                {{!-- <div class="card-body">
                   <p class="bio">{{this.biography}}</p>
-                </div>
+                </div> --}}
               </div>
             </a>
           </div>
@@ -46,7 +46,7 @@
     </section>
   {{/if}}
 </div>
-            
+
   <section class="jumbotron search-results" id="jumbo-bottom">
   </section>
 
@@ -73,7 +73,7 @@ let center = document.getElementById('center').value.split(',');
     var marker = new mapboxgl.Marker()
     .setLngLat(data.location.coordinates)
     .addTo(map);
-  } 
+  }
 
   let city = document.getElementById('city').value;
   let domain = document.domain;

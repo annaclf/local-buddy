@@ -23,7 +23,7 @@
   cursor: pointer;
   transition: opacity .25s ease;
   span{
-    background: #000;
+    background: #fff;
     border: none;
     height: 3px;
     width: 100%;
@@ -36,12 +36,12 @@
       top: 7px;
     }
     &:nth-of-type(3) {
-      top: 14px; 
+      top: 14px;
     }
   }
   &.open{
     span {
-      background: #000;
+      background: #fff;
     }
     span.top{
       transform: translateY(6px) translateX(0) rotate(45deg);
@@ -67,7 +67,7 @@
   visibility: hidden;
   transition: opacity .35s,visibility .35s,height .35s,width .35s;
   overflow: hidden;
-  z-index: 2; 
+  z-index: 2;
   color: #fff;
   &.open{
     opacity: 1;

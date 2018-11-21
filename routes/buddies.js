@@ -16,9 +16,7 @@ router.get('/:id', privateRoute.validObjectId, (req, res, next) => {
     .then((user) => {
       res.render('buddies/profile', user);
     })
-    .catch((error) => {
-      next(error);
-    });
+    .catch(next);
 });
 
 router.post('/:id/favourite', privateRoute.validObjectId, authMiddle.loggedUser, (req, res, next) => {
@@ -26,9 +24,7 @@ router.post('/:id/favourite', privateRoute.validObjectId, authMiddle.loggedUser,
     .then(() => {
       console.log('add buddy to favourites');
     })
-    .catch((error) => {
-      next(error);
-    });
+    .catch(next);
 });
 
 router.get('/:id/book', privateRoute.validObjectId, privateRoute.requireUser, reservationMiddleware.compareDates, (req, res, next) => {
@@ -39,9 +35,7 @@ router.get('/:id/book', privateRoute.validObjectId, privateRoute.requireUser, re
       console.log('hola');
       res.render('buddies/form-reservations', {startDate, endDate, user});
     })
-    .catch(error => {
-      next(error);
-    });
+    .catch(next);
 });
 
 router.post('/:id/book', privateRoute.validObjectId, authMiddle.loggedUser, (req, res, next) => {
@@ -61,9 +55,7 @@ router.post('/:id/book', privateRoute.validObjectId, authMiddle.loggedUser, (req
     .then(() => {
       res.redirect('/profile/reservations');
     })
-    .catch(error => {
-      next(error);
-    });
+    .catch(next);
 });
 
 module.exports = router;

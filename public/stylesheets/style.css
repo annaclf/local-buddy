@@ -221,7 +221,7 @@ a {
   cursor: pointer;
   transition: opacity .25s ease; }
   .navbar-toggle-button span {
-    background: #000;
+    background: #fff;
     border: none;
     height: 3px;
     width: 100%;
@@ -235,7 +235,7 @@ a {
     .navbar-toggle-button span:nth-of-type(3) {
       top: 14px; }
   .navbar-toggle-button.open span {
-    background: #000; }
+    background: #fff; }
   .navbar-toggle-button.open span.top {
     transform: translateY(6px) translateX(0) rotate(45deg); }
   .navbar-toggle-button.open span.middle {

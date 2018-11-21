@@ -221,9 +221,9 @@ a {
   cursor: pointer;
   transition: opacity .25s ease; }
   .navbar-toggle-button span {
-    background: #fff;
+    background: #000;
     border: none;
-    height: 2px;
+    height: 3px;
     width: 100%;
     position: absolute;
     top: 0;
@@ -231,17 +231,17 @@ a {
     transition: all .35s ease;
     cursor: pointer; }
     .navbar-toggle-button span:nth-of-type(2) {
-      top: 6px; }
+      top: 7px; }
     .navbar-toggle-button span:nth-of-type(3) {
-      top: 12px; }
+      top: 14px; }
+  .navbar-toggle-button.open span {
+    background: #000; }
   .navbar-toggle-button.open span.top {
     transform: translateY(6px) translateX(0) rotate(45deg); }
   .navbar-toggle-button.open span.middle {
     opacity: 0; }
   .navbar-toggle-button.open span.bottom {
     transform: translateY(-6px) translateX(0) rotate(-45deg); }
-  .navbar-toggle-button.open span {
-    background: #fff; }
 
 .menu-container {
   position: fixed;
@@ -255,7 +255,7 @@ a {
   visibility: hidden;
   transition: opacity .35s,visibility .35s,height .35s,width .35s;
   overflow: hidden;
-  z-index: 100;
+  z-index: 2;
   color: #fff; }
   .menu-container.open {
     opacity: 1;
@@ -386,10 +386,16 @@ a {
 .icon-text {
   margin-top: 10%; }
 
+.header-name p {
+  text-transform: capitalize; }
+
 #username {
   text-align: center;
   height: 50px;
   font-size: 1.4rem; }
+
+.info-icons {
+  background: #efefef; }
 
 @media (min-width: 556px) {
   .mt-3 {

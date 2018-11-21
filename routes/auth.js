@@ -50,29 +50,29 @@ router.get('/login', (req, res, next) => {
 
 router.post('/login', authMiddle.validUserInputLogin, (req, res, next) => {
   const { username, password } = req.body;
-
+  console.log(req.body);
   User.findOne({ username })
     .then(user => {
-      console.log(password);
+      console.log(user);
       if (!user) {
         req.flash('info', 'Username does not exist');
         return res.redirect('/login');
-      } else {
-        if (bcrypt.compareSync(password, user.password)) {
+      }
+      if (bcrypt.compareSync(password, user.password)) {
+        console.log('compared');
         // Save the login in the session!
-          req.session.currentUser = user;
-          if (req.session.counter === 1) {
-            const previousUrl = req.session.lastUrl;
-            console.log(previousUrl);
-            req.session.counter = 0;
-            return res.redirect(`.${previousUrl}`);
-          } else {
-            return res.redirect('/profile');
-          }
+        req.session.currentUser = user;
+        if (req.session.counter === 1) {
+          const previousUrl = req.session.lastUrl;
+          console.log(previousUrl);
+          req.session.counter = 0;
+          return res.redirect(`/${previousUrl}`);
         } else {
-          req.flash('info', 'password wrong');
-          return res.redirect('/login');
+          return res.redirect('/profile');
         }
+      } else {
+        req.flash('info', 'password wrong');
+        return res.redirect('/login');
       }
     })
     .catch(error => {

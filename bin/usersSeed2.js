@@ -4,7 +4,7 @@ const User = require('../models/user');
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-
+  
 const users = [
   {
     fullname: 'Rocío Lopez Quesada',
@@ -19,7 +19,11 @@ const users = [
     bedsNumber: 1,
     typeBeds: 'Single Bed',
     transport: 'Seat Leon s.6',
-    avatarUrl: 'https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5b703c6052b95e9f418a9025296bdc0c&auto=format&fit=crop&w=500&q=60'
+    avatarUrl: 'https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5b703c6052b95e9f418a9025296bdc0c&auto=format&fit=crop&w=500&q=60',
+    location: {
+      type: {type: String},
+      coordinates: [-3.709190, 40.416744]
+    }
   },
   {
     fullname: 'Marta Campos Jijon',
@@ -34,7 +38,11 @@ const users = [
     bedsNumber: 1,
     typeBeds: 'Double Bed',
     transport: 'Seat Ibiza',
-    avatarUrl: 'https://images.unsplash.com/photo-1504276048855-f3d60e69632f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=05f84c6cccdbace3c4b7d04fc85df9a6&auto=format&fit=crop&w=500&q=60'
+    avatarUrl: 'https://images.unsplash.com/photo-1504276048855-f3d60e69632f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=05f84c6cccdbace3c4b7d04fc85df9a6&auto=format&fit=crop&w=500&q=60',
+    location: {
+      type: {type: String},
+      coordinates: [-3.711961, 40.412637]
+    }
   },
   {
     fullname: 'Marina Martínez Casas',
@@ -49,7 +57,11 @@ const users = [
     bedsNumber: 1,
     typeBeds: 'Double Bed',
     transport: 'Seat Ibiza',
-    avatarUrl: 'https://images.unsplash.com/photo-1503104834685-7205e8607eb9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=defcf01cd785ef042aa159c5b1681e14&auto=format&fit=crop&w=500&q=60'
+    avatarUrl: 'https://images.unsplash.com/photo-1503104834685-7205e8607eb9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=defcf01cd785ef042aa159c5b1681e14&auto=format&fit=crop&w=500&q=60',
+    location: {
+      type: {type: String},
+      coordinates: [-3.710676, 40.409946]
+    }
   },
   {
     fullname: 'Luisa Sánchez Perco',
@@ -64,7 +76,11 @@ const users = [
     bedsNumber: 1,
     typeBeds: 'Couch',
     transport: 'Peugeot 307',
-    avatarUrl: 'https://images.unsplash.com/photo-1510520434124-5bc7e642b61d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6b256ab85181b440dbd72eb4b1c297c&auto=format&fit=crop&w=500&q=60'
+    avatarUrl: 'https://images.unsplash.com/photo-1510520434124-5bc7e642b61d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6b256ab85181b440dbd72eb4b1c297c&auto=format&fit=crop&w=500&q=60',
+    location: {
+      type: {type: String},
+      coordinates: [-3.695133, 40.420818]
+    }
   },
   {
     fullname: 'María Sánchez Agudo',
@@ -79,7 +95,11 @@ const users = [
     bedsNumber: 2,
     typeBeds: 'Couch',
     transport: 'Peugeot 206',
-    avatarUrl: 'https://images.unsplash.com/photo-1513207565459-d7f36bfa1222?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=35fe1b3b9c76a4d39394697202e872e0&auto=format&fit=crop&w=500&q=60'
+    avatarUrl: 'https://images.unsplash.com/photo-1513207565459-d7f36bfa1222?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=35fe1b3b9c76a4d39394697202e872e0&auto=format&fit=crop&w=500&q=60',
+    location: {
+      type: {type: String},
+      coordinates: [-3.704483, 40.417168]
+    }
   },
   {
     fullname: 'Aitana Agudo i Riera',
@@ -94,7 +114,11 @@ const users = [
     bedsNumber: 1,
     typeBeds: 'Double Bed',
     transport: 'Seat Ibiza',
-    avatarUrl: 'https://images.unsplash.com/photo-1433954558247-ba7696b9af19?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5224f7bddffe1086b76d2e480ab2444&auto=format&fit=crop&w=500&q=60'
+    avatarUrl: 'https://images.unsplash.com/photo-1433954558247-ba7696b9af19?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e5224f7bddffe1086b76d2e480ab2444&auto=format&fit=crop&w=500&q=60',
+    location: {
+      type: {type: String},
+      coordinates: [2.1905541, 41.3977417]
+    }
   },
   {
     fullname: 'Monica Agudo i Riera',
@@ -109,7 +133,11 @@ const users = [
     bedsNumber: 1,
     typeBeds: 'Single Bed',
     transport: 'Seat Ibiza',
-    avatarUrl: '/images/default-avatar.jpg'
+    avatarUrl: '/images/default-avatar.jpg',
+    location: {
+      type: {type: String},
+      coordinates: [2.1905541, 41.3977417]
+    }
   },
   {
     fullname: 'Nick Washington',

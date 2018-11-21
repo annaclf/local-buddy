@@ -1,13 +1,13 @@
 <div class="container reservations">
   <h1 class="title-book mt-5">Your bookings</h1>
-  
+
   <section class="requested">
-    <h2 class="book-sections-title">Your requested bookings</h2>
-    {{#unless pending}}
+    <h2 class="book-sections-title">Waiting for response from Buddie!!</h2>
+    {{#unless pendingOut}}
       <p>You have no requested bookings yet!</p>
     {{/unless}}
 
-    {{#each pending}}
+    {{#each pendingOut}}
       <div class="booking-card">
         {{> reservationCard }}
       </div>
@@ -16,12 +16,12 @@
     {{/each}}
   </section>
   <section class="pending">
-    <h2 class="book-sections-title">Requests to book you</h2>
-    {{#unless pending2}}
+    <h2 class="book-sections-title">These buddies wants to visit you!!</h2>
+    {{#unless pendingIn}}
       <p>You have no pending requests to book you!</p>
     {{/unless}}
 
-    {{#each pending2}}
+    {{#each pendingIn}}
       <div class="booking-card">
         {{> rescardtraveller }}
       </div>
@@ -29,7 +29,7 @@
       <div>
         <form method="post" action="/profile/reservations">
           <button type="submit" name="status" value="Accepted" class="form-control btn btn-success">Accept</button>
-          <button type="submit" name="status" value="Rejected" class="form-control btn btn-danger">Reject</button>  
+          <button type="submit" name="status" value="Rejected" class="form-control btn btn-danger">Reject</button>
           <input type="hidden" name="id" value="{{this._id}}">
         </form>
       </div>
@@ -37,18 +37,45 @@
   </section>
 
   <section class="accepted">
-    <h2 class="book-sections-title">Accepted bookings</h2>
-
-    {{#unless accepted}}
+    <h2 class="book-sections-title">You are going to visit these buddies!!</h2>
+    {{!-- {{#unless accepted}}
       <p>You have not any accepted booking yet!</p>
-    {{/unless}}
-
-    {{#each accepted}}
-      <div class="booking-card">
+    {{/unless}} --}}
+    {{#each outgoingAccepted}}
+       <div class="booking-card">
         {{> reservationCard }}
       </div>
+    {{/each}}
+  </section>
 
+  <section class="accepted">
+    <h2 class="book-sections-title">These buddies are going to visit you!!</h2>
+    {{!-- {{#unless accepted}}
+      <p>You have not any accepted booking yet!</p>
+    {{/unless}} --}}
+    {{#each incomingAccepted}}
+       <div class="booking-card">
+        <a href="/buddies/{{this.idTraveller._id}}">
+<div class="container reservation-card">
+  <div class="row">
+    {{!-- <div class="col-4"> --}}
+      {{!-- <img src="{{this.idBuddy.avatarUrl}}"  alt="" class="rounded-circle"> --}}
+      <div style="height: 120px; width:120px; background: url('{{this.idTraveller.avatarUrl}}') no-repeat center; background-size: cover;" class=" col-4 user-pic container"></div>
+    {{!-- </div> --}}
+    <div class="col-8 my-auto text-book-card">
+      <h2>{{this.idTraveller.fullname}}</h2>
+      <p>City: {{this.idTraveller.city}}</p>
+      <div class="row">
+        <p class="col">Start Date: <br><i>{{this.startDate}}</i></p>
+        <p class="col">End Date: <br><i>{{this.endDate}}</i></p>
+      </div>
+    </div>
 
+  </div>
+
+</div>
+</a>
+      </div>
     {{/each}}
   </section>
 </div>

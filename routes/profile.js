@@ -90,21 +90,24 @@ router.post('/edit', privateRoute.requireUser, (req, res, next) => {
 
 router.get('/reservations', authMiddle.loggedUser, (req, res, next) => {
   const idTraveller = req.session.currentUser._id;
-  Reservation.find({ idTraveller: idTraveller }).populate('idBuddy').sort({startDate: 1})
-    .then(reservations1 => {
-      const accepted = reservations1.filter(reservation => {
+  Reservation.find({ idTraveller: idTraveller }).populate('idBuddy')
+    .then(outgoing => {
+      const outgoingAccepted = outgoing.filter(reservation => {
         return reservation.status === 'Accepted';
       });
-      const pending = reservations1.filter(reservation => {
+      const pendingOut = outgoing.filter(reservation => {
         return reservation.status === 'Pending';
       });
       const idBuddy = req.session.currentUser._id;
-      Reservation.find({ idBuddy: idBuddy }).populate('idTraveller').sort({startDate: 1})
-        .then(reservations2 => {
-          const pending2 = reservations2.filter(reservation => {
+      Reservation.find({ idBuddy: idBuddy }).populate('idTraveller')
+        .then(incoming => {
+          const incomingAccepted = incoming.filter(reservation => {
+            return reservation.status === 'Accepted';
+          });
+          const pendingIn = incoming.filter(reservation => {
             return reservation.status === 'Pending';
           });
-          res.render('profile/reservations', {accepted, pending, pending2});
+          res.render('profile/reservations', {outgoingAccepted, incomingAccepted, pendingOut, pendingIn});
         })
         .catch(error => {
           next(error);

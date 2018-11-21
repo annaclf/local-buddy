@@ -14,12 +14,12 @@
 
 </section>
 
-<section class="container mt-3">
+<section class="container">
 
-    <div class="row info-icons text-center">
+    <div class="row info-icons text-center pt-3">
         {{#if this.category}}
           <div class="col">
-            <i class="fas fa-map-marked-alt fa-2x"></i>            
+            <i class="fas fa-map-marked-alt fa-2x"></i>
             <p class="icon-text">{{this.category}}</p>
           </div>
         {{/if}}
@@ -83,7 +83,7 @@
   </div>
 
   <input type="hidden" id='center' value='{{this.location.coordinates}}'>
-  
+
 
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>

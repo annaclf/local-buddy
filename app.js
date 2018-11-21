@@ -18,7 +18,6 @@ const searchRouter = require('./routes/search');
 const profileRouter = require('./routes/profile');
 const apiRouter = require('./routes/api');
 
-
 const app = express();
 
 // view engine setup

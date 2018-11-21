@@ -5,7 +5,7 @@
   .fullname{
     font-size: 26px;
     margin: 0%;
-  }  
+  }
   p{
     margin-bottom: 2%;
   }
@@ -14,6 +14,9 @@
   margin-top: 10%;
 }
 
+.header-name p{
+  text-transform: capitalize;
+}
 
 #username{
   text-align: center;
@@ -21,7 +24,9 @@
   font-size: $h2-text-size;
 }
 
-
+.info-icons{
+  background: #efefef;
+}
 
 
 

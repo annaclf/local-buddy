@@ -6,6 +6,7 @@
           <td class="align-bottom header-name">
                 <h2 class="fullname">{{this.fullname}}</h2>
                 <p>{{this.city}}</p>
+                <p class="pt-2"><i>{{this.highlights}}</i></p>
           </td>
         </tr>
     </table>
@@ -13,12 +14,12 @@
 
 </section>
 
-<section class="container mt-3">
+<section class="container">
 
-    <div class="row info-icons text-center">
+    <div class="row info-icons text-center pt-4">
         {{#if this.category}}
           <div class="col">
-            <i class="fas fa-map-marked-alt fa-2x"></i>            
+            <i class="fas fa-map-marked-alt fa-2x"></i>
             <p class="icon-text">{{this.category}}</p>
           </div>
         {{/if}}
@@ -42,11 +43,10 @@
 
 
     </div>
-    <p><i>{{this.highlights}}</i></p>
 </section>
 
-<div class="container">
-    <div class="row mt-1">
+<div class="container mt-3">
+    <div class="row">
       <div class="col-md-7 mb-4">
         {{#if this.biography}}
         <h2 class="">About me</h2>
@@ -59,13 +59,13 @@
       </div>
 
 
-       
+
     </div>
   </div>
 
 
 
-{{!-- 
+{{!--
 
 <section class="buddie-profile">
   <div class="top-banner">
@@ -93,7 +93,7 @@
         <p><strong>Highlights:</strong> <i>{{this.highlights}}</i></p>
         <p><strong>In category:</strong> {{this.category}}</p>
         <p><strong>Beds:</strong> {{this.bedsNumber}} {{this.typeBeds}}</p>
-        
+
         <a class="btn btn-lg btn-primary" href="profile/edit" role="button">Edit</a>
 
       </div>

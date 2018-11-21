@@ -1,8 +1,8 @@
 <section class="login-section">
   <div class="container">
-    
+
     <div class="row vh-90 align-items-center top-section">
-      
+
       <div class="col-md-6 col-lg-5 mx-auto">
         <div class="form-top">
         <div class="d-flex flex-column">
@@ -11,27 +11,27 @@
       </div>
         <section class="login-form text-center">
           <form method="post" action="/login" role="login" class="user-form">
-            
+
             <input type="text" name="username" placeholder="Username" required class="form-control input-lg">
-            <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password" required>          
-            
-            <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Login</button>
-            
+            <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password">
+
+            <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+
             <footer>
               Not registered yet? <a href="/signup">Create account</a>
             </footer>
 
           </form>
-        </section>  
+        </section>
 
         <aside class="errormessage text-center mt-4">
           {{#if messages.length}}
               {{#each messages}}<p>{{this}}</p>{{/each}}
           {{/if}}
 
-        </aside> 
+        </aside>
 
       </div>
-    </div>    
+    </div>
   </div>
 </section>
